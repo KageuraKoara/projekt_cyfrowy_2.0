@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://5b1mwsoorbrf"]
+
+[ext_resource type="PackedScene" uid="uid://c0txe0f57ssv5" path="res://scenes/note.tscn" id="1_ksju7"]
+
+[node name="Level1" type="Node"]
+
+[node name="C" parent="." instance=ExtResource("1_ksju7")]
+input = "W"
+
+[node name="D" parent="." instance=ExtResource("1_ksju7")]
+input = "E"
+
+[node name="E" parent="." instance=ExtResource("1_ksju7")]
+
+[node name="F" parent="." instance=ExtResource("1_ksju7")]
+input = "T"
+
+[node name="G" parent="." instance=ExtResource("1_ksju7")]
+input = "Y"
+
+[node name="A" parent="." instance=ExtResource("1_ksju7")]
+input = "U"
+
+[node name="H" parent="." instance=ExtResource("1_ksju7")]
+input = "I"
