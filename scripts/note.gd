@@ -2,6 +2,7 @@ extends AnimatedSprite2D
 
 @export var input = ""
 @export var comboTime = 0.1
+@export var pitch = ""
 
 var comboing = false
 

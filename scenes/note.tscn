@@ -9,6 +9,7 @@ size = Vector2(92, 246)
 [node name="Note" type="AnimatedSprite2D"]
 sprite_frames = ExtResource("1_1bnk6")
 script = ExtResource("2_43c4j")
+input = "R"
 
 [node name="Area2D" type="Area2D" parent="."]
 
