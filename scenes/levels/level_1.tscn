@@ -79,9 +79,10 @@ position = Vector2(-1079.64, -246.839)
 shape = SubResource("RectangleShape2D_s5b24")
 
 [node name="Wall_Right" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(598.359, -231.839)
+position = Vector2(1014.36, -237.839)
 shape = SubResource("RectangleShape2D_s5b24")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(585, 311)
+position = Vector2(17, -26)
+anchor_mode = 0
 script = ExtResource("10_s5b24")

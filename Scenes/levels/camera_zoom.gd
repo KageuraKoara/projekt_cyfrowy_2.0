@@ -1,19 +1,8 @@
 extends Camera2D
-
-@onready var wall_right: CollisionShape2D = $"./StaticBody2D/Wall_Right"
-@onready var wall_left: CollisionShape2D = $"./StaticBody2D/Wall_Left"
-
-
-
-var Left = wall_left
-var Right = wall_right
-@export var Max = 1.0
-@export var Min = 0.5
 	
-
-func distance():
+var size = get_viewport_rect()
 	
-	Camera2D.zoom <= Max
-	Camera2D.zoom >= Min
-	
+func _process(delta: float) -> void:
+	size = get_viewport_rect()
+	print(size)
 	
