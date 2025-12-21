@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c0txe0f57ssv5"]
 
 [ext_resource type="SpriteFrames" uid="uid://cewt006eixqkt" path="res://sprites/game/notes/note_frames.tres" id="1_1bnk6"]
-[ext_resource type="Script" uid="uid://cl22tanlvt07t" path="res://Scripts/note.gd" id="2_43c4j"]
+[ext_resource type="Script" uid="uid://cl22tanlvt07t" path="res://scripts/note.gd" id="2_43c4j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njo4t"]
 size = Vector2(92, 246)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://5b1mwsoorbrf"]
 
-[ext_resource type="PackedScene" uid="uid://c0txe0f57ssv5" path="res://Scenes/note.tscn" id="1_ksju7"]
+[ext_resource type="PackedScene" uid="uid://c0txe0f57ssv5" path="res://scenes/note.tscn" id="1_ksju7"]
 [ext_resource type="AudioStream" uid="uid://b6wv7rsmxmc8g" path="res://sounds/C.wav" id="2_6iamk"]
 [ext_resource type="AudioStream" uid="uid://diuiwp0bnpig8" path="res://sounds/D.wav" id="3_s8va5"]
 [ext_resource type="AudioStream" uid="uid://bpehdo3fegxhb" path="res://sounds/E.wav" id="4_dga24"]
@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://bsbitodswfa3o" path="res://sounds/G.wav" id="6_excbq"]
 [ext_resource type="AudioStream" uid="uid://cash83eaollvn" path="res://sounds/A.wav" id="7_iav0o"]
 [ext_resource type="AudioStream" uid="uid://d2se4oawsq0r5" path="res://sounds/H.wav" id="8_dnkej"]
-[ext_resource type="PackedScene" uid="uid://b0vf6neoqgkk4" path="res://Scenes/player.tscn" id="9_dsuda"]
+[ext_resource type="PackedScene" uid="uid://b0vf6neoqgkk4" path="res://scenes/player.tscn" id="9_dsuda"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dsuda"]
 size = Vector2(2112, 60.3221)
