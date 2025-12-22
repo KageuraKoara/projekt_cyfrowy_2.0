@@ -1,15 +1,20 @@
-[gd_scene load_steps=13 format=3 uid="uid://5b1mwsoorbrf"]
+[gd_scene load_steps=19 format=3 uid="uid://5b1mwsoorbrf"]
 
-[ext_resource type="PackedScene" uid="uid://c0txe0f57ssv5" path="res://Scenes/note.tscn" id="1_ksju7"]
-[ext_resource type="AudioStream" uid="uid://b6wv7rsmxmc8g" path="res://sounds/C.wav" id="2_6iamk"]
-[ext_resource type="AudioStream" uid="uid://diuiwp0bnpig8" path="res://sounds/D.wav" id="3_s8va5"]
-[ext_resource type="AudioStream" uid="uid://bpehdo3fegxhb" path="res://sounds/E.wav" id="4_dga24"]
-[ext_resource type="AudioStream" uid="uid://bwpbc5gsskpsp" path="res://sounds/F.wav" id="5_qxy0u"]
-[ext_resource type="AudioStream" uid="uid://bsbitodswfa3o" path="res://sounds/G.wav" id="6_excbq"]
-[ext_resource type="AudioStream" uid="uid://cash83eaollvn" path="res://sounds/A.wav" id="7_iav0o"]
-[ext_resource type="AudioStream" uid="uid://d2se4oawsq0r5" path="res://sounds/H.wav" id="8_dnkej"]
-[ext_resource type="PackedScene" uid="uid://b0vf6neoqgkk4" path="res://Scenes/player.tscn" id="9_dsuda"]
-[ext_resource type="Script" uid="uid://b2a01eyrc1rui" path="res://Scenes/levels/camera_zoom.gd" id="10_s5b24"]
+[ext_resource type="Script" uid="uid://b05mfiyf4wugg" path="res://scenes/levels/game.gd" id="1_excbq"]
+[ext_resource type="PackedScene" uid="uid://c0txe0f57ssv5" path="res://scenes/note.tscn" id="1_ksju7"]
+[ext_resource type="AudioStream" uid="uid://butrua1wugngf" path="res://sounds/Concerto In G Minor for Violin, String Orchestra and Continuo, Op. 8, No. 2, RV 315, Lestate....mp3" id="3_mm8aj"]
+[ext_resource type="AudioStream" uid="uid://cmn5xley5ak03" path="res://sounds/harpsichord/c.wav" id="4_iav0o"]
+[ext_resource type="AudioStream" uid="uid://dm0kxdy441gp8" path="res://sounds/harpsichord/d.wav" id="5_dnkej"]
+[ext_resource type="AudioStream" uid="uid://bd1ay2nk80rar" path="res://sounds/harpsichord/e_m.wav" id="6_mm8aj"]
+[ext_resource type="AudioStream" uid="uid://cm3j6p2ky2s5m" path="res://sounds/harpsichord/f.wav" id="7_wtwp4"]
+[ext_resource type="AudioStream" uid="uid://31ikrg5orx4f" path="res://sounds/harpsichord/g.wav" id="8_iwr0g"]
+[ext_resource type="AudioStream" uid="uid://bp2ejswd7psgg" path="res://sounds/harpsichord/a.wav" id="9_bahl2"]
+[ext_resource type="PackedScene" uid="uid://b0vf6neoqgkk4" path="res://scenes/player.tscn" id="9_dsuda"]
+[ext_resource type="AudioStream" uid="uid://bb08rjssv0vm6" path="res://sounds/harpsichord/b.wav" id="10_np2pn"]
+[ext_resource type="Script" uid="uid://b2a01eyrc1rui" path="res://scenes/levels/camera_zoom.gd" id="10_s5b24"]
+[ext_resource type="PackedScene" uid="uid://t1pibog7rmnq" path="res://scenes/conductor.tscn" id="12_iav0o"]
+[ext_resource type="PackedScene" uid="uid://d1tvv5smk3qyf" path="res://scenes/hourglass.tscn" id="12_wtwp4"]
+[ext_resource type="Script" uid="uid://b4co0s1upm4mk" path="res://scenes/levels/test-enemy.gd" id="13_dnkej"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dsuda"]
 size = Vector2(2112, 60.3221)
@@ -17,68 +22,81 @@ size = Vector2(2112, 60.3221)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5b24"]
 size = Vector2(20, 391.419)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iav0o"]
+size = Vector2(226, 420.5)
+
 [node name="Level1" type="Node"]
+script = ExtResource("1_excbq")
+
+[node name="Notes" type="Node" parent="."]
+
+[node name="C" parent="Notes" instance=ExtResource("1_ksju7")]
+visible = false
+position = Vector2(4, -132)
+input = "E"
+pitch = ExtResource("4_iav0o")
+
+[node name="D" parent="Notes" instance=ExtResource("1_ksju7")]
+visible = false
+position = Vector2(4, -132)
+input = "R"
+pitch = ExtResource("5_dnkej")
+
+[node name="E" parent="Notes" instance=ExtResource("1_ksju7")]
+visible = false
+position = Vector2(4, -132)
+input = "T"
+pitch = ExtResource("6_mm8aj")
+
+[node name="F" parent="Notes" instance=ExtResource("1_ksju7")]
+visible = false
+position = Vector2(4, -132)
+input = "Y"
+pitch = ExtResource("7_wtwp4")
+
+[node name="G" parent="Notes" instance=ExtResource("1_ksju7")]
+visible = false
+position = Vector2(4, -132)
+input = "U"
+pitch = ExtResource("8_iwr0g")
+
+[node name="A" parent="Notes" instance=ExtResource("1_ksju7")]
+visible = false
+position = Vector2(4, -132)
+input = "I"
+pitch = ExtResource("9_bahl2")
+
+[node name="H" parent="Notes" instance=ExtResource("1_ksju7")]
+visible = false
+position = Vector2(4, -132)
+input = "O"
+pitch = ExtResource("10_np2pn")
+
+[node name="Conductor" parent="." instance=ExtResource("12_iav0o")]
+stream = ExtResource("3_mm8aj")
+volume_db = -40.0
+
+[node name="Hourglass" parent="." instance=ExtResource("12_wtwp4")]
+position = Vector2(232, 45)
 
 [node name="Player" parent="." instance=ExtResource("9_dsuda")]
 position = Vector2(249, 377)
 safe_margin = 0.8
 
-[node name="C" parent="Player" instance=ExtResource("1_ksju7")]
-visible = false
-position = Vector2(-245, -509)
-input = "E"
-pitch = ExtResource("2_6iamk")
-
-[node name="D" parent="Player" instance=ExtResource("1_ksju7")]
-visible = false
-position = Vector2(-245, -509)
-input = "R"
-pitch = ExtResource("3_s8va5")
-
-[node name="E" parent="Player" instance=ExtResource("1_ksju7")]
-visible = false
-position = Vector2(-245, -509)
-input = "T"
-pitch = ExtResource("4_dga24")
-
-[node name="F" parent="Player" instance=ExtResource("1_ksju7")]
-visible = false
-position = Vector2(-245, -509)
-input = "Y"
-pitch = ExtResource("5_qxy0u")
-
-[node name="G" parent="Player" instance=ExtResource("1_ksju7")]
-visible = false
-position = Vector2(-245, -509)
-input = "U"
-pitch = ExtResource("6_excbq")
-
-[node name="A" parent="Player" instance=ExtResource("1_ksju7")]
-visible = false
-position = Vector2(-245, -509)
-input = "I"
-pitch = ExtResource("7_iav0o")
-
-[node name="H" parent="Player" instance=ExtResource("1_ksju7")]
-visible = false
-position = Vector2(-245, -509)
-input = "O"
-pitch = ExtResource("8_dnkej")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="SceneCollisions" type="StaticBody2D" parent="."]
 position = Vector2(577.641, 679.839)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Floor" type="CollisionShape2D" parent="SceneCollisions"]
 light_mask = 3
 visibility_layer = 3
 position = Vector2(-32.6408, -30.8389)
 shape = SubResource("RectangleShape2D_dsuda")
 
-[node name="Wall_Left" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Wall_Left" type="CollisionShape2D" parent="SceneCollisions"]
 position = Vector2(-1079.64, -246.839)
 shape = SubResource("RectangleShape2D_s5b24")
 
-[node name="Wall_Right" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Wall_Right" type="CollisionShape2D" parent="SceneCollisions"]
 position = Vector2(1014.36, -237.839)
 shape = SubResource("RectangleShape2D_s5b24")
 
@@ -86,3 +104,17 @@ shape = SubResource("RectangleShape2D_s5b24")
 position = Vector2(17, -26)
 anchor_mode = 0
 script = ExtResource("10_s5b24")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 7
+script = ExtResource("13_dnkej")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(797, 393)
+shape = SubResource("RectangleShape2D_iav0o")
+
+[connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
+[connection signal="time_ran_out" from="Hourglass" to="." method="_on_hourglass_time_ran_out"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="owie" from="Area2D" to="." method="_on_death_owie"]

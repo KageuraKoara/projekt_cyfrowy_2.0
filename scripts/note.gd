@@ -13,7 +13,7 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action(input):
 		if event.is_action_pressed(input, false):
-			get_parent().Notes(input)
+			get_tree().get_root().get_node("Level1").Notes(input)
 			$NoteSound.play()
 			$ComboTimer.start()
 			comboing = true

@@ -1,6 +1,6 @@
 [gd_scene load_steps=52 format=3 uid="uid://b0vf6neoqgkk4"]
 
-[ext_resource type="Script" uid="uid://c36emfipxdkff" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://c36emfipxdkff" path="res://scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://726emgcsawcu" path="res://sprites/game/Player_Attack_1/Atak_1_F1.png" id="2_pu2lt"]
 [ext_resource type="Texture2D" uid="uid://clho5h8lfleud" path="res://sprites/game/Player_Attack_1/Atak_1_F2.png" id="3_ukyrk"]
 [ext_resource type="Texture2D" uid="uid://mx70tbaxy6hh" path="res://sprites/game/Player_Attack_1/Atak_1_F3.png" id="4_7dp3o"]
@@ -239,6 +239,8 @@ animations = [{
 size = Vector2(70, 254)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 11
 script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
