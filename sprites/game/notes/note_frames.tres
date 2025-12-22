@@ -1,12 +1,16 @@
-[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://cewt006eixqkt"]
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://cewt006eixqkt"]
 
 [ext_resource type="Texture2D" uid="uid://bmok2sruq8ksq" path="res://sprites/game/notes/note.png" id="1_n1t1m"]
+[ext_resource type="Texture2D" uid="uid://bkgufcyfi58gg" path="res://sprites/game/notes/gold_note.png" id="2_5lvva"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_n1t1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5lvva")
 }],
 "loop": true,
 "name": &"default",
