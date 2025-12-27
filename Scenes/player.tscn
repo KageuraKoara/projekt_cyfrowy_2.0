@@ -251,3 +251,7 @@ sprite_frames = SubResource("SpriteFrames_cvnsp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_vgqql")
+
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true

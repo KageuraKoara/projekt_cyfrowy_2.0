@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 var Spawn_Position : Vector2
 var Spawn_Rotation : float
-var note := "E" #for tests
+var note := ""
 var frame = 0
 var time_damage = 0.5
 
