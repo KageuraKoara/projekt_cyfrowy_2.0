@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var Main = get_tree().get_root().get_node("Level1")
 @onready var Projectile = load("res://Scenes/Projectile.tscn")
+@onready var AnimatedSprite =  $'AnimatedSprite2D'
 
 @export var Speed = 500
 @export var Gravity: float = 1000.0
@@ -39,14 +40,21 @@ func _process(_delta: float) -> void:
 	input_walking = Input.get_axis("movement_Q", "movement_P")
 	velocity.x= input_walking * Speed
 
+
 func jump_input() -> bool:
 	return Input.is_action_just_pressed("movement_Space")
 	
 func handle_jump(body: CharacterBody2D, want_to_jump: bool) -> void:
 	if want_to_jump and body.is_on_floor():
-		body.velocity.y = Jump_Velocity
+		body.velocity.y = Jump_Velocity		
 		
 	is_jumping = body.velocity.y < 0 and not body.is_on_floor()
+	AnimatedSprite.play("Jumping")
+	
+	if body.is_on_floor():
+		AnimatedSprite.play("default")
+
+	
 
 	#_________ Gravity _________#
 	
