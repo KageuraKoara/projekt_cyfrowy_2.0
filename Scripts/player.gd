@@ -11,6 +11,7 @@ extends CharacterBody2D
 
 var offset = -40 # notes offset
 
+
 var is_falling: bool = false
 var input_walking: float = 0.0
 var input_jump: float = 0.0
@@ -39,7 +40,9 @@ func _physics_process(delta):
 func _process(_delta: float) -> void:
 	input_walking = Input.get_axis("movement_Q", "movement_P")
 	velocity.x= input_walking * Speed
-
+	if Input.is_action_pressed("movement_Q") or Input.is_action_pressed("movement_P"):
+		AnimatedSprite.play("Walking")
+	
 
 func jump_input() -> bool:
 	return Input.is_action_just_pressed("movement_Space")
@@ -71,3 +74,4 @@ func Notes(input):
 	instance.Spawn_Position = Vector2(global_position.x,base + keys[input])
 	instance.Spawn_Rotation = rotation
 	Main.add_child(instance)
+	

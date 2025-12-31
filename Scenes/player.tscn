@@ -1,11 +1,10 @@
-[gd_scene load_steps=52 format=3 uid="uid://b0vf6neoqgkk4"]
+[gd_scene load_steps=51 format=3 uid="uid://b0vf6neoqgkk4"]
 
 [ext_resource type="Script" uid="uid://c36emfipxdkff" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://726emgcsawcu" path="res://sprites/game/Player_Attack_1/Atak_1_F1.png" id="2_pu2lt"]
 [ext_resource type="Texture2D" uid="uid://clho5h8lfleud" path="res://sprites/game/Player_Attack_1/Atak_1_F2.png" id="3_ukyrk"]
 [ext_resource type="Texture2D" uid="uid://mx70tbaxy6hh" path="res://sprites/game/Player_Attack_1/Atak_1_F3.png" id="4_7dp3o"]
 [ext_resource type="Texture2D" uid="uid://bgu0jkkbpx44t" path="res://sprites/game/Player_Attack_1/Atak_1_F4.png" id="5_h4iuc"]
-[ext_resource type="Texture2D" uid="uid://c4ohut8mgm4im" path="res://sprites/game/Player_Attack_1/Atak_1_F5.png" id="6_fd4e3"]
 [ext_resource type="Texture2D" uid="uid://cwpb4pe2kwub7" path="res://sprites/game/Player_Attack_1/Atak_1_F6.png" id="7_qqcod"]
 [ext_resource type="Texture2D" uid="uid://p33t5dhot5tx" path="res://sprites/game/Player_Attack_1/Atak_1_F7.png" id="8_igrcy"]
 [ext_resource type="Texture2D" uid="uid://8w7bd41mcgmk" path="res://sprites/game/Player_Attack_1/Atak_1_F8.png" id="9_fs7ks"]
@@ -64,9 +63,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_h4iuc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_fd4e3")
 }, {
 "duration": 1.0,
 "texture": ExtResource("7_qqcod")
@@ -247,6 +243,9 @@ script = ExtResource("1_cvnsp")
 position = Vector2(2, -10)
 scale = Vector2(0.0704948, 0.0704948)
 sprite_frames = SubResource("SpriteFrames_cvnsp")
+animation = &"Walking"
+frame = 1
+frame_progress = 0.332603
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
