@@ -11,6 +11,8 @@ extends CharacterBody2D
 
 var offset = -40 # notes offset
 
+var is_walking: bool = false
+var is_shooting: bool = false
 
 var is_falling: bool = false
 var input_walking: float = 0.0
@@ -29,9 +31,9 @@ var keys = {
 
 func _ready() -> void:
 	pass
-	
+
 	#_________ Movement handler _________#
-	
+
 func _physics_process(delta):
 	move_and_slide()
 	HandleGravity(self, delta)
@@ -40,8 +42,23 @@ func _physics_process(delta):
 func _process(_delta: float) -> void:
 	input_walking = Input.get_axis("movement_Q", "movement_P")
 	velocity.x= input_walking * Speed
-	if Input.is_action_pressed("movement_Q") or Input.is_action_pressed("movement_P"):
+	Animations()
+	
+func Animations():
+	if !is_walking and (Input.is_action_pressed("movement_Q") or Input.is_action_pressed("movement_P")):
+		is_walking = true
 		AnimatedSprite.play("Walking")
+	if is_walking and (Input.is_action_just_released("movement_Q") or Input.is_action_just_released("movement_P")):
+		is_walking = false
+		AnimatedSprite.play("default")
+	if is_shooting:
+		AnimatedSprite.play("Atak_1")
+		is_shooting = false
+
+#### Need to figure this shit out, can't get it to work in the Notes function ####
+	#is_shooting = true
+	#print(is_shooting)
+	#Animations()
 	
 
 func jump_input() -> bool:
@@ -50,14 +67,12 @@ func jump_input() -> bool:
 func handle_jump(body: CharacterBody2D, want_to_jump: bool) -> void:
 	if want_to_jump and body.is_on_floor():
 		body.velocity.y = Jump_Velocity		
-		
+		AnimatedSprite.play("Jumping")
 	is_jumping = body.velocity.y < 0 and not body.is_on_floor()
-	AnimatedSprite.play("Jumping")
 	
-	if body.is_on_floor():
-		AnimatedSprite.play("default")
 
-	
+	if body.is_on_floor() and !is_walking and !is_shooting:
+		AnimatedSprite.play("default")
 
 	#_________ Gravity _________#
 	
@@ -74,4 +89,3 @@ func Notes(input):
 	instance.Spawn_Position = Vector2(global_position.x,base + keys[input])
 	instance.Spawn_Rotation = rotation
 	Main.add_child(instance)
-	

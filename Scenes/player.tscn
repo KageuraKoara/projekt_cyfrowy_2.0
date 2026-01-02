@@ -133,7 +133,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Damage",
-"speed": 5.1
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -226,9 +226,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_pu2lt")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
@@ -243,9 +243,6 @@ script = ExtResource("1_cvnsp")
 position = Vector2(2, -10)
 scale = Vector2(0.0704948, 0.0704948)
 sprite_frames = SubResource("SpriteFrames_cvnsp")
-animation = &"Walking"
-frame = 1
-frame_progress = 0.332603
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
