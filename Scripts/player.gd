@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
 @onready var Main = get_tree().get_root().get_node("Level1")
-@onready var Projectile = load("res://Scenes/Projectile.tscn")
+@onready var Death = get_parent().find_child("Death")
 
 @export var Gravity: float = 800.0
 @export var Jump_Velocity: float = -400.0
 var Speed : int
+var direction
+var note_direction: float = 0.0
 
 var is_falling: bool = false
 var input_walking: float = 0.0
@@ -23,9 +25,17 @@ func _physics_process(delta):
 	handle_jump(self, jump_input())
 
 func _process(_delta: float) -> void:
+	direction = (Death.position - position).normalized()
+	
+	if direction.x < 0:
+		$AnimatedSprite2D.flip_h = true
+		note_direction = -3.12
+	else:
+		$AnimatedSprite2D.flip_h = false
+		note_direction = 0.0
+	
 	if $DashTimer.time_left != 0:
 		Speed = 600
-		print("dash active")
 	else:
 		Speed = 300
 	
@@ -50,12 +60,3 @@ func HandleGravity (body: CharacterBody2D, delta: float) -> void:
 
 func StartDashTimer():
 	$DashTimer.start()
-
-	#_________ Shooting notes _________#
-
-'func Notes(input):
-	var instance = Projectile.instantiate()
-	instance.Direction = rotation
-	instance.Spawn_Position = Vector2(global_position.x,base + keys[input])
-	instance.Spawn_Rotation = rotation
-	Main.add_child(instance)'

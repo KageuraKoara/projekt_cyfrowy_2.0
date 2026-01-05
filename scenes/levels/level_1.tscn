@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b05mfiyf4wugg" path="res://scenes/levels/game.gd" id="1_excbq"]
 [ext_resource type="PackedScene" uid="uid://c0txe0f57ssv5" path="res://scenes/note.tscn" id="1_ksju7"]
+[ext_resource type="PackedScene" uid="uid://d384mg7fb6l2e" path="res://scenes/chord_manager.tscn" id="2_bahl2"]
 [ext_resource type="PackedScene" uid="uid://cgb3e0fnsocwp" path="res://scenes/references.tscn" id="2_iwr0g"]
 [ext_resource type="AudioStream" uid="uid://butrua1wugngf" path="res://sounds/Concerto In G Minor for Violin, String Orchestra and Continuo, Op. 8, No. 2, RV 315, Lestate....mp3" id="3_mm8aj"]
 [ext_resource type="AudioStream" uid="uid://cmn5xley5ak03" path="res://sounds/harpsichord/c.wav" id="4_iav0o"]
@@ -12,10 +13,10 @@
 [ext_resource type="AudioStream" uid="uid://bp2ejswd7psgg" path="res://sounds/harpsichord/a.wav" id="9_bahl2"]
 [ext_resource type="PackedScene" uid="uid://b0vf6neoqgkk4" path="res://scenes/player.tscn" id="9_dsuda"]
 [ext_resource type="AudioStream" uid="uid://bb08rjssv0vm6" path="res://sounds/harpsichord/b.wav" id="10_np2pn"]
-[ext_resource type="Script" uid="uid://b2a01eyrc1rui" path="res://scenes/levels/camera_zoom.gd" id="10_s5b24"]
+[ext_resource type="Script" uid="uid://b2a01eyrc1rui" path="res://scripts/camera_zoom.gd" id="10_s5b24"]
 [ext_resource type="PackedScene" uid="uid://t1pibog7rmnq" path="res://scenes/conductor.tscn" id="12_iav0o"]
 [ext_resource type="PackedScene" uid="uid://d1tvv5smk3qyf" path="res://scenes/hourglass.tscn" id="12_wtwp4"]
-[ext_resource type="Script" uid="uid://b4co0s1upm4mk" path="res://scenes/levels/test-enemy.gd" id="13_dnkej"]
+[ext_resource type="PackedScene" uid="uid://dl86hcthk4cl3" path="res://scenes/death.tscn" id="17_bahl2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dsuda"]
 size = Vector2(2112, 60.3221)
@@ -23,11 +24,10 @@ size = Vector2(2112, 60.3221)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5b24"]
 size = Vector2(20, 391.419)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iav0o"]
-size = Vector2(226, 420.5)
-
 [node name="Level1" type="Node"]
 script = ExtResource("1_excbq")
+
+[node name="ChordManager" parent="." instance=ExtResource("2_bahl2")]
 
 [node name="References" parent="." instance=ExtResource("2_iwr0g")]
 
@@ -36,43 +36,43 @@ script = ExtResource("1_excbq")
 [node name="C" parent="Notes" instance=ExtResource("1_ksju7")]
 visible = false
 position = Vector2(4, -132)
-input = "E"
+input = "C"
 pitch = ExtResource("4_iav0o")
 
 [node name="D" parent="Notes" instance=ExtResource("1_ksju7")]
 visible = false
 position = Vector2(4, -132)
-input = "R"
+input = "D"
 pitch = ExtResource("5_dnkej")
 
 [node name="E" parent="Notes" instance=ExtResource("1_ksju7")]
 visible = false
 position = Vector2(4, -132)
-input = "T"
+input = "E"
 pitch = ExtResource("6_mm8aj")
 
 [node name="F" parent="Notes" instance=ExtResource("1_ksju7")]
 visible = false
 position = Vector2(4, -132)
-input = "Y"
+input = "F"
 pitch = ExtResource("7_wtwp4")
 
 [node name="G" parent="Notes" instance=ExtResource("1_ksju7")]
 visible = false
 position = Vector2(4, -132)
-input = "U"
+input = "G"
 pitch = ExtResource("8_iwr0g")
 
 [node name="A" parent="Notes" instance=ExtResource("1_ksju7")]
 visible = false
 position = Vector2(4, -132)
-input = "I"
+input = "A"
 pitch = ExtResource("9_bahl2")
 
-[node name="H" parent="Notes" instance=ExtResource("1_ksju7")]
+[node name="B" parent="Notes" instance=ExtResource("1_ksju7")]
 visible = false
 position = Vector2(4, -132)
-input = "O"
+input = "B"
 pitch = ExtResource("10_np2pn")
 
 [node name="Conductor" parent="." instance=ExtResource("12_iav0o")]
@@ -108,16 +108,9 @@ position = Vector2(17, -26)
 anchor_mode = 0
 script = ExtResource("10_s5b24")
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 8
-collision_mask = 7
-script = ExtResource("13_dnkej")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(797, 393)
-shape = SubResource("RectangleShape2D_iav0o")
+[node name="Death" parent="." instance=ExtResource("17_bahl2")]
+position = Vector2(800, 384)
 
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="time_ran_out" from="Hourglass" to="." method="_on_hourglass_time_ran_out"]
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="owie" from="Area2D" to="." method="_on_death_owie"]
+[connection signal="death_hit" from="Death" to="." method="_on_death_hit"]

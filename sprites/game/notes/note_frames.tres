@@ -1,13 +1,17 @@
-[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://cewt006eixqkt"]
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://cewt006eixqkt"]
 
 [ext_resource type="Texture2D" uid="uid://bmok2sruq8ksq" path="res://sprites/game/notes/note.png" id="1_n1t1m"]
 [ext_resource type="Texture2D" uid="uid://bkgufcyfi58gg" path="res://sprites/game/notes/gold_note.png" id="2_5lvva"]
+[ext_resource type="Texture2D" uid="uid://do0s0ddpt8ktq" path="res://sprites/game/notes/blue_note.png" id="2_6r6ox"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_n1t1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6r6ox")
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_5lvva")
