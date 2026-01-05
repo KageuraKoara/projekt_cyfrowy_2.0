@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://d384mg7fb6l2e"]
+
+[ext_resource type="Script" uid="uid://cjm0tsoqdsfqf" path="res://scripts/chord_manager.gd" id="1_oiylu"]
+
+[node name="ChordManager" type="Node"]
+script = ExtResource("1_oiylu")
+
+[node name="CDUR_Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="DMOLL_Timer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+
+[node name="EMOLL_Timer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
+[connection signal="timeout" from="CDUR_Timer" to="." method="_on_CDUR_timeout"]
+[connection signal="timeout" from="DMOLL_Timer" to="." method="_on_DMOLL_timeout"]
+[connection signal="timeout" from="EMOLL_Timer" to="." method="_on_EMOLL_timeout"]

@@ -10,13 +10,10 @@ func _ready() -> void:
 	$ComboTimer.wait_time = comboTime
 	$NoteSound.stream = pitch
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action(input):
-		if event.is_action_pressed(input, false):
-			get_tree().get_root().get_node("Level1").Notes(input)
-			$NoteSound.play()
-			$ComboTimer.start()
-			comboing = true
+func get_played_idiot(input):
+	$NoteSound.play()
+	$ComboTimer.start()
+	comboing = true
 
 func _on_combo_timer_timeout() -> void:
 	comboing = false

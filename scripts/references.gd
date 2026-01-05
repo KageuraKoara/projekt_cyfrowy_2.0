@@ -1,33 +1,42 @@
 extends Node
 
+enum EnumNote { C, D, E, F, G, A, B }
+
 var keys = [
 	{
-		"key": "E",
+		"id": 0,
+		"key": "C",
 		"active": func(): return $"../Notes/C".comboing
 	},
 	{
-		"key": "R",
+		"id": 1,
+		"key": "D",
 		"active": func(): return $"../Notes/D".comboing
 	},
 	{
-		"key": "T",
+		"id": 2,
+		"key": "E",
 		"active": func(): return $"../Notes/E".comboing
 	},
 	{
-		"key": "Y",
+		"id": 3,
+		"key": "F",
 		"active": func(): return $"../Notes/F".comboing
 	},
 	{
-		"key": "U",
+		"id": 4,
+		"key": "G",
 		"active": func(): return $"../Notes/G".comboing
 	},
 	{
-		"key": "I",
+		"id": 5,
+		"key": "A",
 		"active": func(): return $"../Notes/A".comboing
 	},
 	{
-		"key": "O",
-		"active": func(): return $"../Notes/H".comboing
+		"id": 6,
+		"key": "B",
+		"active": func(): return $"../Notes/B".comboing
 	}
 ]
 
@@ -37,7 +46,7 @@ var patterns = [
 		"active": false,
 		"start": [1, 99],
 		"end": [36, 132],
-		"inputs": ["E", "R"],
+		"inputs": ["C", "D"],
 		"time_damage": 2.0,
 		"effect": func(): pass
 	},
@@ -46,7 +55,7 @@ var patterns = [
 		"active": false,
 		"start": [1, 37, 99],
 		"end": [36, 98, 132],
-		"inputs": ["E", "T"],
+		"inputs": ["C", "E"],
 		"time_damage": 3.0,
 		"effect": func(): pass
 	},
@@ -55,7 +64,7 @@ var patterns = [
 		"active": false,
 		"start": [1, 37, 133],
 		"end": [36, 98, 162],
-		"inputs": ["E", "Y"],
+		"inputs": ["C", "F"],
 		"time_damage": 5.0,
 		"effect": func(): pass
 	},
@@ -64,8 +73,29 @@ var patterns = [
 		"active": false,
 		"start": [1],
 		"end": [162],
-		"inputs": ["E", "T", "U"],
+		"inputs": ["C", "E", "G"],
 		"time_damage": 5.0,
 		"effect": func(): $"../Player".StartDashTimer()
+	}
+]
+
+const CHORDS := [
+	{
+		"id": "C_DUR",
+		"notes": [EnumNote.C, EnumNote.E, EnumNote.G],
+		"HP": 5.0,
+		"speed_mult": 1.3,
+		},
+	{
+		"id": "D_MOLL",
+		"notes": [EnumNote.D, EnumNote.F, EnumNote.A],
+		"HP": 5.0,
+		"speed_mult": 1.3,
+		},
+	{
+		"id": "E_MOLL",
+		"notes": [EnumNote.E, EnumNote.G, EnumNote.B],
+		"HP": 5.0,
+		"speed_mult": 1.3,
 	}
 ]
