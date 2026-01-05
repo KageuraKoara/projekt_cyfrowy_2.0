@@ -79,7 +79,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_olqyp")
 }],
-"loop": true,
+"loop": false,
 "name": &"Atak_1",
 "speed": 10.0
 }, {
@@ -108,7 +108,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("19_m376e")
 }],
-"loop": true,
+"loop": false,
 "name": &"Atak_2",
 "speed": 10.0
 }, {
@@ -131,7 +131,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("25_usbl8")
 }],
-"loop": true,
+"loop": false,
 "name": &"Damage",
 "speed": 10.0
 }, {
@@ -148,7 +148,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("29_f5f5t")
 }],
-"loop": true,
+"loop": false,
 "name": &"Damage_2",
 "speed": 10.0
 }, {
@@ -177,7 +177,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("37_feq18")
 }],
-"loop": true,
+"loop": false,
 "name": &"Jumping",
 "speed": 10.0
 }, {
@@ -243,7 +243,10 @@ script = ExtResource("1_cvnsp")
 position = Vector2(2, -10)
 scale = Vector2(0.0704948, 0.0704948)
 sprite_frames = SubResource("SpriteFrames_cvnsp")
+animation = &"Jumping"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_vgqql")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
