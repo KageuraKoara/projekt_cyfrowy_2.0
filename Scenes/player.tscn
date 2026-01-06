@@ -236,7 +236,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
-size = Vector2(70, 254)
+size = Vector2(70, 251)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
@@ -249,7 +249,7 @@ scale = Vector2(0.0704948, 0.0704948)
 sprite_frames = SubResource("SpriteFrames_cvnsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -8)
+position = Vector2(0, -9.5)
 shape = SubResource("RectangleShape2D_vgqql")
 
 [node name="DashTimer" type="Timer" parent="."]

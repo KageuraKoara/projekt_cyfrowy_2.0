@@ -49,6 +49,7 @@ func _physics_process(delta: float) -> void:
 		var attacks := resolve_combos(inputsPressed)
 		if attacks.size() > 0:
 			Main.execute_attacks(attacks)
+		inputsPressed.clear()
 		resolve_requested = false
 
 func _unhandled_input(event: InputEvent) -> void:

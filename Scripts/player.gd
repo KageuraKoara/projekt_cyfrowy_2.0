@@ -60,3 +60,7 @@ func HandleGravity (body: CharacterBody2D, delta: float) -> void:
 
 func StartDashTimer():
 	$DashTimer.start()
+
+func _on_knockback(push):
+	var t = create_tween()
+	t.tween_property(self, "global_position:x", global_position.x - push, 0.2)

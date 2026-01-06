@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dl86hcthk4cl3" path="res://scenes/death.tscn" id="17_bahl2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dsuda"]
-size = Vector2(2112, 60.3221)
+size = Vector2(2112, 139)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5b24"]
 size = Vector2(20, 391.419)
@@ -92,7 +92,7 @@ position = Vector2(577.641, 679.839)
 [node name="Floor" type="CollisionShape2D" parent="SceneCollisions"]
 light_mask = 3
 visibility_layer = 3
-position = Vector2(-32.6408, -30.8389)
+position = Vector2(-32.6408, -60.339)
 shape = SubResource("RectangleShape2D_dsuda")
 
 [node name="Wall_Left" type="CollisionShape2D" parent="SceneCollisions"]

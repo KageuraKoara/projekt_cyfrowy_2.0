@@ -19,7 +19,13 @@ position = Vector2(0, 14)
 shape = SubResource("RectangleShape2D_njo4t")
 
 [node name="ComboTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="SpamTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [node name="NoteSound" type="AudioStreamPlayer" parent="."]
 
 [connection signal="timeout" from="ComboTimer" to="." method="_on_combo_timer_timeout"]
+[connection signal="timeout" from="SpamTimer" to="." method="_on_spam_timer_timeout"]
