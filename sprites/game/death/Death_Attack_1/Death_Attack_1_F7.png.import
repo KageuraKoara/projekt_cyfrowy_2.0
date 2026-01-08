@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/Death_Attack_1_F7.png-69b2edb4723e138dfda78e5
 
 [params]
 
-compress/mode=0
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
