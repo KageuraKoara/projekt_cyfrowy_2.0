@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/Atak_1_F7.png-63981a3bf50b94eb6b7b21a0859c4d6
 
 [params]
 
-compress/mode=0
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

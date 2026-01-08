@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/gold_note.png-cd509c9a347fad010422dc72d6e9aee
 
 [params]
 
-compress/mode=0
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
