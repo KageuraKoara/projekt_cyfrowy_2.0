@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/Player_Jump_F8.png-bde02b59e62e8b18bf4f6e54dd
 
 [params]
 
-compress/mode=0
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

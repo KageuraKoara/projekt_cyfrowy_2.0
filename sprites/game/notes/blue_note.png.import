@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/blue_note.png-12ba615304383f26fbb371701ecc631
 
 [params]
 
-compress/mode=0
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

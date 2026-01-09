@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/Player_Damage_2_F4.png-74a0a7876cc8f7f20c5601
 
 [params]
 
-compress/mode=0
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

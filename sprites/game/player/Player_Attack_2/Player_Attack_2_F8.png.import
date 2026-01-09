@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/Player_Attack_2_F8.png-0ccfc88f5c253143b7eb3e
 
 [params]
 
-compress/mode=0
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

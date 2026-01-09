@@ -15,6 +15,14 @@ run/main_scene="uid://5b1mwsoorbrf"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
+
 [global_group]
 
 projectile=""
@@ -94,3 +102,7 @@ movement_D={
 2d_physics/layer_2="player"
 2d_physics/layer_3="projectiles"
 2d_physics/layer_4="enemy"
+
+[physics]
+
+common/physics_interpolation=true

@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/Player_Walk_F5.png-f24246b3952b908ff088ba702c
 
 [params]
 
-compress/mode=0
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
