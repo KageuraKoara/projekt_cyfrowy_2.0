@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db1vb6sxr4txv"
-path="res://.godot/imported/Death_Summon_F14.png-d52c241c480263dd0763001ee9e7932e.ctex"
+uid="uid://dw2oyt856ybx0"
+path="res://.godot/imported/Death_Summon_F1.png-34935fa86251072bf8236cc973c24117.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/game/death/Death_Attack_3/Death_Summon_F14.png"
-dest_files=["res://.godot/imported/Death_Summon_F14.png-d52c241c480263dd0763001ee9e7932e.ctex"]
+source_file="res://sprites/game/death/Death_Attack_3/Death_Summon_F1.png"
+dest_files=["res://.godot/imported/Death_Summon_F1.png-34935fa86251072bf8236cc973c24117.ctex"]
 
 [params]
 

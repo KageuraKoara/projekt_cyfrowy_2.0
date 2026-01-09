@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://ckyxan81cgf10" path="res://sprites/game/death/Death_Attack_2/Death_Strike_F9.png" id="18_55cin"]
 [ext_resource type="Texture2D" uid="uid://nuflql1qnoal" path="res://sprites/game/death/Death_Violin/Death_V_F9.png" id="18_un1nj"]
 [ext_resource type="Texture2D" uid="uid://t6x3qiu1b5lt" path="res://sprites/game/death/Death_Violin/Death_V_F10.png" id="19_gmbuc"]
+[ext_resource type="Texture2D" uid="uid://dw2oyt856ybx0" path="res://sprites/game/death/Death_Attack_3/Death_Summon_F1.png" id="19_sjqv0"]
 [ext_resource type="Texture2D" uid="uid://wsbwc88gxrxi" path="res://sprites/game/death/Death_Attack_3/Death_Summon_F2.png" id="19_x6gm6"]
 [ext_resource type="Texture2D" uid="uid://6km1i0v1k5xl" path="res://sprites/game/death/Death_Attack_3/Death_Summon_F3.png" id="20_bqxi1"]
 [ext_resource type="Texture2D" uid="uid://csmruab1f5o78" path="res://sprites/game/death/Death_Violin/Death_V_F11.png" id="20_u2ubf"]
@@ -52,7 +53,6 @@
 [ext_resource type="Texture2D" uid="uid://brjmhp8uf1ab5" path="res://sprites/game/death/Death_Attack_3/Death_Summon_F11.png" id="28_yvequ"]
 [ext_resource type="Texture2D" uid="uid://krnm6hmow8gi" path="res://sprites/game/death/Death_Attack_3/Death_Summon_F12.png" id="29_r74sr"]
 [ext_resource type="Texture2D" uid="uid://cf5bislco0u25" path="res://sprites/game/death/Death_Attack_3/Death_Summon_F13.png" id="30_alti7"]
-[ext_resource type="Texture2D" uid="uid://db1vb6sxr4txv" path="res://sprites/game/death/Death_Attack_3/Death_Summon_F14.png" id="31_i1amy"]
 [ext_resource type="Texture2D" uid="uid://c0m1ospe0oggn" path="res://sprites/game/death/Death_Attack_5/Death_RCharge_F1.png" id="32_71caw"]
 [ext_resource type="Texture2D" uid="uid://bl3fgkoeoybjy" path="res://sprites/game/death/Death_Attack_5/Death_RCharge_F2.png" id="33_x4rvi"]
 [ext_resource type="Texture2D" uid="uid://d141rww5wnmo7" path="res://sprites/game/death/Death_Attack_5/Death_RCharge_F3.png" id="34_0kq1o"]
@@ -154,6 +154,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("19_sjqv0")
+}, {
+"duration": 1.0,
 "texture": ExtResource("19_x6gm6")
 }, {
 "duration": 1.0,
@@ -188,9 +191,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("30_alti7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_i1amy")
 }],
 "loop": false,
 "name": &"attack_3",
@@ -392,36 +392,6 @@ tracks/1/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_48ncm"]
-resource_name = "idle"
-length = 1.70001
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"idle"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-}
-
 [sub_resource type="Animation" id="Animation_wa3nb"]
 resource_name = "attack_1"
 length = 0.80001
@@ -572,6 +542,36 @@ tracks/2/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_48ncm"]
+resource_name = "idle"
+length = 1.70001
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+}
+
 [sub_resource type="Animation" id="Animation_t6nu6"]
 resource_name = "raven"
 length = 0.625013
@@ -656,7 +656,7 @@ script = ExtResource("1_6up1m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-128, -55)
-scale = Vector2(0.12, 0.12)
+scale = Vector2(0.520001, 0.520001)
 sprite_frames = SubResource("SpriteFrames_w8wr1")
 animation = &"idle"
 autoplay = "idle"

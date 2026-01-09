@@ -17,6 +17,8 @@ one_shot = true
 wait_time = 20.0
 one_shot = true
 
-[connection signal="timeout" from="CDUR_Timer" to="." method="_on_CDUR_timeout"]
-[connection signal="timeout" from="DMOLL_Timer" to="." method="_on_DMOLL_timeout"]
-[connection signal="timeout" from="EMOLL_Timer" to="." method="_on_EMOLL_timeout"]
+[node name="NoteBoostTimer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[connection signal="timeout" from="NoteBoostTimer" to="." method="_on_note_boost_timeout"]
