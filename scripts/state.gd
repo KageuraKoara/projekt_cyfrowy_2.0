@@ -2,6 +2,7 @@ extends Node2D
 class_name State
 
 @onready var debug = owner.find_child("debug")
+@onready var Main = get_tree().get_root().get_node("Level1")
 @onready var player = owner.get_parent().find_child("Player")
 @onready var animation_player = owner.find_child("AnimationPlayer")
 
