@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @onready var Main = get_tree().get_root().get_node("Level1")
 @onready var Death = get_parent().find_child("Death")
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 @export var Gravity: float = 800.0
 @export var Jump_Velocity: float = -400.0
@@ -14,49 +16,106 @@ var input_walking: float = 0.0
 var input_jump: float = 0.0
 var is_jumping: bool = false
 
+@export var GRAVITY := 800.0
+@export var WALK_SPEED := 300
+@export var DASH_SPEED := 600
+@export var JUMP_FORCE := -400.0
+@export var SUPER_JUMP_FORCE := -600.0
+
+enum PlayerState {
+	IDLE,
+	WALK,
+	JUMP,
+	FALL,
+	ATTACK,
+	DAMAGE
+}
+
+var state: PlayerState = PlayerState.IDLE
+var speed := WALK_SPEED
+
 func _ready() -> void:
-	pass
-	
-	#_________ Movement handler _________#
-	
+	set_state(PlayerState.IDLE)
+
 func _physics_process(delta):
+	handle_gravity(delta)
+	handle_movement()
+	handle_jump()
 	move_and_slide()
-	HandleGravity(self, delta)
-	handle_jump(self, jump_input())
+	update_state()
 
-func _process(_delta: float) -> void:
-	direction = (Death.position - position).normalized()
-	
-	if direction.x < 0:
-		$AnimatedSprite2D.flip_h = true
-		note_direction = -3.12
+func handle_movement():
+	var input := Input.get_axis("movement_Q", "movement_P")
+	speed = DASH_SPEED if $DashTimer.time_left > 0 else WALK_SPEED
+	velocity.x = input * speed
+
+	'if input != 0:
+		sprite.flip_h = input < 0'
+
+func handle_jump():
+	if Input.is_action_just_pressed("movement_Space") and is_on_floor():
+		velocity.y = SUPER_JUMP_FORCE if $SuperJumpTimer.time_left > 0 else JUMP_FORCE
+
+func handle_gravity(delta):
+	if not is_on_floor():
+		velocity.y += GRAVITY * delta
+
+func update_state():
+	if state == PlayerState.ATTACK or state == PlayerState.DAMAGE:
+		return
+
+	if not is_on_floor():
+		if velocity.y < 0:
+			set_state(PlayerState.JUMP)
+		else:
+			set_state(PlayerState.FALL)
+	elif abs(velocity.x) > 0:
+		set_state(PlayerState.WALK)
 	else:
-		$AnimatedSprite2D.flip_h = false
-		note_direction = 0.0
-	
-	if $DashTimer.time_left != 0:
-		Speed = 600
-	else:
-		Speed = 300
-	
-	input_walking = Input.get_axis("movement_Q", "movement_P")
-	velocity.x = input_walking * Speed
+		set_state(PlayerState.IDLE)
 
-func jump_input() -> bool:
-	return Input.is_action_just_pressed("movement_Space")
-	
-func handle_jump(body: CharacterBody2D, want_to_jump: bool) -> void:
-	if want_to_jump and body.is_on_floor():
-		body.velocity.y = Jump_Velocity
-		
-	is_jumping = body.velocity.y < 0 and not body.is_on_floor()
+func set_state(new_state: PlayerState):
+	if state == new_state:
+		return
 
-	#_________ Gravity _________#
-	
-func HandleGravity (body: CharacterBody2D, delta: float) -> void:
-	if not body.is_on_floor():
-		body.velocity.y += Gravity * delta
-	is_falling = body.velocity.y > 0 and not body.is_on_floor()
+	state = new_state
+
+	match state:
+		PlayerState.IDLE:
+			play_anim("Idle")
+		PlayerState.WALK:
+			play_anim("Walking")
+		PlayerState.JUMP:
+			play_anim("Jumping")
+		PlayerState.FALL:
+			play_anim("Falling")
+		PlayerState.ATTACK:
+			play_anim("Attack_" + str(randi_range(1, 2)))
+		PlayerState.DAMAGE:
+			play_anim("Damage_" + str(randi_range(1, 2)))
+
+func play_anim(name: String):
+	if animation_player.current_animation != name:
+		animation_player.play(name)
+
+
+# -------- External Calls --------
+
+func play_attack():
+	set_state(PlayerState.ATTACK)
+	await animation_player.animation_finished
+	set_state(PlayerState.IDLE)
+
+func _on_knockback(push: float):
+	if global_position.x >= -350:
+		set_state(PlayerState.DAMAGE)
+		var t = create_tween()
+		t.tween_property(self, "global_position:x", global_position.x - push, 0.2)
+		await animation_player.animation_finished
+		set_state(PlayerState.IDLE)
 
 func StartDashTimer():
 	$DashTimer.start()
+
+func StartSJumpTimer():
+	$SuperJumpTimer.start()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d1tvv5smk3qyf"]
 
-[ext_resource type="Script" uid="uid://ruce2mpawhfd" path="res://Scripts/hourglass.gd" id="1_136ty"]
+[ext_resource type="Script" uid="uid://ruce2mpawhfd" path="res://scripts/hourglass.gd" id="1_136ty"]
 
 [node name="Hourglass" type="Node2D"]
 script = ExtResource("1_136ty")

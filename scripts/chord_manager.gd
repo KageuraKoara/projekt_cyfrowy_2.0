@@ -1,6 +1,7 @@
 extends Node
 
 @onready var Main = get_tree().get_root().get_node("Level1")
+@onready var player = get_parent().find_child("Player")
 @onready var C = get_parent().find_child("C")
 @onready var D = get_parent().find_child("D")
 @onready var E = get_parent().find_child("E")
@@ -14,6 +15,7 @@ enum EnumNote { C, D, E, F, G, A, B }
 
 var inputsPressed : Array[int] = []
 var resolve_requested := false
+var note_boost := 1.0
 
 var CHORDS := [
 	{
@@ -23,6 +25,7 @@ var CHORDS := [
 		"notes": [EnumNote.C, EnumNote.E, EnumNote.G],
 		"HP": 5.0,
 		"speed_mult": 1.3,
+		"effect": "dash"
 		},
 	{
 		"id": "D_MOLL",
@@ -31,6 +34,7 @@ var CHORDS := [
 		"notes": [EnumNote.D, EnumNote.F, EnumNote.A],
 		"HP": 5.0,
 		"speed_mult": 1.3,
+		"effect": "super_jump"
 		},
 	{
 		"id": "E_MOLL",
@@ -39,6 +43,7 @@ var CHORDS := [
 		"notes": [EnumNote.E, EnumNote.G, EnumNote.B],
 		"HP": 5.0,
 		"speed_mult": 1.3,
+		"effect": "note_boost"
 	}
 ]
 
@@ -49,6 +54,7 @@ func _physics_process(delta: float) -> void:
 		var attacks := resolve_combos(inputsPressed)
 		if attacks.size() > 0:
 			Main.execute_attacks(attacks)
+		inputsPressed.clear()
 		resolve_requested = false
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -56,6 +62,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.is_action_pressed(note.input, false):
 			resolve_requested = true
 			note.get_played_idiot(note.input)
+			$"../Player".play_attack()
 
 func update_inputsPressed():
 	for note in Notes:
@@ -97,11 +104,12 @@ func resolve_combos(pressed_notes: Array[int]) -> Array[Dictionary]:
 				break
 	
 	if played_chord:
+		perform_chord_effect(played_chord.effect)
 		result.append({
 			"type": "chord",
 			"notes": played_chord.notes.duplicate(),
-			"HP": played_chord.HP,
-			"speed_mult": played_chord.speed_mult,
+			"HP": played_chord.HP * note_boost,
+			"speed_mult": played_chord.speed_mult * note_boost,
 			"chord_id": played_chord.id
 		})
 		
@@ -130,8 +138,8 @@ func resolve_combos(pressed_notes: Array[int]) -> Array[Dictionary]:
 				"type": "interval",
 				"notes": best_pair,
 				"distance": best_distance,
-				"HP": interval_HP(best_distance),
-				"speed_mult": 1.1
+				"HP": interval_HP(best_distance) * note_boost,
+				"speed_mult": 1.1 * note_boost
 			})
 			
 			available.erase(best_pair[0])
@@ -148,6 +156,18 @@ func _single_note_attack(note: int) -> Dictionary:
 	return {
 		"type": "single",
 		"notes": [note],
-		"HP": 0.5,
-		"speed_mult": 1.0
+		"HP": 0.5 * note_boost,
+		"speed_mult": 1.0 * note_boost
 	}
+
+func perform_chord_effect(effect):
+	if effect == "dash":
+		player.StartDashTimer()
+	elif effect == "super_jump":
+		player.StartDashTimer()
+	elif effect == "note_boost":
+		note_boost = 1.3
+		$NoteBoostTimer.start()
+
+func _on_note_boost_timeout() -> void:
+	note_boost = 1.0
