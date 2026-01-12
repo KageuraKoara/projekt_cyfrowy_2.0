@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/ink_F2.png-01489dd675f976ef80ab28f50547ab10.c
 
 [params]
 
-compress/mode=0
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

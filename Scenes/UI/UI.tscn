@@ -64,9 +64,9 @@ scale = Vector2(2, 2)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 877.0
+offset_left = 981.0
 offset_top = 87.0
-offset_right = 1003.0
+offset_right = 1107.0
 offset_bottom = 127.0
 text = "Composition"
 

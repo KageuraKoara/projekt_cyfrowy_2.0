@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/Death_Slash_F7.png-188d28282e6e7cdbd591ff1fa0
 
 [params]
 
-compress/mode=0
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

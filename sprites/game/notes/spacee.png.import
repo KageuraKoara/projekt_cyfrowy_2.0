@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/spacee.png-3a4467e29ee9f5530874c22c0910eac6.c
 
 [params]
 
-compress/mode=0
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/Death_Summon_F0.png-691c29d8b312b5d464c3666dc
 
 [params]
 
-compress/mode=0
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/Death_Transform_F9.png-c383a59fd1bedf0e8ff3ba
 
 [params]
 
-compress/mode=0
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

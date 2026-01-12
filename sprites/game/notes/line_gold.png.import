@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/line_gold.png-14eb294c536a17a08757be8b61a03d6
 
 [params]
 
-compress/mode=0
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

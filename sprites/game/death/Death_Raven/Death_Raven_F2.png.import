@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/Death_Raven_F2.png-f83594b3a133cec095a6da968d
 
 [params]
 
-compress/mode=0
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

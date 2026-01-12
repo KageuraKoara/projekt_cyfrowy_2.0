@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/InkRaven_F2.png-6db754e916f1bba396c08a47d0a2b
 
 [params]
 
-compress/mode=0
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/Death_Charge_F7.png-202bc8b0b3c5da4d2e5aadedb
 
 [params]
 
-compress/mode=0
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
