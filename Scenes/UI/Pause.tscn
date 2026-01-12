@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0xqff0dpg01f"]
+
+[ext_resource type="Script" uid="uid://fapgwduuxpfm" path="res://Scripts/Exit_button.gd" id="1_hcn70"]
+[ext_resource type="Script" uid="uid://cjdwc1xi12o7i" path="res://Scripts/Play_button.gd" id="2_fny3v"]
+
+[node name="Pause" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.721354
+anchor_top = 0.95216
+anchor_right = 0.756944
+anchor_bottom = 1.0
+offset_left = -287.0
+offset_top = -233.0
+offset_right = -287.0
+offset_bottom = -233.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Resume"
+alignment = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.724826
+anchor_top = 0.949074
+anchor_right = 0.782118
+anchor_bottom = 0.996914
+offset_left = -320.0
+offset_top = -169.0
+offset_right = -320.0
+offset_bottom = -169.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Exit"
+alignment = 0
+script = ExtResource("1_hcn70")
+metadata/_edit_use_anchors_ = true
+
+[node name="Restart" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.724826
+anchor_top = 0.950617
+anchor_right = 0.731771
+anchor_bottom = 0.998457
+offset_left = -320.0
+offset_top = -201.0
+offset_right = -258.0
+offset_bottom = -201.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Restart
+"
+script = ExtResource("2_fny3v")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_up" from="Exit" to="Exit" method="_on_button_up"]
+[connection signal="button_up" from="Restart" to="Restart" method="_on_button_up"]

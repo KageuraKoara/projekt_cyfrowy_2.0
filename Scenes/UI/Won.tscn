@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2sjuxlkbhhdp"]
+
+[ext_resource type="Script" uid="uid://dwhorv62gfh15" path="res://Scripts/menu_button.gd" id="1_cxjsq"]
+
+[node name="Won" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 80.0
+offset_right = 361.0
+offset_bottom = 120.0
+text = "Congrats You Lived!"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 538.0
+offset_top = 405.0
+offset_right = 634.0
+offset_bottom = 436.0
+text = "Main Menu"
+script = ExtResource("1_cxjsq")
+
+[connection signal="button_up" from="Button" to="Button" method="_on_button_up"]

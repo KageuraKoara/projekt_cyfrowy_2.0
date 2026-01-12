@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgl3i6x633nwm"]
+
+[ext_resource type="Script" uid="uid://chctscyv12g48" path="res://Scripts/Menu_button.gd" id="1_dxxwr"]
+[ext_resource type="Script" uid="uid://cjdwc1xi12o7i" path="res://Scripts/play_button.gd" id="1_pcr6i"]
+
+[node name="Lost" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 80.0
+offset_right = 361.0
+offset_bottom = 120.0
+text = "Oh no, you died..."
+
+[node name="Menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 538.0
+offset_top = 468.0
+offset_right = 634.0
+offset_bottom = 499.0
+text = "Main Menu"
+script = ExtResource("1_dxxwr")
+
+[node name="Restart" type="Button" parent="."]
+layout_mode = 0
+offset_left = 538.0
+offset_top = 427.0
+offset_right = 634.0
+offset_bottom = 458.0
+text = "Play Again"
+script = ExtResource("1_pcr6i")
+
+[connection signal="button_up" from="Menu" to="Menu" method="_on_button_up"]
+[connection signal="button_up" from="Restart" to="Restart" method="_on_button_up"]

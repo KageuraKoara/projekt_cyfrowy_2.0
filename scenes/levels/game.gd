@@ -27,6 +27,7 @@ func _on_got_hit(attack, HP):
 func _on_hourglass_time_ran_out() -> void:
 	print(acc_points * 10)
 	print("WE DEAD!!!!!!!!!!!!!!!!!!!!!!!!!!")
+	get_tree().change_scene_to_file("res://Scenes/death.tscn")
 
 func execute_attacks(attacks: Array[Dictionary]):
 	for attack in attacks:
