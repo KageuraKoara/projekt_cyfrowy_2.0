@@ -3,6 +3,10 @@ extends CharacterBody2D
 @onready var Main = get_tree().get_root().get_node("Level1")
 @onready var player = get_parent().find_child("Player")
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var attackCD_timer = $AttackCooldownTimer
+
+@export var min_attackCD := 2
+@export var max_attackCD := 6
 
 var direction : Vector2
 var player_in_range := false
@@ -44,3 +48,8 @@ func _on_player_entered(body: Node2D) -> void:
 func _on_player_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_in_range = false
+
+func start_attackCD(time):
+	var CDtime = time if time > 0.0 else randi_range(min_attackCD, max_attackCD)
+	attackCD_timer.start(CDtime)
+	print("attack cooldown timer: ", attackCD_timer.time_left)

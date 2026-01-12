@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://dblplccxgvapa"]
+
+[ext_resource type="Script" uid="uid://b13t31fgpidnm" path="res://scripts/ink_raven.gd" id="1_81c28"]
+[ext_resource type="Texture2D" uid="uid://basf13jerwq2o" path="res://sprites/game/death/Ink_Raven/InkRaven_F0.png" id="2_8b28d"]
+[ext_resource type="Texture2D" uid="uid://b5pe5h101o0hs" path="res://sprites/game/death/Ink_Raven/InkRaven_F1.png" id="3_3iyk7"]
+[ext_resource type="Texture2D" uid="uid://1sumtu3350mr" path="res://sprites/game/death/Ink_Raven/InkRaven_F2.png" id="4_3pay5"]
+[ext_resource type="Texture2D" uid="uid://lbduo08fat4w" path="res://sprites/game/death/Ink_Raven/InkRaven_F3.png" id="5_ckdsb"]
+[ext_resource type="Texture2D" uid="uid://d3f41pbpcsh3g" path="res://sprites/game/death/Ink_Raven/InkRaven_F4.png" id="6_etr8r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x0ric"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8b28d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3iyk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3pay5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ckdsb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_etr8r")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c8gtk"]
+radius = 35.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_81c28"]
+radius = 63.561
+
+[node name="ink_raven" type="CharacterBody2D" groups=["enemy_projectile"]]
+collision_layer = 4
+collision_mask = 18
+script = ExtResource("1_81c28")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x0ric")
+animation = &"idle"
+autoplay = "idle"
+frame = 2
+frame_progress = 0.80086
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_c8gtk")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 27
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_81c28")
+
+[node name="DespawnTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_entered"]
+[connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timeout"]

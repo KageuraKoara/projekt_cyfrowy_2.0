@@ -4,11 +4,11 @@ var has_charged := false
 
 func enter():
 	super.enter()
-	$"../../PlayerDetection/CollisionShape2D".scale = Vector2(0.3, 0.3)
+	detection_collision.scale = Vector2(0.3, 0.3)
 	attack()
 
 func exit():
-	$"../../PlayerDetection/CollisionShape2D".scale = Vector2(1, 1)
+	detection_collision.scale = Vector2(1, 1)
 	super.exit()
 
 func attack(move = "5"):
