@@ -5,22 +5,13 @@ extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-@export var Gravity: float = 800.0
-@export var Jump_Velocity: float = -400.0
-var Speed : int
-var direction
-var note_direction: float = 0.0
-
-var is_falling: bool = false
-var input_walking: float = 0.0
-var input_jump: float = 0.0
-var is_jumping: bool = false
-
 @export var GRAVITY := 800.0
 @export var WALK_SPEED := 300
 @export var DASH_SPEED := 600
 @export var JUMP_FORCE := -400.0
 @export var SUPER_JUMP_FORCE := -600.0
+
+@export var movement_set = ["movement_Q", "movement_P", "movement_Space"]
 
 enum PlayerState {
 	IDLE,
@@ -45,7 +36,7 @@ func _physics_process(delta):
 	update_state()
 
 func handle_movement():
-	var input := Input.get_axis("movement_Q", "movement_P")
+	var input := Input.get_axis(movement_set[0], movement_set[1])
 	speed = DASH_SPEED if $DashTimer.time_left > 0 else WALK_SPEED
 	velocity.x = input * speed
 
@@ -53,7 +44,7 @@ func handle_movement():
 		sprite.flip_h = input < 0'
 
 func handle_jump():
-	if Input.is_action_just_pressed("movement_Space") and is_on_floor():
+	if Input.is_action_just_pressed(movement_set[2]) and is_on_floor():
 		velocity.y = SUPER_JUMP_FORCE if $SuperJumpTimer.time_left > 0 else JUMP_FORCE
 
 func handle_gravity(delta):
@@ -94,9 +85,9 @@ func set_state(new_state: PlayerState):
 		PlayerState.DAMAGE:
 			play_anim("Damage_" + str(randi_range(1, 2)))
 
-func play_anim(name: String):
-	if animation_player.current_animation != name:
-		animation_player.play(name)
+func play_anim(anim_name: String):
+	if animation_player.current_animation != anim_name:
+		animation_player.play(anim_name)
 
 
 # -------- External Calls --------

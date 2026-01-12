@@ -1,18 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://oimoygjbyut5"]
+[gd_scene load_steps=5 format=3 uid="uid://oimoygjbyut5"]
 
 [ext_resource type="Script" uid="uid://e8oy2o4klttq" path="res://scripts/projectile.gd" id="1_k1cl8"]
 [ext_resource type="SpriteFrames" uid="uid://cewt006eixqkt" path="res://sprites/game/notes/note_frames.tres" id="2_vihyi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8cioo"]
-size = Vector2(206, 297)
+size = Vector2(117.341, 176.012)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vihyi"]
+size = Vector2(20, 30)
 
 [node name="Projectile" type="CharacterBody2D" groups=["projectile"]]
-collision_layer = 4
-collision_mask = 9
+collision_layer = 16
+collision_mask = 13
 script = ExtResource("1_k1cl8")
 speed = 1000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.38419e-07, -2.38419e-07)
 scale = Vector2(0.102266, 0.102266)
 shape = SubResource("RectangleShape2D_8cioo")
 
@@ -24,4 +28,12 @@ sprite_frames = ExtResource("2_vihyi")
 wait_time = 10.0
 autostart = true
 
+[node name="Area2D" type="Area2D" parent="." groups=["projectile"]]
+collision_layer = 16
+collision_mask = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_vihyi")
+
 [connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

@@ -4,6 +4,8 @@ func enter():
 	super.enter()
 	owner.set_physics_process(true)
 	animation_player.play("raven")
+	raven_collision.set_deferred("disabled", false)
+	default_collision.set_deferred("disabled", true)
 
 func exit():
 	super.exit()

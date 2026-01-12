@@ -13,9 +13,10 @@ extends Node
 @onready var Notes = [C, D, E, F, G, A, B]
 enum EnumNote { C, D, E, F, G, A, B }
 
-var inputsPressed : Array[int] = []
+var inputs_pressed : Array[int] = []
 var resolve_requested := false
 var note_boost := 1.0
+var attack_data_dics : Array[Dictionary]
 
 var CHORDS := [
 	{
@@ -48,13 +49,13 @@ var CHORDS := [
 ]
 
 func _physics_process(delta: float) -> void:
-	update_inputsPressed()
+	update_inputs_pressed()
 	
 	if resolve_requested:
-		var attacks := resolve_combos(inputsPressed)
+		var attacks := resolve_combos(inputs_pressed)
 		if attacks.size() > 0:
 			Main.execute_attacks(attacks)
-		inputsPressed.clear()
+		inputs_pressed.clear()
 		resolve_requested = false
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -64,20 +65,23 @@ func _unhandled_input(event: InputEvent) -> void:
 			note.get_played_idiot(note.input)
 			$"../Player".play_attack()
 
-func update_inputsPressed():
+func update_inputs_pressed():
 	for note in Notes:
 		var temp = EnumNote.get(str(note).left(1))
 		if note.comboing:
-			if !inputsPressed.has(temp):
-				inputsPressed.append(temp)
+			if !inputs_pressed.has(temp):
+				inputs_pressed.append(temp)
 			else:
 				pass
 		else:
-			inputsPressed.erase(temp)
-		inputsPressed.sort()
+			inputs_pressed.erase(temp)
+		inputs_pressed.sort()
 
 func interval_HP(distance: int) -> float:
 	return 1.0 + (distance * 0.25)
+
+
+# the big boy section
 
 func resolve_combos(pressed_notes: Array[int]) -> Array[Dictionary]:
 	var result: Array[Dictionary] = []
@@ -88,7 +92,6 @@ func resolve_combos(pressed_notes: Array[int]) -> Array[Dictionary]:
 			result.append(_single_note_attack(note))
 		return result
 	
-
 	var played_chord = null
 	
 	for chord in CHORDS:
@@ -146,7 +149,6 @@ func resolve_combos(pressed_notes: Array[int]) -> Array[Dictionary]:
 			available.erase(best_pair[1])
 	
 	
-	
 	for note in available:
 		result.append(_single_note_attack(note))
 	
@@ -160,11 +162,12 @@ func _single_note_attack(note: int) -> Dictionary:
 		"speed_mult": 1.0 * note_boost
 	}
 
+
 func perform_chord_effect(effect):
 	if effect == "dash":
 		player.StartDashTimer()
 	elif effect == "super_jump":
-		player.StartDashTimer()
+		player.StartSJumpTimer()
 	elif effect == "note_boost":
 		note_boost = 1.3
 		$NoteBoostTimer.start()

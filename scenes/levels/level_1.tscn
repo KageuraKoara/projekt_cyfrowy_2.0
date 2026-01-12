@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://5b1mwsoorbrf"]
+[gd_scene load_steps=23 format=3 uid="uid://5b1mwsoorbrf"]
 
 [ext_resource type="Script" uid="uid://b05mfiyf4wugg" path="res://scenes/levels/game.gd" id="1_excbq"]
 [ext_resource type="PackedScene" uid="uid://c0txe0f57ssv5" path="res://scenes/note.tscn" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://d384mg7fb6l2e" path="res://scenes/chord_manager.tscn" id="2_bahl2"]
 [ext_resource type="AudioStream" uid="uid://butrua1wugngf" path="res://sounds/Concerto In G Minor for Violin, String Orchestra and Continuo, Op. 8, No. 2, RV 315, Lestate....mp3" id="3_mm8aj"]
+[ext_resource type="PackedScene" uid="uid://dth7isd7m8d0p" path="res://scenes/stave_line.tscn" id="3_v6ha0"]
 [ext_resource type="AudioStream" uid="uid://cmn5xley5ak03" path="res://sounds/harpsichord/c.wav" id="4_iav0o"]
 [ext_resource type="AudioStream" uid="uid://dm0kxdy441gp8" path="res://sounds/harpsichord/d.wav" id="5_dnkej"]
 [ext_resource type="AudioStream" uid="uid://bd1ay2nk80rar" path="res://sounds/harpsichord/e_m.wav" id="6_mm8aj"]
@@ -36,47 +37,115 @@ script = ExtResource("1_excbq")
 
 [node name="ChordManager" parent="." instance=ExtResource("2_bahl2")]
 
+[node name="Stave" type="Node" parent="."]
+
+[node name="stave_line_0" parent="Stave" node_paths=PackedStringArray("note") instance=ExtResource("3_v6ha0")]
+position = Vector2(500, 0)
+note = NodePath("../../Notes/C")
+type = "line"
+
+[node name="stave_line_1" parent="Stave" node_paths=PackedStringArray("note") instance=ExtResource("3_v6ha0")]
+position = Vector2(500, 0)
+note = NodePath("../../Notes/D")
+type = "space"
+id = 1
+
+[node name="stave_line_2" parent="Stave" node_paths=PackedStringArray("note") instance=ExtResource("3_v6ha0")]
+position = Vector2(500, 0)
+note = NodePath("../../Notes/E")
+type = "line"
+id = 2
+
+[node name="stave_line_3" parent="Stave" node_paths=PackedStringArray("note") instance=ExtResource("3_v6ha0")]
+position = Vector2(500, 0)
+note = NodePath("../../Notes/F")
+type = "space"
+id = 3
+
+[node name="stave_line_4" parent="Stave" node_paths=PackedStringArray("note") instance=ExtResource("3_v6ha0")]
+position = Vector2(500, 0)
+note = NodePath("../../Notes/G")
+type = "line"
+id = 4
+
+[node name="stave_line_5" parent="Stave" node_paths=PackedStringArray("note") instance=ExtResource("3_v6ha0")]
+position = Vector2(500, 0)
+note = NodePath("../../Notes/A")
+type = "space"
+id = 5
+
+[node name="stave_line_6" parent="Stave" node_paths=PackedStringArray("note") instance=ExtResource("3_v6ha0")]
+position = Vector2(500, 0)
+note = NodePath("../../Notes/B")
+type = "line"
+id = 6
+
+[node name="stave_line_7" parent="Stave" instance=ExtResource("3_v6ha0")]
+position = Vector2(500, 0)
+type = "space"
+id = 7
+
+[node name="stave_line_8" parent="Stave" instance=ExtResource("3_v6ha0")]
+position = Vector2(500, 0)
+type = "line"
+id = 8
+
+[node name="stave_line_9" parent="Stave" instance=ExtResource("3_v6ha0")]
+position = Vector2(500, 0)
+type = "space"
+id = 9
+
+[node name="stave_line_10" parent="Stave" instance=ExtResource("3_v6ha0")]
+position = Vector2(500, 0)
+type = "line"
+id = 10
+
+[node name="stave_line_11" parent="Stave" instance=ExtResource("3_v6ha0")]
+position = Vector2(500, 0)
+type = "space"
+id = 11
+
 [node name="Notes" type="Node" parent="."]
 
-[node name="C" parent="Notes" instance=ExtResource("1_ksju7")]
-visible = false
+[node name="C" parent="Notes" node_paths=PackedStringArray("stave_line") instance=ExtResource("1_ksju7")]
 position = Vector2(4, -132)
+stave_line = NodePath("../../Stave/stave_line_0")
 input = "C"
 pitch = ExtResource("4_iav0o")
 
-[node name="D" parent="Notes" instance=ExtResource("1_ksju7")]
-visible = false
+[node name="D" parent="Notes" node_paths=PackedStringArray("stave_line") instance=ExtResource("1_ksju7")]
 position = Vector2(4, -132)
+stave_line = NodePath("../../Stave/stave_line_1")
 input = "D"
 pitch = ExtResource("5_dnkej")
 
-[node name="E" parent="Notes" instance=ExtResource("1_ksju7")]
-visible = false
+[node name="E" parent="Notes" node_paths=PackedStringArray("stave_line") instance=ExtResource("1_ksju7")]
 position = Vector2(4, -132)
+stave_line = NodePath("../../Stave/stave_line_2")
 input = "E"
 pitch = ExtResource("6_mm8aj")
 
-[node name="F" parent="Notes" instance=ExtResource("1_ksju7")]
-visible = false
+[node name="F" parent="Notes" node_paths=PackedStringArray("stave_line") instance=ExtResource("1_ksju7")]
 position = Vector2(4, -132)
+stave_line = NodePath("../../Stave/stave_line_3")
 input = "F"
 pitch = ExtResource("7_wtwp4")
 
-[node name="G" parent="Notes" instance=ExtResource("1_ksju7")]
-visible = false
+[node name="G" parent="Notes" node_paths=PackedStringArray("stave_line") instance=ExtResource("1_ksju7")]
 position = Vector2(4, -132)
+stave_line = NodePath("../../Stave/stave_line_4")
 input = "G"
 pitch = ExtResource("8_iwr0g")
 
-[node name="A" parent="Notes" instance=ExtResource("1_ksju7")]
-visible = false
+[node name="A" parent="Notes" node_paths=PackedStringArray("stave_line") instance=ExtResource("1_ksju7")]
 position = Vector2(4, -132)
+stave_line = NodePath("../../Stave/stave_line_5")
 input = "A"
 pitch = ExtResource("9_bahl2")
 
-[node name="B" parent="Notes" instance=ExtResource("1_ksju7")]
-visible = false
+[node name="B" parent="Notes" node_paths=PackedStringArray("stave_line") instance=ExtResource("1_ksju7")]
 position = Vector2(4, -132)
+stave_line = NodePath("../../Stave/stave_line_6")
 input = "B"
 pitch = ExtResource("10_np2pn")
 
