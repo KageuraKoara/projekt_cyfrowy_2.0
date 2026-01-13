@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cgl3i6x633nwm"]
 
 [ext_resource type="Script" uid="uid://chctscyv12g48" path="res://Scripts/Menu_button.gd" id="1_dxxwr"]
-[ext_resource type="Script" uid="uid://cjdwc1xi12o7i" path="res://Scripts/play_button.gd" id="1_pcr6i"]
+[ext_resource type="Script" uid="uid://cjdwc1xi12o7i" path="res://Scripts/Play_button.gd" id="1_pcr6i"]
 
 [node name="Lost" type="Control"]
 layout_mode = 3

@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bewunkqqfpobr"]
+[gd_scene load_steps=2 format=3 uid="uid://bewunkqqfpobr"]
 
-[ext_resource type="Script" uid="uid://bw254es86ejmn" path="res://Scripts/Hourglass_top.gd" id="1_636u5"]
-[ext_resource type="Script" uid="uid://dy5sqm2o5oatn" path="res://Scripts/Hourglass_bottom.gd" id="2_akgwn"]
+[ext_resource type="Script" uid="uid://bovm6sn668qmk" path="res://Scripts/Hourglass_UI.gd" id="1_s86y4"]
 
 [node name="Ui" type="Control"]
 layout_mode = 3
@@ -37,7 +36,8 @@ offset_left = 16.0
 offset_top = 4.0
 offset_right = 32.0
 offset_bottom = 51.0
-script = ExtResource("1_636u5")
+editable = false
+script = ExtResource("1_s86y4")
 
 [node name="Bottom" type="VSlider" parent="Hourglass_top"]
 layout_mode = 0
@@ -46,14 +46,14 @@ offset_top = 61.0
 offset_right = 32.0
 offset_bottom = 108.0
 value = 100.0
-script = ExtResource("2_akgwn")
+editable = false
 
 [node name="Hourglass_bottom" type="TextureRect" parent="Hourglass_top"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HSlider" type="HSlider" parent="."]
+[node name="Song_timer" type="HSlider" parent="."]
 layout_mode = 0
 offset_left = 1122.0
 offset_top = 71.0
@@ -61,6 +61,7 @@ offset_right = 1333.0
 offset_bottom = 87.0
 rotation = 3.14159
 scale = Vector2(2, 2)
+editable = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
