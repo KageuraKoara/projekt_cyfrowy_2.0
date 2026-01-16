@@ -19,7 +19,7 @@ func _ready() -> void:
 	set_physics_process(false)
 
 func _process(delta: float) -> void:
-	direction = player.position - position
+ 	direction = player.position - position
 	
 	if direction.x > 0:
 		animated_sprite.flip_h = true

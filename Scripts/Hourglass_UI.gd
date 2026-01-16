@@ -1,7 +1,10 @@
 extends VSlider
 
+
+@export var lvl1: Node
 @onready var top: VSlider = $"."
-@onready var bottom: VSlider = $"../Bottom"i
+@onready var bottom: VSlider = $"../Bottom"
+const Game = preload("res://Scenes/levels/game.gd")
 
 @onready var song_timer: HSlider = $"../../Song_timer"
 
@@ -9,10 +12,12 @@ extends VSlider
 
 var song_length = song.get_length()
 
-func _ready() -> void:
+
+func _process(delta: float) -> void:
 	top.max_value = song_length
 	bottom.max_value = song_length
 	song_timer.max_value = song_length
+	song_timer.value = lvl1.song_position_in_beats
 
 func _on_value_changed() -> void:
 	top.value = $Hourglass.wait_time

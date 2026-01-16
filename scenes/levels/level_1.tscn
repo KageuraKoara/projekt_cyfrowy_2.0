@@ -180,6 +180,8 @@ shape = SubResource("RectangleShape2D_s5b24")
 
 [node name="Death" parent="." instance=ExtResource("17_bahl2")]
 position = Vector2(800, 440)
+min_attackCD = null
+max_attackCD = null
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_targets")]
 top_level = true
@@ -207,18 +209,23 @@ limit_left = -570
 limit_bottom = 675
 editor_draw_limits = true
 
-[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
-process_priority = 300
-process_physics_priority = 300
-script = ExtResource("19_v6uk5")
-metadata/_custom_type_script = "uid://bd046eokvcnu2"
-
 [node name="Ui" parent="Camera2D" instance=ExtResource("20_n3ge2")]
 offset_left = -499.5
 offset_top = -351.0
 offset_right = -499.5
 offset_bottom = -351.0
 
+[node name="Top" parent="Camera2D/Ui/Hourglass_top" index="0" node_paths=PackedStringArray("lvl1")]
+lvl1 = NodePath("../../../..")
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("19_v6uk5")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="time_ran_out" from="Hourglass" to="." method="_on_hourglass_time_ran_out"]
 [connection signal="death_hit" from="Death" to="." method="_on_death_hit"]
+
+[editable path="Camera2D/Ui"]
