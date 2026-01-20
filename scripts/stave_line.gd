@@ -14,10 +14,10 @@ func _ready() -> void:
 	assign_base()
 
 func _process(delta: float) -> void:
-	if Main.song_position_in_beats == 10:
+	'if Main.song_position_in_beats == 10:
 		assign_pre_gold([0, 2, 5])
 	if Main.song_position_in_beats == 12:
-		activate([0, 2, 5])
+		activate([0, 2, 5])'
 
 func assign_base():
 	play(type + "_base") if id != 0 else play("space_base")

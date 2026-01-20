@@ -16,7 +16,12 @@ one_shot = true
 wait_time = 2.0
 one_shot = true
 
+[node name="TypeCheckTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
 [node name="NoteSound" type="AudioStreamPlayer" parent="."]
 
 [connection signal="timeout" from="ComboTimer" to="." method="_on_combo_timer_timeout"]
 [connection signal="timeout" from="SpamTimer" to="." method="_on_spam_timer_timeout"]
+[connection signal="timeout" from="TypeCheckTimer" to="." method="_on_type_check_timeout"]

@@ -25,7 +25,6 @@ func transition():
 			get_parent().change_state("Raven")
 			get_parent().raven_charge_count += 1
 			has_charged = false
-			print(get_parent().raven_charge_count)
 		else:
 			$"../..".global_position = $"../..".default_position
 			get_parent().change_state("Idle")

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var Main = get_tree().get_root().get_node("Level1")
+
 @export var speed := 100
 @export var Direction : float
 
@@ -12,6 +14,7 @@ var HP := 0.5
 var pos_y
 var caught := false
 var damn_chicken
+var winded := false
 
 # odwrócenie kierunku lotu: Direction = -PI
 
@@ -34,16 +37,28 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy_projectile"):
-		if type != "single":
-			body.despawn()
-			speed = speed * 0.5
-			HP = HP * 0.5
-		else:
+		if body.name == "ink_raven":
 			damn_chicken = body
-			caught = true
-			$Area2D/CollisionShape2D.set_deferred("disabled", true)
-			$CollisionShape2D.set_deferred("disabled", true)
-			body.go_back()
+			if type != "single":
+				body.despawn()
+				get_debuffed(0.5)
+			else:
+				caught = true
+				$Area2D/CollisionShape2D.set_deferred("disabled", true)
+				$CollisionShape2D.set_deferred("disabled", true)
+				body.go_back()
+
+func get_debuffed(percent : float):
+	speed = speed * percent
+	HP = HP * percent
+
+func get_rotated_idiot():
+	if type != "single":
+		get_debuffed(0.5)
+	else:
+		winded = true
+		Direction = -PI
+		set_collision_mask_value(2, true)
 
 func _on_despawn_timeout() -> void:
 	despawn()

@@ -3,7 +3,6 @@ extends Node2D
 var current_state : State
 var previous_state : State
 
-# var busy := false
 var raven_charge_count := 0
 
 func _ready() -> void:

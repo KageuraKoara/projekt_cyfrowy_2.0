@@ -117,41 +117,47 @@ pitch = ExtResource("4_iav0o")
 position = Vector2(4, -132)
 stave_line = NodePath("../../Stave/stave_line_1")
 input = "D"
+id = 1
 pitch = ExtResource("5_dnkej")
 
 [node name="E" parent="Notes" node_paths=PackedStringArray("stave_line") instance=ExtResource("1_ksju7")]
 position = Vector2(4, -132)
 stave_line = NodePath("../../Stave/stave_line_2")
 input = "E"
+id = 2
 pitch = ExtResource("6_mm8aj")
 
 [node name="F" parent="Notes" node_paths=PackedStringArray("stave_line") instance=ExtResource("1_ksju7")]
 position = Vector2(4, -132)
 stave_line = NodePath("../../Stave/stave_line_3")
 input = "F"
+id = 3
 pitch = ExtResource("7_wtwp4")
 
 [node name="G" parent="Notes" node_paths=PackedStringArray("stave_line") instance=ExtResource("1_ksju7")]
 position = Vector2(4, -132)
 stave_line = NodePath("../../Stave/stave_line_4")
 input = "G"
+id = 4
 pitch = ExtResource("8_iwr0g")
 
 [node name="A" parent="Notes" node_paths=PackedStringArray("stave_line") instance=ExtResource("1_ksju7")]
 position = Vector2(4, -132)
 stave_line = NodePath("../../Stave/stave_line_5")
 input = "A"
+id = 5
 pitch = ExtResource("9_bahl2")
 
 [node name="B" parent="Notes" node_paths=PackedStringArray("stave_line") instance=ExtResource("1_ksju7")]
 position = Vector2(4, -132)
 stave_line = NodePath("../../Stave/stave_line_6")
 input = "B"
+id = 6
 pitch = ExtResource("10_np2pn")
 
 [node name="Conductor" parent="." instance=ExtResource("12_iav0o")]
 stream = ExtResource("3_mm8aj")
-volume_db = -40.0
+volume_db = -20.0
 
 [node name="Hourglass" parent="." instance=ExtResource("12_wtwp4")]
 position = Vector2(232, 45)
@@ -211,6 +217,10 @@ process_priority = 300
 process_physics_priority = 300
 script = ExtResource("19_v6uk5")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="ProjectileLayer" type="Node" parent="."]
+
+[node name="CurtainLayer" type="Node" parent="."]
 
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="time_ran_out" from="Hourglass" to="." method="_on_hourglass_time_ran_out"]

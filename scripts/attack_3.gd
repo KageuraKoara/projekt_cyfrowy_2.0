@@ -12,7 +12,7 @@ func enter():
 func spawn():
 	var ink_raven = ink_raven_node.instantiate()
 	ink_raven.position = owner.position + Vector2(20, 40)
-	Main.add_child(ink_raven)
+	pr_layer.add_child(ink_raven)
 
 func transition():
 	if can_transition:

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var Main = get_tree().get_root().get_node("Level1")
+@onready var Main = get_tree().get_root().get_node("Level1") 
 
 var direction := 0.0
 var vel_x := -200
@@ -40,4 +40,6 @@ func _on_despawn_timeout() -> void:
 
 func despawn():
 	is_alive = false
+	$AnimatedSprite2D.play("dying")
+	await get_tree().create_timer(0.7).timeout
 	queue_free()

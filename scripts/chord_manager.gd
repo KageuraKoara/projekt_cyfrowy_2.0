@@ -2,21 +2,13 @@ extends Node
 
 @onready var Main = get_tree().get_root().get_node("Level1")
 @onready var player = get_parent().find_child("Player")
-@onready var C = get_parent().find_child("C")
-@onready var D = get_parent().find_child("D")
-@onready var E = get_parent().find_child("E")
-@onready var F = get_parent().find_child("F")
-@onready var G = get_parent().find_child("G")
-@onready var A = get_parent().find_child("A")
-@onready var B = get_parent().find_child("B")
+@onready var note_refs = [$"../Notes/C", $"../Notes/D", $"../Notes/E", $"../Notes/F", $"../Notes/G", $"../Notes/A", $"../Notes/B"]
 
-@onready var Notes = [C, D, E, F, G, A, B]
 enum EnumNote { C, D, E, F, G, A, B }
 
 var inputs_pressed : Array[int] = []
 var resolve_requested := false
 var note_boost := 1.0
-var attack_data_dics : Array[Dictionary]
 
 var CHORDS := [
 	{
@@ -48,34 +40,26 @@ var CHORDS := [
 	}
 ]
 
-func _physics_process(delta: float) -> void:
-	update_inputs_pressed()
+func _process(delta: float) -> void:
+	inputs_pressed.sort()
 	
 	if resolve_requested:
 		var attacks := resolve_combos(inputs_pressed)
 		if attacks.size() > 0:
 			Main.execute_attacks(attacks)
-		inputs_pressed.clear()
 		resolve_requested = false
 
 func _unhandled_input(event: InputEvent) -> void:
-	for note in Notes:
+	for note in note_refs:
 		if event.is_action_pressed(note.input, false):
 			resolve_requested = true
-			note.get_played_idiot(note.input)
-			$"../Player".play_attack()
-
-func update_inputs_pressed():
-	for note in Notes:
-		var temp = EnumNote.get(str(note).left(1))
-		if note.comboing:
-			if !inputs_pressed.has(temp):
-				inputs_pressed.append(temp)
+			if !inputs_pressed.has(note.id):
+				inputs_pressed.append(note.id)
 			else:
 				pass
-		else:
-			inputs_pressed.erase(temp)
-		inputs_pressed.sort()
+
+func clear_note(note: int):
+	inputs_pressed.erase(note)
 
 func interval_HP(distance: int) -> float:
 	return 1.0 + (distance * 0.25)
