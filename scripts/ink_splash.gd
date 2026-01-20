@@ -7,7 +7,6 @@ func _ready() -> void:
 
 func _on_hurt_timer_timeout() -> void:
 	$Area2D/CollisionShape2D.set_deferred("disabled", false)
-	play("hit")
 	die()
 
 func _on_ink_splash_entered(body: Node2D) -> void:
@@ -15,5 +14,5 @@ func _on_ink_splash_entered(body: Node2D) -> void:
 		Main._on_got_hit("ink_splash", 15.0)
 
 func die():
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.5).timeout
 	queue_free()

@@ -1,14 +1,51 @@
-[gd_scene load_steps=10 format=3 uid="uid://dblplccxgvapa"]
+[gd_scene load_steps=18 format=3 uid="uid://dblplccxgvapa"]
 
 [ext_resource type="Script" uid="uid://b13t31fgpidnm" path="res://scripts/ink_raven.gd" id="1_81c28"]
 [ext_resource type="Texture2D" uid="uid://basf13jerwq2o" path="res://sprites/game/death/Ink_Raven/InkRaven_F0.png" id="2_8b28d"]
+[ext_resource type="Texture2D" uid="uid://b76saqjm7hm2v" path="res://sprites/game/death/Ink_Raven/Death/IR_Dying_F0.png" id="2_e21pu"]
 [ext_resource type="Texture2D" uid="uid://b5pe5h101o0hs" path="res://sprites/game/death/Ink_Raven/InkRaven_F1.png" id="3_3iyk7"]
+[ext_resource type="Texture2D" uid="uid://ojhq4rp0mgi5" path="res://sprites/game/death/Ink_Raven/Death/IR_Dying_F1.png" id="3_rvxxb"]
 [ext_resource type="Texture2D" uid="uid://1sumtu3350mr" path="res://sprites/game/death/Ink_Raven/InkRaven_F2.png" id="4_3pay5"]
+[ext_resource type="Texture2D" uid="uid://bw8m7oxha11lk" path="res://sprites/game/death/Ink_Raven/Death/IR_Dying_F2.png" id="4_th4vr"]
 [ext_resource type="Texture2D" uid="uid://lbduo08fat4w" path="res://sprites/game/death/Ink_Raven/InkRaven_F3.png" id="5_ckdsb"]
+[ext_resource type="Texture2D" uid="uid://b2kstgv35c4ve" path="res://sprites/game/death/Ink_Raven/Death/IR_Dying_F3.png" id="5_qa4v8"]
+[ext_resource type="Texture2D" uid="uid://b14ntt25cnydo" path="res://sprites/game/death/Ink_Raven/Death/IR_Dying_F4.png" id="6_5lhnr"]
 [ext_resource type="Texture2D" uid="uid://d3f41pbpcsh3g" path="res://sprites/game/death/Ink_Raven/InkRaven_F4.png" id="6_etr8r"]
+[ext_resource type="Texture2D" uid="uid://c28vne686dnde" path="res://sprites/game/death/Ink_Raven/Death/IR_Dying_F5.png" id="7_cahjg"]
+[ext_resource type="Texture2D" uid="uid://d24h1i2vhakeq" path="res://sprites/game/death/Ink_Raven/Death/IR_Dying_F6.png" id="8_e7xes"]
+[ext_resource type="Texture2D" uid="uid://b8j3ay7hwacqe" path="res://sprites/game/death/Ink_Raven/Death/IR_Dying_F7.png" id="9_fbue3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x0ric"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_e21pu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rvxxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_th4vr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qa4v8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5lhnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cahjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_e7xes")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fbue3")
+}],
+"loop": false,
+"name": &"dying",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_8b28d")
@@ -43,10 +80,10 @@ script = ExtResource("1_81c28")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x0ric")
-animation = &"idle"
+animation = &"dying"
 autoplay = "idle"
-frame = 2
-frame_progress = 0.80086
+frame = 7
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_c8gtk")

@@ -1,10 +1,9 @@
-[gd_scene load_steps=116 format=3 uid="uid://dl86hcthk4cl3"]
+[gd_scene load_steps=120 format=3 uid="uid://dl86hcthk4cl3"]
 
 [ext_resource type="Script" uid="uid://1orefmul01ce" path="res://scripts/death.gd" id="1_6up1m"]
 [ext_resource type="Texture2D" uid="uid://2tpm4qy7wpcn" path="res://sprites/game/death/Death_Attack_1/Death_Slash_F0.png" id="2_p4k8n"]
 [ext_resource type="Script" uid="uid://cnlmu7ygcatxq" path="res://scripts/death_state_machine.gd" id="2_w8wr1"]
 [ext_resource type="Texture2D" uid="uid://duvjh4dnnvbip" path="res://sprites/game/death/Death_Attack_1/Death_Slash_F1.png" id="3_ix4ad"]
-[ext_resource type="Script" uid="uid://dmux5pmr833wr" path="res://scripts/state.gd" id="3_tjai8"]
 [ext_resource type="Script" uid="uid://xrslotl05y2y" path="res://scripts/death_collision.gd" id="3_w0no0"]
 [ext_resource type="Texture2D" uid="uid://d2cvpyung26q6" path="res://sprites/game/death/Death_Attack_1/Death_Slash_F2.png" id="4_yfqfo"]
 [ext_resource type="Texture2D" uid="uid://0jvuejrhk3my" path="res://sprites/game/death/Death_Attack_1/Death_Slash_F3.png" id="5_1dqic"]
@@ -51,16 +50,21 @@
 [ext_resource type="Texture2D" uid="uid://dqafrq1dwons2" path="res://sprites/game/death/Death_Attack_5/Death_Charge_F9.png" id="28_d7sqd"]
 [ext_resource type="Texture2D" uid="uid://d0ab4xrqkujnv" path="res://sprites/game/death/Death_Attack_5/Death_Charge_F10.png" id="29_gypw1"]
 [ext_resource type="Texture2D" uid="uid://cdj1tt0l56kt4" path="res://sprites/game/death/Death_Violin/Death_V_F0.png" id="30_1vkjy"]
+[ext_resource type="Texture2D" uid="uid://618i2pgwtloh" path="res://sprites/game/death/Death_Attack_5/Death_Charge_F11.png" id="30_4nlub"]
+[ext_resource type="Texture2D" uid="uid://b4a52l075oka" path="res://sprites/game/death/Death_Attack_5/Death_Charge_F12.png" id="31_3up6i"]
+[ext_resource type="Texture2D" uid="uid://dg5fk31udpbsj" path="res://sprites/game/death/Death_Attack_5/Death_Charge_F13.png" id="32_mt0ie"]
+[ext_resource type="Texture2D" uid="uid://125ll46vgfhc" path="res://sprites/game/death/Death_Attack_5/Death_Charge_F14.png" id="33_7qpix"]
 [ext_resource type="Texture2D" uid="uid://cliaprce00dix" path="res://sprites/game/death/Death_Transform/Death_Transform_F0.png" id="33_uwgc5"]
 [ext_resource type="Texture2D" uid="uid://3iydnun0uhsp" path="res://sprites/game/death/Death_Raven/Death_Raven_F1.png" id="36_umjed"]
 [ext_resource type="Texture2D" uid="uid://bg7g5p8a8kn71" path="res://sprites/game/death/Death_Raven/Death_Raven_F2.png" id="37_40ovl"]
 [ext_resource type="Texture2D" uid="uid://ctc03qrjy404g" path="res://sprites/game/death/Death_Raven/Death_Raven_F3.png" id="38_kf8of"]
-[ext_resource type="Texture2D" uid="uid://bix66c0shy21b" path="res://sprites/game/death/Death_Raven/Death_Raven_F5.png" id="40_nekld"]
 [ext_resource type="Texture2D" uid="uid://bh1ph5sr1w6ck" path="res://sprites/game/death/Death_Raven/Death_Raven_F0.png" id="47_e11dn"]
 [ext_resource type="Script" uid="uid://ny3h6fhfxvfc" path="res://scripts/attack_2.gd" id="53_q3uio"]
+[ext_resource type="Texture2D" uid="uid://dka42bvm4607l" path="res://sprites/game/death/Death_Raven/Death_Raven_F4.png" id="55_4nlub"]
 [ext_resource type="Script" uid="uid://r36mf41qa1so" path="res://scripts/attack_3.gd" id="58_40ovl"]
 [ext_resource type="PackedScene" uid="uid://die02galv5dwi" path="res://scenes/scythe_attack.tscn" id="58_55cin"]
 [ext_resource type="PackedScene" uid="uid://dblplccxgvapa" path="res://scenes/ink_raven.tscn" id="59_kf8of"]
+[ext_resource type="Script" uid="uid://bmwnxhbs58fld" path="res://scripts/attack_4.gd" id="61_55cin"]
 [ext_resource type="Script" uid="uid://dvytk1ff8jc8o" path="res://scripts/raven.gd" id="86_bqxi1"]
 [ext_resource type="Script" uid="uid://ctxqogtpfe20s" path="res://scripts/attack_5.gd" id="86_sjqv0"]
 [ext_resource type="Script" uid="uid://bmwey0n56vxuy" path="res://scripts/transform.gd" id="87_t6nu6"]
@@ -342,6 +346,18 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("29_gypw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_4nlub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_3up6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_mt0ie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_7qpix")
 }],
 "loop": false,
 "name": &"attack_5",
@@ -417,7 +433,7 @@ animations = [{
 "texture": ExtResource("38_kf8of")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_nekld")
+"texture": ExtResource("55_4nlub")
 }],
 "loop": true,
 "name": &"raven",
@@ -685,10 +701,24 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start_rain_timer"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_yfqfo"]
 resource_name = "attack_5"
-length = 1.10001
+length = 1.50001
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -709,10 +739,10 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.09958, 1.2, 1.3, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -721,7 +751,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.7, 0.8),
+"times": PackedFloat32Array(1.1, 1.2),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": ["attack_5", 30.0],
@@ -827,11 +857,14 @@ tracks/2/path = NodePath("StateMachine/Transform")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [true, 0.0],
 "method": &"is_busy"
+}, {
+"args": [true],
+"method": &"is_raven"
 }]
 }
 
@@ -904,6 +937,7 @@ position = Vector2(-30, -31)
 shape = SubResource("RectangleShape2D_w8wr1")
 
 [node name="debug" type="Label" parent="."]
+visible = false
 offset_left = -22.0
 offset_top = -365.0
 offset_right = 27.0
@@ -914,6 +948,9 @@ text = "debug"
 wait_time = 3.0
 one_shot = true
 autostart = true
+
+[node name="SpecialAttackDurationTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="StateMachine" type="Node2D" parent="."]
 script = ExtResource("2_w8wr1")
@@ -933,7 +970,7 @@ script = ExtResource("58_40ovl")
 ink_raven_node = ExtResource("59_kf8of")
 
 [node name="Attack_4" type="Node2D" parent="StateMachine"]
-script = ExtResource("3_tjai8")
+script = ExtResource("61_55cin")
 
 [node name="Attack_5" type="Node2D" parent="StateMachine"]
 script = ExtResource("86_sjqv0")

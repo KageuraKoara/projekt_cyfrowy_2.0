@@ -89,6 +89,16 @@ func play_anim(anim_name: String):
 	if animation_player.current_animation != anim_name:
 		animation_player.play(anim_name)
 
+func _on_collision_entered(body: Node2D) -> void:
+	if body.is_in_group("projectile"):
+		if body.winded:
+			Main._on_got_hit(body.note, body.HP)
+			body.despawn()
+
+func death():
+	animation_player.play("Dying")
+	await animation_player.animation_finished
+	get_tree().quit()
 
 # -------- External Calls --------
 
@@ -97,9 +107,13 @@ func play_attack():
 	await animation_player.animation_finished
 	set_state(PlayerState.IDLE)
 
+func _on_damage():
+	set_state(PlayerState.DAMAGE)
+	await animation_player.animation_finished
+	set_state(PlayerState.IDLE)
+
 func _on_knockback(push: float):
 	if global_position.x >= -350:
-		set_state(PlayerState.DAMAGE)
 		var t = create_tween()
 		t.tween_property(self, "global_position:x", global_position.x - push, 0.2)
 		await animation_player.animation_finished

@@ -28,7 +28,7 @@ sprite_frames = ExtResource("2_vihyi")
 wait_time = 10.0
 autostart = true
 
-[node name="Area2D" type="Area2D" parent="." groups=["projectile"]]
+[node name="Area2D" type="Area2D" parent="."]
 collision_layer = 16
 collision_mask = 13
 
