@@ -1,34 +1,18 @@
 [gd_scene load_steps=5 format=3 uid="uid://djkqhr4h05nml"]
 
 [ext_resource type="Script" uid="uid://d301oyiopgj8l" path="res://scripts/wind_gust.gd" id="1_8ekob"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_x0ric"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": null
-}],
-"loop": true,
-"name": &"idle",
-"speed": 10.0
-}]
+[ext_resource type="PackedScene" uid="uid://cfwru6fbt68k1" path="res://scenes/particles2.tscn" id="2_6pxwh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c8gtk"]
 radius = 35.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ekob"]
-size = Vector2(300, 120)
+size = Vector2(400, 120)
 
 [node name="wind_gust" type="CharacterBody2D" groups=["enemy_projectile"]]
 collision_layer = 4
 collision_mask = 18
 script = ExtResource("1_8ekob")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_x0ric")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.80086
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_c8gtk")
@@ -49,6 +33,9 @@ autostart = true
 wait_time = 4.0
 one_shot = true
 autostart = true
+
+[node name="Particles" parent="." instance=ExtResource("2_6pxwh")]
+scale = Vector2(0.8, 0.8)
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_entered"]
 [connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timeout"]

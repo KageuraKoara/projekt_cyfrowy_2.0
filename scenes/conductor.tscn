@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://v8qb42ruatb6" path="res://scripts/conductor.gd" id="1_dqjak"]
 
 [node name="Conductor" type="AudioStreamPlayer"]
+bus = &"Music"
 script = ExtResource("1_dqjak")
 bpm = 120
 

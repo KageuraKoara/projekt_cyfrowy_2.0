@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2d0wuswlxlhm"]
+
+[ext_resource type="Texture2D" uid="uid://crnstadorfdme" path="res://sprites/game/notes/under_hg.png" id="1_b14di"]
+[ext_resource type="Texture2D" uid="uid://c2dnpfv16ewkk" path="res://sprites/game/notes/over_hg.png" id="2_i3uv0"]
+[ext_resource type="Texture2D" uid="uid://uarjmf2y50fm" path="res://sprites/game/notes/progress_hg.png" id="3_akwvp"]
+[ext_resource type="Script" uid="uid://0sgbeao2d7wt" path="res://scripts/ui_hourglass.gd" id="4_b14di"]
+
+[node name="Hourglass" type="TextureProgressBar"]
+offset_right = 300.0
+offset_bottom = 400.0
+scale = Vector2(0.5, 0.5)
+max_value = 180.0
+value = 20.0
+fill_mode = 3
+texture_under = ExtResource("1_b14di")
+texture_over = ExtResource("2_i3uv0")
+texture_progress = ExtResource("3_akwvp")
+script = ExtResource("4_b14di")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

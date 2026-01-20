@@ -12,7 +12,7 @@ func enter():
 func spawn():
 	var min_x = player.global_position.x - 300
 	var ink_splash = ink_splash_node.instantiate()
-	ink_splash.position.x = randi_range(min_x, 700)
+	ink_splash.position.x = randi_range(min_x, 1100)
 	ink_splash.position.y = 440
 	pr_layer.add_child(ink_splash)
 

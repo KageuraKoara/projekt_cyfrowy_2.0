@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyfh6u5ojtyui"]
+
+[sub_resource type="GDScript" id="GDScript_rfnc5"]
+script/source = "extends ProgressBar
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="CompositionProgress" type="ProgressBar"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -857.0
+offset_top = 23.0
+offset_right = -22.0
+offset_bottom = 50.0
+grow_horizontal = 0
+max_value = 180.0
+step = 1.0
+show_percentage = false
+script = SubResource("GDScript_rfnc5")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 717.0
+offset_top = 36.0
+offset_right = 815.0
+offset_bottom = 59.0
+text = "Composition"
