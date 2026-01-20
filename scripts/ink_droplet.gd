@@ -3,11 +3,10 @@ extends CharacterBody2D
 @onready var Main = get_tree().get_root().get_node("Level1")
 
 var direction := 0.0
-var vel_y := 300
+var vel_y := 500
 
 func _ready() -> void:
-	$AnimatedSprite2D.play("idle")
-	global_position.x = randi_range(-500, 800)
+	global_position.x = randi_range(-500, 1200)
 	global_position.y = -200
 
 func _physics_process(delta: float) -> void:
@@ -28,4 +27,7 @@ func _on_despawn_timeout() -> void:
 	despawn()
 
 func despawn():
+	$Particles.splash()
+	$InkDrop.visible = false
+	await get_tree().create_timer(1).timeout
 	queue_free()

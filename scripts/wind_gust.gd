@@ -1,9 +1,8 @@
 extends CharacterBody2D
 
-
 func _ready() -> void:
-	$AnimatedSprite2D.play("idle")
-	global_position.x = 500
+	$Particles.wind()
+	global_position.x = 700
 	global_position.y = 460
 
 func _on_phase_change() -> void:
@@ -19,4 +18,6 @@ func _on_despawn_timeout() -> void:
 	despawn()
 
 func despawn():
+	$Particles.stop_wimdy()
+	await get_tree().create_timer(2).timeout
 	queue_free()

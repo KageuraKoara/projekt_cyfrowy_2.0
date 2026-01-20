@@ -1,0 +1,97 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg08eg5ai8ia8"]
+
+[ext_resource type="Script" uid="uid://cwdmdakr51mcf" path="res://scripts/main_menu.gd" id="1_n00j1"]
+[ext_resource type="PackedScene" uid="uid://b30l3wy1vsiix" path="res://scenes/UI/Settings.tscn" id="2_7vad4"]
+[ext_resource type="PackedScene" uid="uid://ean2b0d38pv7" path="res://scenes/UI/Level_menu.tscn" id="3_66axm"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v62cy"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchor_left = 0.715
+anchor_top = 0.593
+anchor_right = 0.751
+anchor_bottom = 0.64
+offset_left = -823.68
+offset_top = -384.264
+offset_right = 286.848
+offset_bottom = 233.28
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n00j1")
+
+[node name="Background" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_v62cy")
+
+[node name="Music_sheet" type="Node" parent="."]
+
+[node name="Play" type="Button" parent="Music_sheet"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -233.0
+offset_top = -391.0
+offset_right = -192.0
+offset_bottom = -360.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Play"
+alignment = 0
+
+[node name="Settings" type="Button" parent="Music_sheet"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -262.0
+offset_top = -312.0
+offset_right = -192.0
+offset_bottom = -281.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Settings"
+
+[node name="Exit" type="Button" parent="Music_sheet"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -229.0
+offset_top = -236.0
+offset_right = -192.0
+offset_bottom = -205.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Exit"
+alignment = 0
+
+[node name="Credits" type="Button" parent="Music_sheet"]
+offset_left = 75.0
+offset_top = 867.0
+offset_right = 201.0
+offset_bottom = 970.0
+text = "Credits"
+
+[node name="Settings" parent="." instance=ExtResource("2_7vad4")]
+visible = false
+layout_mode = 1
+
+[node name="LevelMenu" parent="." instance=ExtResource("3_66axm")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="Music_sheet/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Music_sheet/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Music_sheet/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Music_sheet/Credits" to="." method="_on_credits_pressed"]

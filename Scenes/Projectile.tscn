@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://e8oy2o4klttq" path="res://scripts/projectile.gd" id="1_k1cl8"]
 [ext_resource type="SpriteFrames" uid="uid://cewt006eixqkt" path="res://sprites/game/notes/note_frames.tres" id="2_vihyi"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cioo"]
-size = Vector2(117.341, 176.012)
+[sub_resource type="CircleShape2D" id="CircleShape2D_vihyi"]
+radius = 100.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vihyi"]
-size = Vector2(20, 30)
+[sub_resource type="CircleShape2D" id="CircleShape2D_kdm4f"]
+radius = 15.0
 
 [node name="Projectile" type="CharacterBody2D" groups=["projectile"]]
 collision_layer = 16
@@ -15,25 +15,27 @@ collision_mask = 13
 script = ExtResource("1_k1cl8")
 speed = 1000
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.38419e-07, -2.38419e-07)
-scale = Vector2(0.102266, 0.102266)
-shape = SubResource("RectangleShape2D_8cioo")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.099538, 0.099538)
+position = Vector2(-16, 0)
+scale = Vector2(0.25, 0.25)
 sprite_frames = ExtResource("2_vihyi")
+animation = &"interval"
 
-[node name="DespawnTimer" type="Timer" parent="."]
-wait_time = 10.0
-autostart = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5.96046e-08, 0)
+scale = Vector2(0.08, 0.08)
+shape = SubResource("CircleShape2D_vihyi")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 16
 collision_mask = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_vihyi")
+shape = SubResource("CircleShape2D_kdm4f")
 
-[connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timeout"]
+[node name="DespawnTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timeout"]

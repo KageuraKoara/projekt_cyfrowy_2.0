@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://5b1mwsoorbrf"]
+[gd_scene load_steps=30 format=3 uid="uid://5b1mwsoorbrf"]
 
 [ext_resource type="Script" uid="uid://b05mfiyf4wugg" path="res://scenes/levels/game.gd" id="1_excbq"]
 [ext_resource type="PackedScene" uid="uid://c0txe0f57ssv5" path="res://scenes/note.tscn" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://d384mg7fb6l2e" path="res://scenes/chord_manager.tscn" id="2_bahl2"]
-[ext_resource type="AudioStream" uid="uid://butrua1wugngf" path="res://sounds/Concerto In G Minor for Violin, String Orchestra and Continuo, Op. 8, No. 2, RV 315, Lestate....mp3" id="3_mm8aj"]
+[ext_resource type="Texture2D" uid="uid://dggombc7145g" path="res://sprites/game/background/1.png" id="2_mqh5v"]
+[ext_resource type="Texture2D" uid="uid://cfffprsiboc2p" path="res://sprites/game/background/3.png" id="3_7o3do"]
 [ext_resource type="PackedScene" uid="uid://dth7isd7m8d0p" path="res://scenes/stave_line.tscn" id="3_v6ha0"]
 [ext_resource type="AudioStream" uid="uid://cmn5xley5ak03" path="res://sounds/harpsichord/c.wav" id="4_iav0o"]
 [ext_resource type="AudioStream" uid="uid://dm0kxdy441gp8" path="res://sounds/harpsichord/d.wav" id="5_dnkej"]
@@ -14,11 +15,17 @@
 [ext_resource type="PackedScene" uid="uid://b0vf6neoqgkk4" path="res://scenes/player.tscn" id="9_dsuda"]
 [ext_resource type="AudioStream" uid="uid://bb08rjssv0vm6" path="res://sounds/harpsichord/b.wav" id="10_np2pn"]
 [ext_resource type="PackedScene" uid="uid://t1pibog7rmnq" path="res://scenes/conductor.tscn" id="12_iav0o"]
-[ext_resource type="PackedScene" uid="uid://d1tvv5smk3qyf" path="res://scenes/hourglass.tscn" id="12_wtwp4"]
+[ext_resource type="AudioStream" uid="uid://b1fub7l6ycc5u" path="res://sounds/summer.mp3" id="15_7o3do"]
 [ext_resource type="PackedScene" uid="uid://dl86hcthk4cl3" path="res://scenes/death.tscn" id="17_bahl2"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="17_flpb6"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="18_v6ha0"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="19_v6uk5"]
+[ext_resource type="Texture2D" uid="uid://celbmvvb53orc" path="res://sprites/game/background/2.png" id="22_o7j4k"]
+[ext_resource type="Texture2D" uid="uid://dr7twp03ylrva" path="res://sprites/game/background/4.png" id="23_31oqk"]
+[ext_resource type="Texture2D" uid="uid://jc8qdy2hbu6m" path="res://sprites/game/background/5.png" id="24_x7jkp"]
+[ext_resource type="PackedScene" uid="uid://b2d0wuswlxlhm" path="res://scenes/UI/Hourglass.tscn" id="25_7o3do"]
+[ext_resource type="PackedScene" uid="uid://cyfh6u5ojtyui" path="res://scenes/UI/composition_progress.tscn" id="26_31oqk"]
+[ext_resource type="PackedScene" uid="uid://d0xqff0dpg01f" path="res://scenes/UI/Pause.tscn" id="26_o7j4k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dsuda"]
 size = Vector2(2112, 60.3221)
@@ -34,6 +41,18 @@ ease = 2
 
 [node name="Level1" type="Node"]
 script = ExtResource("1_excbq")
+
+[node name="BackgroundLayer" type="Node" parent="."]
+
+[node name="1" type="Sprite2D" parent="BackgroundLayer"]
+position = Vector2(555, 149)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_mqh5v")
+
+[node name="3" type="Sprite2D" parent="BackgroundLayer"]
+position = Vector2(555, 149)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_7o3do")
 
 [node name="ChordManager" parent="." instance=ExtResource("2_bahl2")]
 
@@ -156,11 +175,7 @@ id = 6
 pitch = ExtResource("10_np2pn")
 
 [node name="Conductor" parent="." instance=ExtResource("12_iav0o")]
-stream = ExtResource("3_mm8aj")
-volume_db = -20.0
-
-[node name="Hourglass" parent="." instance=ExtResource("12_wtwp4")]
-position = Vector2(232, 45)
+stream = ExtResource("15_7o3do")
 
 [node name="Player" parent="." instance=ExtResource("9_dsuda")]
 position = Vector2(249, 495)
@@ -184,11 +199,11 @@ position = Vector2(1014.36, -237.839)
 shape = SubResource("RectangleShape2D_s5b24")
 
 [node name="Death" parent="." instance=ExtResource("17_bahl2")]
-position = Vector2(800, 440)
+position = Vector2(1200, 440)
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_targets")]
 top_level = true
-position = Vector2(499.5, 351)
+position = Vector2(699.5, 135)
 script = ExtResource("17_flpb6")
 follow_mode = 3
 follow_targets = [NodePath("../Player"), NodePath("../Death")]
@@ -206,7 +221,7 @@ metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
-position = Vector2(499.5, 351)
+position = Vector2(699.5, 135)
 process_callback = 0
 limit_left = -570
 limit_bottom = 675
@@ -222,6 +237,32 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="CurtainLayer" type="Node" parent="."]
 
+[node name="2" type="Sprite2D" parent="CurtainLayer"]
+position = Vector2(555, 149)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("22_o7j4k")
+
+[node name="4" type="Sprite2D" parent="CurtainLayer"]
+position = Vector2(555, 149)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("23_31oqk")
+
+[node name="5" type="Sprite2D" parent="CurtainLayer"]
+position = Vector2(555, 149)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("24_x7jkp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hourglass" parent="CanvasLayer" instance=ExtResource("25_7o3do")]
+metadata/_edit_use_anchors_ = true
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("26_o7j4k")]
+visible = false
+
+[node name="CompositionProgress" parent="CanvasLayer" instance=ExtResource("26_31oqk")]
+max_value = 360.0
+
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
-[connection signal="time_ran_out" from="Hourglass" to="." method="_on_hourglass_time_ran_out"]
 [connection signal="death_hit" from="Death" to="." method="_on_death_hit"]
+[connection signal="your_time_ran_out" from="CanvasLayer/Hourglass" to="." method="_on_hourglass_your_time_ran_out"]

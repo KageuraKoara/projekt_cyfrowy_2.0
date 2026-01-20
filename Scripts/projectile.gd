@@ -9,7 +9,6 @@ var PlayerX_Position
 var speed_multiplier : float
 var note = null
 var type := ""
-var frame := 0
 var HP := 0.5
 var pos_y
 var caught := false
@@ -21,7 +20,7 @@ var winded := false
 func _ready() -> void:
 	global_position = Vector2(PlayerX_Position, pos_y[note])
 	speed = speed * speed_multiplier
-	$AnimatedSprite2D.frame = frame
+	$AnimatedSprite2D.play(type)
 	if speed < 100:
 		despawn()
 	
@@ -64,4 +63,7 @@ func _on_despawn_timeout() -> void:
 	despawn()
 
 func despawn():
+	speed = 0
+	$AnimatedSprite2D.play(type + "_hit")
+	await $AnimatedSprite2D.animation_finished
 	queue_free()

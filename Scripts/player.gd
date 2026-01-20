@@ -11,7 +11,9 @@ extends CharacterBody2D
 @export var JUMP_FORCE := -400.0
 @export var SUPER_JUMP_FORCE := -600.0
 
-@export var movement_set = ["movement_Q", "movement_P", "movement_Space"]
+var left_input := "movement_A"
+var jump_input := "movement_Space"
+var right_input := "movement_D"
 
 enum PlayerState {
 	IDLE,
@@ -36,7 +38,7 @@ func _physics_process(delta):
 	update_state()
 
 func handle_movement():
-	var input := Input.get_axis(movement_set[0], movement_set[1])
+	var input := Input.get_axis(left_input, right_input)
 	speed = DASH_SPEED if $DashTimer.time_left > 0 else WALK_SPEED
 	velocity.x = input * speed
 
@@ -44,7 +46,7 @@ func handle_movement():
 		sprite.flip_h = input < 0'
 
 func handle_jump():
-	if Input.is_action_just_pressed(movement_set[2]) and is_on_floor():
+	if Input.is_action_just_pressed(jump_input) and is_on_floor():
 		velocity.y = SUPER_JUMP_FORCE if $SuperJumpTimer.time_left > 0 else JUMP_FORCE
 
 func handle_gravity(delta):
@@ -98,7 +100,7 @@ func _on_collision_entered(body: Node2D) -> void:
 func death():
 	animation_player.play("Dying")
 	await animation_player.animation_finished
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://Scenes/UI/Lost.tscn")
 
 # -------- External Calls --------
 

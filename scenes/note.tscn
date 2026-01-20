@@ -21,6 +21,7 @@ wait_time = 0.1
 one_shot = true
 
 [node name="NoteSound" type="AudioStreamPlayer" parent="."]
+bus = &"Sfx"
 
 [connection signal="timeout" from="ComboTimer" to="." method="_on_combo_timer_timeout"]
 [connection signal="timeout" from="SpamTimer" to="." method="_on_spam_timer_timeout"]

@@ -1,36 +1,24 @@
 [gd_scene load_steps=6 format=3 uid="uid://ciy2eklsnpc1m"]
 
 [ext_resource type="Script" uid="uid://dqmttt0ounlfr" path="res://scripts/ink_droplet.gd" id="1_fu0v8"]
-[ext_resource type="Texture2D" uid="uid://bg7i6yhj2566f" path="res://sprites/game/notes/ink_droplet.png" id="2_evpwy"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_x0ric"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_evpwy")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 10.0
-}]
+[ext_resource type="Texture2D" uid="uid://c3eqgs30t2msc" path="res://sprites/game/particle sprites/ink drop.png" id="2_twx8y"]
+[ext_resource type="PackedScene" uid="uid://cfwru6fbt68k1" path="res://scenes/particles2.tscn" id="3_twx8y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c8gtk"]
 radius = 4.24264
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_81c28"]
-radius = 13.1529
+radius = 12.0416
 
 [node name="ink_droplet" type="CharacterBody2D" groups=["enemy_projectile"]]
 collision_layer = 4
 collision_mask = 19
 script = ExtResource("1_fu0v8")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_x0ric")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.80086
+[node name="InkDrop" type="Sprite2D" parent="."]
+position = Vector2(0, -9)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_twx8y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_c8gtk")
@@ -43,8 +31,11 @@ collision_mask = 27
 shape = SubResource("CircleShape2D_81c28")
 
 [node name="DespawnTimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 5.0
 autostart = true
+
+[node name="Particles" parent="." instance=ExtResource("3_twx8y")]
+position = Vector2(0, 12)
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_entered"]
 [connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timeout"]

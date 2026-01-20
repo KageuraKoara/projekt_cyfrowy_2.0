@@ -1,0 +1,75 @@
+[gd_scene load_steps=2 format=3 uid="uid://bewunkqqfpobr"]
+
+[ext_resource type="Script" path="res://Scripts/Hourglass_UI.gd" id="1_s86y4"]
+
+[node name="Ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Compositor_frame" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = 88.0
+offset_top = 26.0
+offset_right = 128.0
+offset_bottom = 66.0
+scale = Vector2(2.52, 2.52)
+
+[node name="Compositor_image" type="TextureRect" parent="Compositor_frame"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Hourglass_top" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 26.0
+offset_right = 321.0
+offset_bottom = 66.0
+
+[node name="Top" type="VSlider" parent="Hourglass_top"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 32.0
+offset_bottom = 51.0
+editable = false
+script = ExtResource("1_s86y4")
+
+[node name="Bottom" type="VSlider" parent="Hourglass_top"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 61.0
+offset_right = 32.0
+offset_bottom = 108.0
+value = 100.0
+editable = false
+
+[node name="Hourglass_bottom" type="TextureRect" parent="Hourglass_top"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Song_timer" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 1122.0
+offset_top = 71.0
+offset_right = 1333.0
+offset_bottom = 87.0
+rotation = 3.14159
+scale = Vector2(2, 2)
+editable = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 981.0
+offset_top = 87.0
+offset_right = 1107.0
+offset_bottom = 127.0
+text = "Composition"
+
+[connection signal="value_changed" from="Hourglass_top/Top" to="Hourglass_top/Top" method="_on_value_changed"]
+[connection signal="value_changed" from="Hourglass_top/Bottom" to="Hourglass_top/Bottom" method="_on_value_changed"]

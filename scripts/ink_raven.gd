@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 	velocity.x = vel_x
 	move_and_slide()
 	
-	if caught and global_position.x >= 700: despawn()
+	if caught and global_position.x >= 1050: despawn()
 
 func go_back():
 	caught = true

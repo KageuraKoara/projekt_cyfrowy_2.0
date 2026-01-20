@@ -12,7 +12,7 @@ extends CharacterBody2D
 
 var direction : Vector2
 var player_in_range := false
-var default_position := Vector2(800, 440)
+var default_position := Vector2(1200, 440)
 
 signal death_hit(note: String, HP: float)
 
@@ -64,5 +64,5 @@ func spawn_ink_rain():
 	if not $SpecialAttackDurationTimer.is_stopped():
 		var ink_droplet = ink_droplet_node.instantiate()
 		pr_layer.add_child(ink_droplet)
-		await get_tree().create_timer(randi_range(1, 3)).timeout
+		await get_tree().create_timer(randf_range(0.5, 1.5)).timeout
 		spawn_ink_rain()
