@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ean2b0d38pv7"]
+[gd_scene load_steps=4 format=3 uid="uid://ean2b0d38pv7"]
 
-[ext_resource type="Script" uid="uid://dw6p2c4pfxlc7" path="res://scripts/level_menu.gd" id="1_w44lg"]
+[ext_resource type="Script" uid="uid://dw6p2c4pfxlc7" path="res://Scripts/level_menu.gd" id="1_w44lg"]
+[ext_resource type="FontFile" uid="uid://c2fmqyfklpeoq" path="res://sprites/Fonts/High Empathy.ttf" id="2_fblrp"]
+[ext_resource type="Texture2D" uid="uid://4j6mgyx35l6d" path="res://sprites/game/UI/key.png" id="2_gqhcl"]
 
 [node name="LevelMenu" type="Control"]
 layout_mode = 3
@@ -10,6 +12,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w44lg")
+
+[node name="Key_tut" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 807.0
+offset_top = 469.0
+offset_right = 838.0
+offset_bottom = 597.0
+texture = ExtResource("2_gqhcl")
+expand_mode = 1
+
+[node name="Key_1" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 807.0
+offset_top = 540.0
+offset_right = 838.0
+offset_bottom = 668.0
+texture = ExtResource("2_gqhcl")
+expand_mode = 1
 
 [node name="tutorial" type="Button" parent="."]
 layout_mode = 1
@@ -24,7 +46,11 @@ offset_right = 34.5
 offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.054902, 0, 0.113725, 0.941176)
+theme_override_fonts/font = ExtResource("2_fblrp")
+theme_override_font_sizes/font_size = 75
 text = "Tutorial"
+flat = true
 
 [node name="level 1" type="Button" parent="."]
 layout_mode = 1
@@ -39,7 +65,15 @@ offset_right = 34.5
 offset_bottom = 91.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.054902, 0, 0.113725, 0.941176)
+theme_override_fonts/font = ExtResource("2_fblrp")
+theme_override_font_sizes/font_size = 75
 text = "Level 1"
+flat = true
 
+[connection signal="mouse_entered" from="tutorial" to="." method="_on_tutorial_mouse_entered"]
+[connection signal="mouse_exited" from="tutorial" to="." method="_on_tutorial_mouse_exited"]
 [connection signal="pressed" from="tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="mouse_entered" from="level 1" to="." method="_on_level_1_mouse_entered"]
+[connection signal="mouse_exited" from="level 1" to="." method="_on_level_1_mouse_exited"]
 [connection signal="pressed" from="level 1" to="." method="_on_level_1_pressed"]
