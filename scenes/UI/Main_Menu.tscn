@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://cg08eg5ai8ia8"]
 
-[ext_resource type="Script" uid="uid://cwdmdakr51mcf" path="res://Scripts/main_menu.gd" id="1_n00j1"]
-[ext_resource type="PackedScene" uid="uid://b30l3wy1vsiix" path="res://Scenes/UI/Settings.tscn" id="2_7vad4"]
+[ext_resource type="Script" uid="uid://cwdmdakr51mcf" path="res://scripts/main_menu.gd" id="1_n00j1"]
+[ext_resource type="PackedScene" uid="uid://b30l3wy1vsiix" path="res://scenes/UI/Settings.tscn" id="2_7vad4"]
 [ext_resource type="Texture2D" uid="uid://bwjlt80s0qbmr" path="res://sprites/game/UI/Menu BG.png" id="2_bildh"]
-[ext_resource type="PackedScene" uid="uid://ean2b0d38pv7" path="res://Scenes/UI/Level_menu.tscn" id="3_66axm"]
+[ext_resource type="PackedScene" uid="uid://ean2b0d38pv7" path="res://scenes/UI/Level_menu.tscn" id="3_66axm"]
 [ext_resource type="Texture2D" uid="uid://ij0emvfgkm" path="res://sprites/game/UI/Menu ilu.png" id="3_q5fvd"]
 [ext_resource type="Texture2D" uid="uid://4j6mgyx35l6d" path="res://sprites/game/UI/key.png" id="4_17otf"]
 [ext_resource type="FontFile" uid="uid://c2fmqyfklpeoq" path="res://sprites/Fonts/High Empathy.ttf" id="4_q5fvd"]

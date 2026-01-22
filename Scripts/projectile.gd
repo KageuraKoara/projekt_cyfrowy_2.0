@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2(speed,0).rotated(Direction)
 		move_and_slide()
 	else:
-		if damn_chicken.is_alive:
+		if is_instance_valid(damn_chicken):
 			global_position = damn_chicken.global_position + Vector2(50, 0)
 		else:
 			despawn()
@@ -37,6 +37,7 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy_projectile"):
 		if body.name == "ink_raven":
+			despawn()
 			damn_chicken = body
 			if type != "single":
 				body.despawn()
