@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b30l3wy1vsiix"]
 
-[ext_resource type="PackedScene" uid="uid://cmoge78x72ov2" path="res://scenes/UI/volume_slider.tscn" id="1_g0tyt"]
-[ext_resource type="Script" uid="uid://b5x42i8iy16il" path="res://scripts/settings.gd" id="1_ydmms"]
+[ext_resource type="PackedScene" uid="uid://cmoge78x72ov2" path="res://Scenes/UI/volume_slider.tscn" id="1_g0tyt"]
+[ext_resource type="Script" uid="uid://b5x42i8iy16il" path="res://Scripts/settings.gd" id="1_ydmms"]
 [ext_resource type="Texture2D" uid="uid://dggombc7145g" path="res://sprites/game/background/1.png" id="2_5dgb1"]
 
 [node name="Settings" type="Control"]

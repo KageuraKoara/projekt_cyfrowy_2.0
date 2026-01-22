@@ -255,6 +255,8 @@ texture = ExtResource("24_x7jkp")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hourglass" parent="CanvasLayer" instance=ExtResource("25_7o3do")]
+anchors_preset = -1
+anchor_bottom = 0.037963
 metadata/_edit_use_anchors_ = true
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("26_o7j4k")]

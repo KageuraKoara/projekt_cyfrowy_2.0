@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bewunkqqfpobr"]
-
-[ext_resource type="Script" path="res://Scripts/Hourglass_UI.gd" id="1_s86y4"]
+[gd_scene format=3 uid="uid://bewunkqqfpobr"]
 
 [node name="Ui" type="Control"]
 layout_mode = 3
@@ -37,7 +35,6 @@ offset_top = 4.0
 offset_right = 32.0
 offset_bottom = 51.0
 editable = false
-script = ExtResource("1_s86y4")
 
 [node name="Bottom" type="VSlider" parent="Hourglass_top"]
 layout_mode = 0
