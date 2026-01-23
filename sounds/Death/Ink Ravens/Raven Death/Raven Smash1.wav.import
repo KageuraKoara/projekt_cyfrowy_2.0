@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dp0thprheeerk"
+path="res://.godot/imported/Raven Smash1.wav-0e33fcb3790f0fcefea7a241e11929fb.sample"
+
+[deps]
+
+source_file="res://sounds/Death/Ink Ravens/Raven Death/Raven Smash1.wav"
+dest_files=["res://.godot/imported/Raven Smash1.wav-0e33fcb3790f0fcefea7a241e11929fb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

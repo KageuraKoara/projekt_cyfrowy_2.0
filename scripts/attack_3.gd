@@ -1,6 +1,7 @@
 extends State
 
 @export var ink_raven_node : PackedScene
+var audio = preload("res://sounds/Death/Ink Ravens/Przywołanie kruka.wav")
 var can_transition := false
 
 func enter():
@@ -11,6 +12,8 @@ func enter():
 
 func spawn():
 	var ink_raven = ink_raven_node.instantiate()
+	$"../../AudioStreamPlayer".stream = audio
+	$"../../AudioStreamPlayer".play()
 	ink_raven.position = owner.position + Vector2(20, 40)
 	pr_layer.add_child(ink_raven)
 

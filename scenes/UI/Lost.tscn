@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgl3i6x633nwm"]
+[gd_scene load_steps=8 format=3 uid="uid://cgl3i6x633nwm"]
 
 [ext_resource type="Script" uid="uid://d2hmfbbbjtq31" path="res://Scripts/pause_menu.gd" id="1_rpp7m"]
 [ext_resource type="FontFile" uid="uid://c2fmqyfklpeoq" path="res://sprites/Fonts/High Empathy.ttf" id="2_dxxwr"]
+[ext_resource type="AudioStream" uid="uid://bwvcddh7koxfe" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX1.wav" id="3_7r88y"]
+[ext_resource type="AudioStream" uid="uid://bikvs00uye3lr" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX2.wav" id="4_215s7"]
+[ext_resource type="AudioStream" uid="uid://baki7vn5tlicm" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX3.wav" id="5_piaik"]
+[ext_resource type="AudioStream" uid="uid://bhxt63e10txjo" path="res://sounds/UI & Main Menu/Ekran Końcowy/Przegrana.wav" id="6_215s7"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_e8o0g"]
+streams_count = 3
+stream_0/stream = ExtResource("3_7r88y")
+stream_1/stream = ExtResource("4_215s7")
+stream_2/stream = ExtResource("5_piaik")
 
 [node name="Lost" type="Control"]
 layout_mode = 3
@@ -56,5 +66,14 @@ theme_override_fonts/font = ExtResource("2_dxxwr")
 theme_override_font_sizes/font_size = 100
 text = "Play Again"
 
+[node name="ButtonsSfx" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_e8o0g")
+bus = &"Sfx"
+
+[node name="result" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_215s7")
+bus = &"Music"
+
 [connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="ready" from="result" to="." method="_on_result_ready"]

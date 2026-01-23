@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dq26ee5wexy8q"
+path="res://.godot/imported/Krakanie2.wav-35673bf53c47bfc9a84288d1527fc674.sample"
+
+[deps]
+
+source_file="res://sounds/Death/Ink Ravens/Krakanie/Krakanie2.wav"
+dest_files=["res://.godot/imported/Krakanie2.wav-35673bf53c47bfc9a84288d1527fc674.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

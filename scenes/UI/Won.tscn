@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2sjuxlkbhhdp"]
+[gd_scene load_steps=6 format=3 uid="uid://b2sjuxlkbhhdp"]
 
-[ext_resource type="Script" uid="uid://d2hmfbbbjtq31" path="res://scripts/pause_menu.gd" id="1_kymma"]
+[ext_resource type="Script" uid="uid://d2hmfbbbjtq31" path="res://Scripts/pause_menu.gd" id="1_kymma"]
+[ext_resource type="AudioStream" uid="uid://bwvcddh7koxfe" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX1.wav" id="2_v1xkt"]
+[ext_resource type="AudioStream" uid="uid://bikvs00uye3lr" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX2.wav" id="3_5gfh7"]
+[ext_resource type="AudioStream" uid="uid://baki7vn5tlicm" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX3.wav" id="4_drevk"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_18uy5"]
+streams_count = 3
+stream_0/stream = ExtResource("2_v1xkt")
+stream_1/stream = ExtResource("3_5gfh7")
+stream_2/stream = ExtResource("4_drevk")
 
 [node name="Won" type="Control"]
 layout_mode = 3
@@ -34,4 +43,12 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Menu"
 
+[node name="ButtonsSfx" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_18uy5")
+bus = &"Sfx"
+
+[node name="Result_won" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+
 [connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
+[connection signal="ready" from="Result_won" to="." method="_on_result_won_ready"]

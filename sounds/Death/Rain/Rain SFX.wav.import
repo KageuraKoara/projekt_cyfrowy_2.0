@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bjrme73uo2t6t"
+path="res://.godot/imported/Rain SFX.wav-d4421f8ba5abced6add78c50a8c90293.sample"
+
+[deps]
+
+source_file="res://sounds/Death/Rain/Rain SFX.wav"
+dest_files=["res://.godot/imported/Rain SFX.wav-d4421f8ba5abced6add78c50a8c90293.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

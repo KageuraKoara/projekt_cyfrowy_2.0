@@ -1,5 +1,5 @@
 extends State
-
+var audio = preload("res://sounds/Death/Raven/Trigger.wav")
 func enter():
 	super.enter()
 	owner.set_physics_process(true)
@@ -13,4 +13,6 @@ func exit():
 
 func transition():
 	if $"../..".player_in_range:
+		$"../../AudioStreamPlayer".stream = audio
+		$"../../AudioStreamPlayer".play()
 		get_parent().change_state("Attack_5")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bonor5y8fl653"
+path="res://.godot/imported/Start Gry.mp3-f2e94d857c54f7041696f8026f03e672.mp3str"
+
+[deps]
+
+source_file="res://sounds/UI & Main Menu/Start Gry.mp3"
+dest_files=["res://.godot/imported/Start Gry.mp3-f2e94d857c54f7041696f8026f03e672.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,14 +1,14 @@
-[gd_scene load_steps=120 format=3 uid="uid://dl86hcthk4cl3"]
+[gd_scene load_steps=123 format=3 uid="uid://dl86hcthk4cl3"]
 
-[ext_resource type="Script" uid="uid://1orefmul01ce" path="res://scripts/death.gd" id="1_6up1m"]
+[ext_resource type="Script" uid="uid://1orefmul01ce" path="res://Scripts/death.gd" id="1_6up1m"]
 [ext_resource type="Texture2D" uid="uid://2tpm4qy7wpcn" path="res://sprites/game/death/Death_Attack_1/Death_Slash_F0.png" id="2_p4k8n"]
-[ext_resource type="Script" uid="uid://cnlmu7ygcatxq" path="res://scripts/death_state_machine.gd" id="2_w8wr1"]
+[ext_resource type="Script" uid="uid://cnlmu7ygcatxq" path="res://Scripts/death_state_machine.gd" id="2_w8wr1"]
 [ext_resource type="Texture2D" uid="uid://duvjh4dnnvbip" path="res://sprites/game/death/Death_Attack_1/Death_Slash_F1.png" id="3_ix4ad"]
-[ext_resource type="Script" uid="uid://xrslotl05y2y" path="res://scripts/death_collision.gd" id="3_w0no0"]
+[ext_resource type="Script" uid="uid://xrslotl05y2y" path="res://Scripts/death_collision.gd" id="3_w0no0"]
 [ext_resource type="Texture2D" uid="uid://d2cvpyung26q6" path="res://sprites/game/death/Death_Attack_1/Death_Slash_F2.png" id="4_yfqfo"]
 [ext_resource type="Texture2D" uid="uid://0jvuejrhk3my" path="res://sprites/game/death/Death_Attack_1/Death_Slash_F3.png" id="5_1dqic"]
-[ext_resource type="Script" uid="uid://c0nthjce01ws1" path="res://scripts/idle.gd" id="5_w0no0"]
-[ext_resource type="Script" uid="uid://ck6l7hjiusr6u" path="res://scripts/attack_1.gd" id="6_7205l"]
+[ext_resource type="Script" uid="uid://c0nthjce01ws1" path="res://Scripts/idle.gd" id="5_w0no0"]
+[ext_resource type="Script" uid="uid://ck6l7hjiusr6u" path="res://Scripts/attack_1.gd" id="6_7205l"]
 [ext_resource type="Texture2D" uid="uid://dpygvyplb4yt6" path="res://sprites/game/death/Death_Attack_1/Death_Slash_F4.png" id="6_q3uio"]
 [ext_resource type="Texture2D" uid="uid://btc5qoaaw5pq6" path="res://sprites/game/death/Death_Attack_1/Death_Slash_F5.png" id="7_by8os"]
 [ext_resource type="Texture2D" uid="uid://dqackqvg2516k" path="res://sprites/game/death/Death_Attack_1/Death_Slash_F6.png" id="8_1yjms"]
@@ -59,15 +59,17 @@
 [ext_resource type="Texture2D" uid="uid://bg7g5p8a8kn71" path="res://sprites/game/death/Death_Raven/Death_Raven_F2.png" id="37_40ovl"]
 [ext_resource type="Texture2D" uid="uid://ctc03qrjy404g" path="res://sprites/game/death/Death_Raven/Death_Raven_F3.png" id="38_kf8of"]
 [ext_resource type="Texture2D" uid="uid://bh1ph5sr1w6ck" path="res://sprites/game/death/Death_Raven/Death_Raven_F0.png" id="47_e11dn"]
-[ext_resource type="Script" uid="uid://ny3h6fhfxvfc" path="res://scripts/attack_2.gd" id="53_q3uio"]
+[ext_resource type="Script" uid="uid://ny3h6fhfxvfc" path="res://Scripts/attack_2.gd" id="53_q3uio"]
 [ext_resource type="Texture2D" uid="uid://dka42bvm4607l" path="res://sprites/game/death/Death_Raven/Death_Raven_F4.png" id="55_4nlub"]
-[ext_resource type="Script" uid="uid://r36mf41qa1so" path="res://scripts/attack_3.gd" id="58_40ovl"]
-[ext_resource type="PackedScene" uid="uid://die02galv5dwi" path="res://scenes/scythe_attack.tscn" id="58_55cin"]
-[ext_resource type="PackedScene" uid="uid://dblplccxgvapa" path="res://scenes/ink_raven.tscn" id="59_kf8of"]
-[ext_resource type="Script" uid="uid://bmwnxhbs58fld" path="res://scripts/attack_4.gd" id="61_55cin"]
-[ext_resource type="Script" uid="uid://dvytk1ff8jc8o" path="res://scripts/raven.gd" id="86_bqxi1"]
-[ext_resource type="Script" uid="uid://ctxqogtpfe20s" path="res://scripts/attack_5.gd" id="86_sjqv0"]
-[ext_resource type="Script" uid="uid://bmwey0n56vxuy" path="res://scripts/transform.gd" id="87_t6nu6"]
+[ext_resource type="Script" uid="uid://r36mf41qa1so" path="res://Scripts/attack_3.gd" id="58_40ovl"]
+[ext_resource type="PackedScene" uid="uid://die02galv5dwi" path="res://Scenes/scythe_attack.tscn" id="58_55cin"]
+[ext_resource type="PackedScene" uid="uid://dblplccxgvapa" path="res://Scenes/ink_raven.tscn" id="59_kf8of"]
+[ext_resource type="Script" uid="uid://bmwnxhbs58fld" path="res://Scripts/attack_4.gd" id="61_55cin"]
+[ext_resource type="AudioStream" uid="uid://d10fos3thckw3" path="res://sounds/Death/Scythe Fall/Uderzenie kosą o ziemie1.wav" id="69_22dwe"]
+[ext_resource type="AudioStream" uid="uid://dtmr7jok2hpvg" path="res://sounds/Death/Scythe Fall/Uderzenie kosą o ziemie2.wav" id="70_0fgja"]
+[ext_resource type="Script" uid="uid://dvytk1ff8jc8o" path="res://Scripts/raven.gd" id="86_bqxi1"]
+[ext_resource type="Script" uid="uid://ctxqogtpfe20s" path="res://Scripts/attack_5.gd" id="86_sjqv0"]
+[ext_resource type="Script" uid="uid://bmwey0n56vxuy" path="res://Scripts/transform.gd" id="87_t6nu6"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mq0yj"]
 load_path = "res://.godot/imported/Death_Strike_F1.png-955bf26474e927b6384585dffacec0f5.ctex"
@@ -892,6 +894,11 @@ radius = 67.3647
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8wr1"]
 size = Vector2(714, 546)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_h261g"]
+streams_count = 2
+stream_0/stream = ExtResource("69_22dwe")
+stream_1/stream = ExtResource("70_0fgja")
+
 [node name="Death" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 8
 collision_mask = 0
@@ -980,6 +987,11 @@ script = ExtResource("86_bqxi1")
 
 [node name="Transform" type="Node2D" parent="StateMachine"]
 script = ExtResource("87_t6nu6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Scythe" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_h261g")
 
 [connection signal="body_entered" from="DeathCollision" to="DeathCollision" method="_on_body_entered"]
 [connection signal="body_exited" from="DeathCollision" to="DeathCollision" method="_on_body_exited"]

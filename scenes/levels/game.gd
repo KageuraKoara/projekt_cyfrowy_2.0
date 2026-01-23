@@ -12,7 +12,7 @@ var keys_posY = [500, 460, 420, 380, 340, 300, 260, 220, 180, 140, 100, 60]
 
 func _ready():
 	$Conductor.play_with_beat_offset(0)
-
+	$Start.play()
 func _on_Conductor_beat(position):
 	song_position_in_beats = position
 	$CanvasLayer/CompositionProgress.value = song_position_in_beats
