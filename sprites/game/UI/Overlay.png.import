@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r4fo3q84o2qk"
-path="res://.godot/imported/hourglassBottom.png-5c2c383b050c22f097eab6b1e8215bee.ctex"
+uid="uid://bfxg0ueqqibc6"
+path="res://.godot/imported/Overlay.png-5d6955174ff92b67a5043e8156c3c44e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/game/UI/hourglassBottom.png"
-dest_files=["res://.godot/imported/hourglassBottom.png-5c2c383b050c22f097eab6b1e8215bee.ctex"]
+source_file="res://sprites/game/UI/Overlay.png"
+dest_files=["res://.godot/imported/Overlay.png-5d6955174ff92b67a5043e8156c3c44e.ctex"]
 
 [params]
 
-compress/mode=4
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

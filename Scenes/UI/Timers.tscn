@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddrwu4difa8nn"]
+
+[ext_resource type="Texture2D" uid="uid://blfsmigiwwps7" path="res://sprites/game/UI/Cooldown/Back.png" id="1_o34f6"]
+[ext_resource type="Texture2D" uid="uid://buukvamqimb6r" path="res://sprites/game/UI/Cooldown/DFA FRONT.png" id="2_jn8f7"]
+[ext_resource type="Texture2D" uid="uid://csvsaqsa8l2wf" path="res://sprites/game/UI/Cooldown/Fill.png" id="3_c0xy0"]
+
+[node name="Cooldown" type="TextureProgressBar"]
+anchors_preset = -1
+anchor_right = 1.03125
+anchor_bottom = 1.0
+max_value = 180.0
+value = 20.0
+fill_mode = 3
+texture_under = ExtResource("1_o34f6")
+texture_over = ExtResource("2_jn8f7")
+texture_progress = ExtResource("3_c0xy0")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

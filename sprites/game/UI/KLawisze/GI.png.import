@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw6jtdtax6mef"
-path="res://.godot/imported/hourglassTop.png-5ba67c0c5d61af60566027542a27a7bf.ctex"
+uid="uid://jksvc552g3vu"
+path="res://.godot/imported/GI.png-1ef84d9ed73ff727e71494e01275aec4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/game/UI/hourglassTop.png"
-dest_files=["res://.godot/imported/hourglassTop.png-5ba67c0c5d61af60566027542a27a7bf.ctex"]
+source_file="res://sprites/game/UI/KLawisze/GI.png"
+dest_files=["res://.godot/imported/GI.png-1ef84d9ed73ff727e71494e01275aec4.ctex"]
 
 [params]
 
-compress/mode=4
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
