@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bbh5eaj0abqxf"
+path="res://.godot/imported/Zarzucenie materiału.wav-ebfbc06bbebe1c46f7d126311278d7ef.sample"
+
+[deps]
+
+source_file="res://sounds/Death/Ink Ravens/Zarzucenie materiału.wav"
+dest_files=["res://.godot/imported/Zarzucenie materiału.wav-ebfbc06bbebe1c46f7d126311278d7ef.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

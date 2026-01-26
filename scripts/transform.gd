@@ -1,5 +1,5 @@
 extends State
-
+var audio = preload("res://sounds/Death/Raven/Magical girl transformation.wav")
 var transformed := false
 
 func enter():
@@ -11,6 +11,8 @@ func exit():
 
 func death_transform():
 	animation_player.play("transform")
+	$"../../AudioStreamPlayer".stream = audio
+	$"../../AudioStreamPlayer".play()
 	await animation_player.animation_finished
 	transformed = true
 

@@ -1,12 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://cg08eg5ai8ia8"]
+[gd_scene load_steps=13 format=3 uid="uid://cg08eg5ai8ia8"]
 
-[ext_resource type="Script" uid="uid://cwdmdakr51mcf" path="res://scripts/main_menu.gd" id="1_n00j1"]
-[ext_resource type="PackedScene" uid="uid://b30l3wy1vsiix" path="res://scenes/UI/Settings.tscn" id="2_7vad4"]
+[ext_resource type="Script" uid="uid://cwdmdakr51mcf" path="res://Scripts/main_menu.gd" id="1_n00j1"]
+[ext_resource type="PackedScene" uid="uid://b30l3wy1vsiix" path="res://Scenes/UI/Settings.tscn" id="2_7vad4"]
 [ext_resource type="Texture2D" uid="uid://bwjlt80s0qbmr" path="res://sprites/game/UI/Menu BG.png" id="2_bildh"]
-[ext_resource type="PackedScene" uid="uid://ean2b0d38pv7" path="res://scenes/UI/Level_menu.tscn" id="3_66axm"]
+[ext_resource type="PackedScene" uid="uid://ean2b0d38pv7" path="res://Scenes/UI/Level_menu.tscn" id="3_66axm"]
 [ext_resource type="Texture2D" uid="uid://ij0emvfgkm" path="res://sprites/game/UI/Menu ilu.png" id="3_q5fvd"]
 [ext_resource type="Texture2D" uid="uid://4j6mgyx35l6d" path="res://sprites/game/UI/key.png" id="4_17otf"]
 [ext_resource type="FontFile" uid="uid://c2fmqyfklpeoq" path="res://sprites/Fonts/High Empathy.ttf" id="4_q5fvd"]
+[ext_resource type="AudioStream" uid="uid://bwvcddh7koxfe" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX1.wav" id="8_vwwf1"]
+[ext_resource type="AudioStream" uid="uid://bikvs00uye3lr" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX2.wav" id="9_61u10"]
+[ext_resource type="AudioStream" uid="uid://baki7vn5tlicm" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX3.wav" id="10_310en"]
+[ext_resource type="AudioStream" uid="uid://ceh7liqathpxb" path="res://sounds/UI & Main Menu/Ambient.wav" id="11_61u10"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2qd55"]
+streams_count = 3
+stream_0/stream = ExtResource("8_vwwf1")
+stream_1/stream = ExtResource("9_61u10")
+stream_2/stream = ExtResource("10_310en")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -143,6 +153,15 @@ offset_left = 518.88
 offset_top = -121.176
 offset_right = 518.88
 offset_bottom = -121.176
+
+[node name="ButtonsSfx" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_2qd55")
+bus = &"Sfx"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_61u10")
+autoplay = true
+bus = &"Music"
 
 [connection signal="mouse_entered" from="Music_sheet/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="mouse_exited" from="Music_sheet/Play" to="." method="_on_play_mouse_exited"]

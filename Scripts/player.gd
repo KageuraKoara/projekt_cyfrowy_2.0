@@ -11,6 +11,9 @@ extends CharacterBody2D
 @export var JUMP_FORCE := -400.0
 @export var SUPER_JUMP_FORCE := -600.0
 
+var Pre_jump = preload("res://sounds/Compositor/Attacks/Combo/Jump.ogg")
+var Pre_dash = preload("res://sounds/Compositor/Attacks/Combo/Dash.ogg")
+
 var left_input := "movement_A"
 var jump_input := "movement_Space"
 var right_input := "movement_D"
@@ -78,15 +81,19 @@ func set_state(new_state: PlayerState):
 			play_anim("Idle")
 		PlayerState.WALK:
 			play_anim("Walking")
+			$Walking.play()
 		PlayerState.JUMP:
 			play_anim("Jumping")
+			$JumpSFX.play()
 		PlayerState.FALL:
 			play_anim("Falling")
+			$JumpSFX.stop()
+			$Fall.play()
 		PlayerState.ATTACK:
 			play_anim("Attack_" + str(randi_range(1, 2)))
 		PlayerState.DAMAGE:
 			play_anim("Damage_" + str(randi_range(1, 2)))
-
+			$Damage.play()
 func play_anim(anim_name: String):
 	if animation_player.current_animation != anim_name:
 		animation_player.play(anim_name)
@@ -123,6 +130,10 @@ func _on_knockback(push: float):
 
 func StartDashTimer():
 	$DashTimer.start()
-
+	$Jingle.play()
+	$Combo.stream = Pre_jump
+	$Combo.play()
 func StartSJumpTimer():
 	$SuperJumpTimer.start()
+	$Combo.stream = Pre_dash
+	$Jingle.play()

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dtmr7jok2hpvg"
+path="res://.godot/imported/Uderzenie kosą o ziemie2.wav-0ca620e0a5d49e09cd15d78279c4c23b.sample"
+
+[deps]
+
+source_file="res://sounds/Death/Scythe Fall/Uderzenie kosą o ziemie2.wav"
+dest_files=["res://.godot/imported/Uderzenie kosą o ziemie2.wav-0ca620e0a5d49e09cd15d78279c4c23b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

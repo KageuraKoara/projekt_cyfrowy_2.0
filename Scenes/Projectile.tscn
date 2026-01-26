@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://oimoygjbyut5"]
 
-[ext_resource type="Script" uid="uid://e8oy2o4klttq" path="res://scripts/projectile.gd" id="1_k1cl8"]
+[ext_resource type="Script" uid="uid://e8oy2o4klttq" path="res://Scripts/projectile.gd" id="1_k1cl8"]
 [ext_resource type="SpriteFrames" uid="uid://cewt006eixqkt" path="res://sprites/game/notes/note_frames.tres" id="2_vihyi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vihyi"]

@@ -1,5 +1,5 @@
 extends State
-
+var audio = preload("res://sounds/Death/Raven/Szarża.wav")
 var has_charged := false
 
 func enter():
@@ -13,6 +13,8 @@ func exit():
 
 func attack(move = "5"):
 	var t = create_tween()
+	$"../../AudioStreamPlayer".stream = audio
+	$"../../AudioStreamPlayer".play()
 	animation_player.play("attack_" + move)
 	t.tween_property(owner, "global_position:x", global_position.x - 300, 0.5)
 	await animation_player.animation_finished

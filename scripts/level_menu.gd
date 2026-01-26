@@ -7,8 +7,8 @@ func _on_tutorial_pressed() -> void:
 	# get_tree().change_scene_to_file("res://scenes/levels/tutorial.tscn")
 
 func _on_level_1_pressed() -> void:
+	$"../ButtonsSfx".play()
 	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
-
 
 func _on_level_1_mouse_entered() -> void:
 	key_lvl.visible = true

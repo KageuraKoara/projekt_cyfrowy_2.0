@@ -85,6 +85,11 @@ text = "jump: Space / W   "
 layout_mode = 2
 text = "right: P / D"
 
+[node name="esc" type="Label" parent="contents/settings"]
+layout_mode = 2
+text = "Press ESC to hide settings"
+horizontal_alignment = 1
+
 [connection signal="toggled" from="contents/settings/left" to="." method="_on_left_toggled"]
 [connection signal="toggled" from="contents/settings/jump" to="." method="_on_jump_toggled"]
 [connection signal="toggled" from="contents/settings/right" to="." method="_on_right_toggled"]

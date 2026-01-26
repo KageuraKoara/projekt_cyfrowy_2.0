@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://drhpixdqhw283"
+path="res://.godot/imported/Przywołanie kruka.wav-2b29e75c211118f61a9dbd309322dc07.sample"
+
+[deps]
+
+source_file="res://sounds/Death/Ink Ravens/Przywołanie kruka.wav"
+dest_files=["res://.godot/imported/Przywołanie kruka.wav-2b29e75c211118f61a9dbd309322dc07.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

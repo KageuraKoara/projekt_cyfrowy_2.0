@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0xqff0dpg01f"]
+[gd_scene load_steps=8 format=3 uid="uid://d0xqff0dpg01f"]
 
 [ext_resource type="Script" uid="uid://d2hmfbbbjtq31" path="res://Scripts/pause_menu.gd" id="1_w5fml"]
 [ext_resource type="Texture2D" uid="uid://ij0emvfgkm" path="res://sprites/game/UI/Menu ilu.png" id="2_hcn70"]
 [ext_resource type="FontFile" uid="uid://c2fmqyfklpeoq" path="res://sprites/Fonts/High Empathy.ttf" id="3_fny3v"]
+[ext_resource type="AudioStream" uid="uid://bwvcddh7koxfe" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX1.wav" id="4_fjwti"]
+[ext_resource type="AudioStream" uid="uid://bikvs00uye3lr" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX2.wav" id="5_fn5q5"]
+[ext_resource type="AudioStream" uid="uid://baki7vn5tlicm" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX3.wav" id="6_et4ke"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jdpbe"]
+streams_count = 3
+stream_0/stream = ExtResource("4_fjwti")
+stream_1/stream = ExtResource("5_fn5q5")
+stream_2/stream = ExtResource("6_et4ke")
 
 [node name="Pause" type="Control"]
 process_mode = 3
@@ -102,6 +111,10 @@ theme_override_fonts/font = ExtResource("3_fny3v")
 theme_override_font_sizes/font_size = 75
 text = "Exit"
 flat = true
+
+[node name="ButtonsSfx" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_jdpbe")
+bus = &"Sfx"
 
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
