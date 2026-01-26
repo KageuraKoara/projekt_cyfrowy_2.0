@@ -2,7 +2,8 @@ extends AnimatedSprite2D
 
 @onready var Main = get_tree().get_root().get_node("Level1")
 @onready var chord_manager = $"../../ChordManager"
-
+const Interval = preload("res://sounds/Compositor/Attacks/Interwał.wav")
+const Acord = preload("res://sounds/Compositor/Attacks/Akord.wav")
 @export var stave_line : AnimatedSprite2D
 @export var input := ""
 @export var id : int
@@ -40,11 +41,16 @@ func _on_type_check_timeout() -> void:
 	for attack in attacks:
 		if attack.type != "chord":
 			if attack.type != "interval" and not intv_found:
+				$Combos.stream = Interval
+				$Combos.play()
 				attack_data = attack
 			else:
+				$Combos2.stream = Acord
+				$Combos2.play()
 				attack_data = attack
 				intv_found = true
 		else: 
+			
 			attack_data = attack
 			break
 	

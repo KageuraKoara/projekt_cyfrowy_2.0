@@ -271,3 +271,5 @@ bus = &"Sfx"
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="death_hit" from="Death" to="." method="_on_death_hit"]
 [connection signal="your_time_ran_out" from="CanvasLayer/Hourglass" to="." method="_on_hourglass_your_time_ran_out"]
+
+[editable path="Death"]
