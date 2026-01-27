@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djlxta2k3h36d"
-path="res://.godot/imported/Czarne.png-69cf87a7a3d05e900a82e9b6585d5f86.ctex"
+path="res://.godot/imported/BlackKeys.png-7e59fb463efe26938625ef8ecca06124.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/game/UI/KLawisze/Czarne.png"
-dest_files=["res://.godot/imported/Czarne.png-69cf87a7a3d05e900a82e9b6585d5f86.ctex"]
+source_file="res://sprites/game/UI/KLawisze/BlackKeys.png"
+dest_files=["res://.godot/imported/BlackKeys.png-7e59fb463efe26938625ef8ecca06124.ctex"]
 
 [params]
 

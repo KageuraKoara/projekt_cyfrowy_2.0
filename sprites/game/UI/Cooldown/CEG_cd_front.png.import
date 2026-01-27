@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkgufcyfi58gg"
-path="res://.godot/imported/gold_note.png-cd509c9a347fad010422dc72d6e9aeef.ctex"
+uid="uid://bsnyhtu84spdu"
+path="res://.godot/imported/CEG_cd_front.png-852356ec854373dc03452d7d3a5063ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/game/notes/gold_note.png"
-dest_files=["res://.godot/imported/gold_note.png-cd509c9a347fad010422dc72d6e9aeef.ctex"]
+source_file="res://sprites/game/UI/Cooldown/CEG_cd_front.png"
+dest_files=["res://.godot/imported/CEG_cd_front.png-852356ec854373dc03452d7d3a5063ad.ctex"]
 
 [params]
 
-compress/mode=4
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

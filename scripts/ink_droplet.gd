@@ -27,6 +27,8 @@ func _on_despawn_timeout() -> void:
 	despawn()
 
 func despawn():
+	$CollisionShape2D.disabled = true
+	$DetectionArea/CollisionShape2D.disabled = true
 	$Particles.splash()
 	$InkDrop.visible = false
 	await get_tree().create_timer(1).timeout

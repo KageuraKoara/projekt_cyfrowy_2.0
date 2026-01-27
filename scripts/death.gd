@@ -8,11 +8,11 @@ extends CharacterBody2D
 @onready var attackCD_timer = $AttackCooldownTimer
 
 @export var min_attackCD := 2
-@export var max_attackCD := 6
+@export var max_attackCD := 5
 
 var direction : Vector2
 var player_in_range := false
-var default_position := Vector2(1200, 440)
+var default_position := Vector2(1200, 417)
 
 signal death_hit(note: String, HP: float)
 
@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 		animated_sprite.flip_h = false
 
 func _physics_process(delta: float) -> void:
-	velocity = direction.normalized() * 80
+	velocity = direction.normalized() * 800
 	move_and_collide(velocity * delta)
 
 func _on_owie(note: float, HP: float) -> void:
@@ -64,5 +64,5 @@ func spawn_ink_rain():
 	if not $SpecialAttackDurationTimer.is_stopped():
 		var ink_droplet = ink_droplet_node.instantiate()
 		pr_layer.add_child(ink_droplet)
-		await get_tree().create_timer(randf_range(0.5, 1.5)).timeout
+		await get_tree().create_timer(randf_range(0.05, 0.5)).timeout
 		spawn_ink_rain()

@@ -1,8 +1,11 @@
-[gd_scene load_steps=87 format=3 uid="uid://b0vf6neoqgkk4"]
+[gd_scene load_steps=90 format=3 uid="uid://b0vf6neoqgkk4"]
 
-[ext_resource type="Script" uid="uid://c36emfipxdkff" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://c36emfipxdkff" path="res://scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://dyh8nucqkckc8" path="res://sprites/game/player/dash_glow.png" id="2_8f1cb"]
 [ext_resource type="Texture2D" uid="uid://dunkln65hv8co" path="res://sprites/game/player/Player_Attack_1/Player_Attack_1_F0.png" id="2_mx1m4"]
 [ext_resource type="Texture2D" uid="uid://d12wwuryuhu0h" path="res://sprites/game/player/Player_Attack_1/Player_Attack_1_F1.png" id="3_4gjji"]
+[ext_resource type="Texture2D" uid="uid://dultlmugffr0n" path="res://sprites/game/player/jump_glow.png" id="3_vau08"]
+[ext_resource type="Texture2D" uid="uid://dtqch83i4tpqd" path="res://sprites/game/player/boost_glow.png" id="4_qsb7e"]
 [ext_resource type="Texture2D" uid="uid://dqy3kbim418cs" path="res://sprites/game/player/Player_Attack_1/Player_Attack_1_F2.png" id="4_u2ulf"]
 [ext_resource type="Texture2D" uid="uid://l72js0obt6l" path="res://sprites/game/player/Player_Attack_1/Player_Attack_1_F3.png" id="5_6e8lb"]
 [ext_resource type="Texture2D" uid="uid://jbxethishiqr" path="res://sprites/game/player/Player_Attack_1/Player_Attack_1_F4.png" id="6_2gdjj"]
@@ -639,6 +642,27 @@ collision_layer = 2
 collision_mask = 31
 script = ExtResource("1_cvnsp")
 
+[node name="DashGlow" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.5)
+position = Vector2(8, -86)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_8f1cb")
+
+[node name="SuperJumpGlow" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.5)
+position = Vector2(8, -86)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("3_vau08")
+
+[node name="NoteBoostGlow" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.5)
+position = Vector2(8, -86)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("4_qsb7e")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4, -86)
 scale = Vector2(0.45, 0.45)
@@ -657,11 +681,11 @@ position = Vector2(-2, -7.5)
 shape = SubResource("RectangleShape2D_vgqql")
 
 [node name="DashTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 5.0
 one_shot = true
 
 [node name="SuperJumpTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 5.0
 one_shot = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -682,14 +706,22 @@ stream = SubResource("AudioStreamRandomizer_nuaet")
 bus = &"Sfx"
 
 [node name="Combo" type="AudioStreamPlayer" parent="."]
+bus = &"Sfx"
 
 [node name="Jingle" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("67_qvbpb")
+volume_db = -15.0
+bus = &"Sfx"
 
 [node name="Fall" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("68_sscpr")
+volume_db = -10.0
+bus = &"Sfx"
 
 [node name="Damage" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("69_sscpr")
+bus = &"Sfx"
 
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timeout"]
+[connection signal="timeout" from="SuperJumpTimer" to="." method="_on_sjump_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_collision_entered"]

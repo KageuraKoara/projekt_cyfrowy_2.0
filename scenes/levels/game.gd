@@ -50,4 +50,5 @@ func _on_hourglass_your_time_ran_out() -> void:
 	$Player.death()
 
 func you_win():
+	print("you SHOULD win")
 	get_tree().change_scene_to_file("res://Scenes/UI/Won.tscn")

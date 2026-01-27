@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dblplccxgvapa"]
+[gd_scene load_steps=19 format=3 uid="uid://dblplccxgvapa"]
 
 [ext_resource type="Script" uid="uid://b13t31fgpidnm" path="res://scripts/ink_raven.gd" id="1_81c28"]
 [ext_resource type="Texture2D" uid="uid://basf13jerwq2o" path="res://sprites/game/death/Ink_Raven/InkRaven_F0.png" id="2_8b28d"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c28vne686dnde" path="res://sprites/game/death/Ink_Raven/Death/IR_Dying_F5.png" id="7_cahjg"]
 [ext_resource type="Texture2D" uid="uid://d24h1i2vhakeq" path="res://sprites/game/death/Ink_Raven/Death/IR_Dying_F6.png" id="8_e7xes"]
 [ext_resource type="Texture2D" uid="uid://b8j3ay7hwacqe" path="res://sprites/game/death/Ink_Raven/Death/IR_Dying_F7.png" id="9_fbue3"]
+[ext_resource type="Texture2D" uid="uid://7exrqklcdote" path="res://sprites/game/notes/notes/single/single1.png" id="15_rvxxb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x0ric"]
 animations = [{
@@ -80,10 +81,9 @@ script = ExtResource("1_81c28")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x0ric")
-animation = &"dying"
+animation = &"idle"
 autoplay = "idle"
-frame = 7
-frame_progress = 1.0
+frame_progress = 0.13771
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_c8gtk")
@@ -98,6 +98,12 @@ shape = SubResource("CircleShape2D_81c28")
 [node name="DespawnTimer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
+
+[node name="Single1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(48, 12)
+scale = Vector2(0.238318, 0.238318)
+texture = ExtResource("15_rvxxb")
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_entered"]
 [connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timeout"]

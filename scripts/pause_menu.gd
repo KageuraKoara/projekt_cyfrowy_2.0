@@ -26,8 +26,8 @@ func _on_resume_pressed() -> void:
 
 func _on_restart_pressed() -> void:
 	if name == "Pause":
+		resume()
 		get_tree().reload_current_scene()
-		$ButtonsSfx.play()
 	else:
 		get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
 

@@ -10,7 +10,7 @@ func enter():
 
 func transition():
 	'if Main.song_position_in_beats == 7:
-		get_parent().change_state("Attack_4")'
+		get_parent().change_state("Transform")' # STATE DEBUG LINE
 	if Main.song_position_in_beats == 24 and not it_wimdy:
 		spawn_wind()
 	if Main.song_position_in_beats == 52:
@@ -50,6 +50,8 @@ func transition():
 		get_parent().change_state("Transform")
 	if Main.song_position_in_beats == 310 and not it_wimdy:
 		spawn_wind()
+	if Main.song_position_in_beats >= 10: # 360
+		Main.you_win()
 	
 	# minor attacks
 	if $"../..".player_in_range:

@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5tysofssnrtu"]
+
+[ext_resource type="Texture2D" uid="uid://dxcxajo4lgure" path="res://sprites/game/UI/Cooldown/cd_back.png" id="1_bitp2"]
+[ext_resource type="Texture2D" uid="uid://bsnyhtu84spdu" path="res://sprites/game/UI/Cooldown/CEG_cd_front.png" id="2_y1t4o"]
+[ext_resource type="Texture2D" uid="uid://c57gb8eryypgh" path="res://sprites/game/UI/Cooldown/cd_fill.png" id="3_ddrdl"]
+[ext_resource type="Script" uid="uid://i37rllhonbf3" path="res://scripts/cd_indicator.gd" id="4_y1t4o"]
+
+[node name="cd_indicator" type="TextureProgressBar"]
+offset_right = 358.0
+offset_bottom = 376.0
+scale = Vector2(0.33, 0.33)
+max_value = 10.0
+fill_mode = 3
+texture_under = ExtResource("1_bitp2")
+texture_over = ExtResource("2_y1t4o")
+texture_progress = ExtResource("3_ddrdl")
+texture_progress_offset = Vector2(0, 65)
+script = ExtResource("4_y1t4o")

@@ -2,9 +2,10 @@ extends AnimatedSprite2D
 
 @onready var Main = get_tree().get_root().get_node("Level1")
 @onready var chord_manager = $"../../ChordManager"
-const Interval = preload("res://sounds/Compositor/Attacks/Interwał.wav")
-const Acord = preload("res://sounds/Compositor/Attacks/Akord.wav")
+# const Interval = preload("res://sounds/Compositor/Attacks/Interwał.wav")
+# const Acord = preload("res://sounds/Compositor/Attacks/Akord.wav")
 @export var stave_line : AnimatedSprite2D
+@export var keyboard_key : TextureRect
 @export var input := ""
 @export var id : int
 @export var comboTime := 0.15
@@ -24,6 +25,9 @@ func get_played_idiot():
 	$NoteSound.play()
 	$ComboTimer.start()
 	$SpamTimer.start()
+	keyboard_key.set_deferred("self_modulate", Color(0.862, 0.692, 0.252))
+	await get_tree().create_timer(0.15).timeout
+	keyboard_key.set_deferred("self_modulate", Color(1, 1, 1))
 	spam_mult -= 0.2 if spam_mult >= 0.2 else 0.0
 	if not stave_line.locked:
 		stave_line.resolve(1 * spam_mult)
@@ -41,12 +45,12 @@ func _on_type_check_timeout() -> void:
 	for attack in attacks:
 		if attack.type != "chord":
 			if attack.type != "interval" and not intv_found:
-				$Combos.stream = Interval
-				$Combos.play()
+				'$Combos.stream = Interval
+				$Combos.play()'
 				attack_data = attack
 			else:
-				$Combos2.stream = Acord
-				$Combos2.play()
+				'$Combos2.stream = Acord
+				$Combos2.play()'
 				attack_data = attack
 				intv_found = true
 		else: 
@@ -54,7 +58,8 @@ func _on_type_check_timeout() -> void:
 			attack_data = attack
 			break
 	
-	Main.spawn_note(id, attack_data)
+	if spam_mult > 0.1:
+		Main.spawn_note(id, attack_data)
 	get_played_idiot()
 	times_spawned = 0
 	attacks.clear()

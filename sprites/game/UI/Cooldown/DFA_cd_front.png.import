@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2dnpfv16ewkk"
-path="res://.godot/imported/over_hg.png-e2fca14aef3afe6bec6094eebda37049.ctex"
+uid="uid://b35y1q021t5d"
+path="res://.godot/imported/DFA_cd_front.png-e69a46d3fb3e4c4ff19167fefd80e6e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/game/notes/over_hg.png"
-dest_files=["res://.godot/imported/over_hg.png-e2fca14aef3afe6bec6094eebda37049.ctex"]
+source_file="res://sprites/game/UI/Cooldown/DFA_cd_front.png"
+dest_files=["res://.godot/imported/DFA_cd_front.png-e69a46d3fb3e4c4ff19167fefd80e6e0.ctex"]
 
 [params]
 

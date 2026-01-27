@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crnstadorfdme"
-path="res://.godot/imported/under_hg.png-61785218eb4e42ea35696a3c3d2d1442.ctex"
+uid="uid://dxcxajo4lgure"
+path="res://.godot/imported/cd_back.png-3a7f3ca9ce0c9b3856754bf5cbc08e3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/game/notes/under_hg.png"
-dest_files=["res://.godot/imported/under_hg.png-61785218eb4e42ea35696a3c3d2d1442.ctex"]
+source_file="res://sprites/game/UI/Cooldown/cd_back.png"
+dest_files=["res://.godot/imported/cd_back.png-3a7f3ca9ce0c9b3856754bf5cbc08e3c.ctex"]
 
 [params]
 

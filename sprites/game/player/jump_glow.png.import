@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do0s0ddpt8ktq"
-path="res://.godot/imported/blue_note.png-12ba615304383f26fbb371701ecc6313.ctex"
+uid="uid://dultlmugffr0n"
+path="res://.godot/imported/jump_glow.png-b3e50e48f4df0b8060516baa35fe83bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/game/notes/blue_note.png"
-dest_files=["res://.godot/imported/blue_note.png-12ba615304383f26fbb371701ecc6313.ctex"]
+source_file="res://sprites/game/player/jump_glow.png"
+dest_files=["res://.godot/imported/jump_glow.png-b3e50e48f4df0b8060516baa35fe83bf.ctex"]
 
 [params]
 
-compress/mode=4
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
