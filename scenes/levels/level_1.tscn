@@ -299,11 +299,6 @@ offset_right = 3147.0
 offset_bottom = 4167.0
 
 [node name="Keyboard" parent="CanvasLayer" instance=ExtResource("28_x7jkp")]
-offset_left = 384.0
-offset_top = 430.0
-offset_right = 384.0
-offset_bottom = 430.0
-scale = Vector2(0.6, 0.6)
 
 [node name="CEG_cd_indicator" parent="CanvasLayer" instance=ExtResource("28_0qwwm")]
 anchors_preset = 1
@@ -348,9 +343,15 @@ visible = false
 [node name="Start" type="AudioStreamPlayer" parent="."]
 bus = &"Sfx"
 
+[node name="WinTimer" type="Timer" parent="."]
+wait_time = 178.0
+one_shot = true
+autostart = true
+
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="death_hit" from="Death" to="." method="_on_death_hit"]
 [connection signal="your_time_ran_out" from="CanvasLayer/Hourglass" to="." method="_on_hourglass_your_time_ran_out"]
+[connection signal="timeout" from="WinTimer" to="." method="_on_win_timeout"]
 
 [editable path="Death"]
 [editable path="CanvasLayer/CompositionProgress"]

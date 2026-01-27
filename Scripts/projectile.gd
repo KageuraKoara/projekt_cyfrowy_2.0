@@ -1,8 +1,6 @@
 extends CharacterBody2D
 
-@onready var Main = get_tree().get_root().get_node("Level1")
-@onready var Raven = get_tree().get_root().get_node("Level1/Death/Raven")
-@onready var Raven_death = get_tree().get_root().get_node("Level1/Death/Death_raven")
+@onready var Main = get_tree().current_scene # get_tree().get_root().get_node("Level1")
 @export var speed := 100
 @export var Direction : float
 

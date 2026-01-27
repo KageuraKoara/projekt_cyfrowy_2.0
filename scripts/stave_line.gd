@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-@onready var Main = get_tree().get_root().get_node("Level1")
+@onready var Main = get_tree().current_scene # get_tree().get_root().get_node("Level1")
 @onready var active_timer = $ActiveTimer 
 
 @export var note : AnimatedSprite2D

@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://biglfq8u88a6d"]
+[gd_scene load_steps=10 format=3 uid="uid://biglfq8u88a6d"]
 
-[ext_resource type="Texture2D" uid="uid://cv50fqmyw87vd" path="res://sprites/game/UI/KLawisze/CR.png" id="1_3kf1j"]
-[ext_resource type="Texture2D" uid="uid://wd47ed0two64" path="res://sprites/game/UI/KLawisze/DT.png" id="2_to247"]
-[ext_resource type="Texture2D" uid="uid://bw12qp8gas25o" path="res://sprites/game/UI/KLawisze/EY.png" id="3_vd8mm"]
-[ext_resource type="Texture2D" uid="uid://ijn1rv6mp3wu" path="res://sprites/game/UI/KLawisze/FU.png" id="4_c3j1x"]
-[ext_resource type="Texture2D" uid="uid://jksvc552g3vu" path="res://sprites/game/UI/KLawisze/GI.png" id="5_87w7n"]
-[ext_resource type="Texture2D" uid="uid://b5apxte4hwsfk" path="res://sprites/game/UI/KLawisze/AO.png" id="6_jxi7c"]
-[ext_resource type="Texture2D" uid="uid://b0i08yakumdqa" path="res://sprites/game/UI/KLawisze/HP.png" id="7_i28vl"]
-[ext_resource type="Texture2D" uid="uid://djlxta2k3h36d" path="res://sprites/game/UI/KLawisze/BlackKeys.png" id="8_lfrqj"]
+[ext_resource type="Texture2D" uid="uid://b1eq34l6kxv76" path="res://sprites/game/UI/KLawisze/bg_piano.png" id="1_to247"]
+[ext_resource type="Texture2D" uid="uid://cigxypla2kcvb" path="res://sprites/game/UI/KLawisze/Ce.png" id="2_vd8mm"]
+[ext_resource type="Texture2D" uid="uid://vae6ssosbn38" path="res://sprites/game/UI/KLawisze/Dr.png" id="3_c3j1x"]
+[ext_resource type="Texture2D" uid="uid://chrgrpk2pp7l2" path="res://sprites/game/UI/KLawisze/Et.png" id="4_87w7n"]
+[ext_resource type="Texture2D" uid="uid://dgydbvsi1d1x8" path="res://sprites/game/UI/KLawisze/Fy.png" id="5_jxi7c"]
+[ext_resource type="Texture2D" uid="uid://wdoc1yfu4krc" path="res://sprites/game/UI/KLawisze/Gu.png" id="6_i28vl"]
+[ext_resource type="Texture2D" uid="uid://dpuimu6con65m" path="res://sprites/game/UI/KLawisze/Ai.png" id="7_lfrqj"]
+[ext_resource type="Texture2D" uid="uid://b4o5shblhnu4e" path="res://sprites/game/UI/KLawisze/Bo.png" id="8_xaha7"]
+[ext_resource type="Texture2D" uid="uid://5kjd1q7vai23" path="res://sprites/game/UI/KLawisze/black_keys.png" id="9_k7wjo"]
 
 [node name="Keyboard" type="Control"]
 layout_mode = 3
@@ -16,6 +17,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -1080.0
+offset_right = 960.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_to247")
 
 [node name="KeyC" type="TextureRect" parent="."]
 layout_mode = 1
@@ -29,7 +44,7 @@ offset_top = -1080.0
 offset_right = 960.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("1_3kf1j")
+texture = ExtResource("2_vd8mm")
 
 [node name="KeyD" type="TextureRect" parent="."]
 layout_mode = 1
@@ -43,7 +58,7 @@ offset_top = -1080.0
 offset_right = 960.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("2_to247")
+texture = ExtResource("3_c3j1x")
 
 [node name="KeyE" type="TextureRect" parent="."]
 layout_mode = 1
@@ -57,7 +72,7 @@ offset_top = -1080.0
 offset_right = 960.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("3_vd8mm")
+texture = ExtResource("4_87w7n")
 
 [node name="KeyF" type="TextureRect" parent="."]
 layout_mode = 1
@@ -71,7 +86,7 @@ offset_top = -1080.0
 offset_right = 960.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("4_c3j1x")
+texture = ExtResource("5_jxi7c")
 
 [node name="KeyG" type="TextureRect" parent="."]
 layout_mode = 1
@@ -85,7 +100,7 @@ offset_top = -1080.0
 offset_right = 960.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("5_87w7n")
+texture = ExtResource("6_i28vl")
 
 [node name="KeyA" type="TextureRect" parent="."]
 layout_mode = 1
@@ -99,7 +114,7 @@ offset_top = -1080.0
 offset_right = 960.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("6_jxi7c")
+texture = ExtResource("7_lfrqj")
 
 [node name="KeyH" type="TextureRect" parent="."]
 layout_mode = 1
@@ -113,7 +128,7 @@ offset_top = -1080.0
 offset_right = 960.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("7_i28vl")
+texture = ExtResource("8_xaha7")
 
 [node name="BlackKeys" type="TextureRect" parent="."]
 layout_mode = 1
@@ -127,4 +142,4 @@ offset_top = -1080.0
 offset_right = 960.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("8_lfrqj")
+texture = ExtResource("9_k7wjo")

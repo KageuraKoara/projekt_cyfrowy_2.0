@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-@onready var Main = get_tree().get_root().get_node("Level1")
+@onready var Main = get_tree().current_scene # get_tree().get_root().get_node("Level1")
 @onready var chord_manager = $"../../ChordManager"
 # const Interval = preload("res://sounds/Compositor/Attacks/Interwał.wav")
 # const Acord = preload("res://sounds/Compositor/Attacks/Akord.wav")

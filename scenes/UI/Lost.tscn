@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://cgl3i6x633nwm"]
 
 [ext_resource type="Script" uid="uid://d2hmfbbbjtq31" path="res://scripts/pause_menu.gd" id="1_rpp7m"]
+[ext_resource type="Texture2D" uid="uid://dj8123a2h7i86" path="res://sprites/game/UI/lost_menu.png" id="2_1qspe"]
 [ext_resource type="FontFile" uid="uid://c2fmqyfklpeoq" path="res://sprites/Fonts/High Empathy.ttf" id="2_dxxwr"]
-[ext_resource type="Texture2D" uid="uid://5v2xddpvffki" path="res://sprites/game/UI/Death.png" id="2_e8o0g"]
 [ext_resource type="Texture2D" uid="uid://m1rgbaddcdns" path="res://sprites/game/UI/Ramka.png" id="3_1qspe"]
 [ext_resource type="AudioStream" uid="uid://bwvcddh7koxfe" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX1.wav" id="3_7r88y"]
 [ext_resource type="Texture2D" uid="uid://bckxqhv4y2npj" path="res://sprites/game/UI/Guzik.png" id="3_piaik"]
@@ -29,10 +29,11 @@ script = ExtResource("1_rpp7m")
 layout_mode = 0
 offset_right = 1919.0
 offset_bottom = 1191.0
-texture = ExtResource("2_e8o0g")
+texture = ExtResource("2_1qspe")
 expand_mode = 1
 
 [node name="Ramka" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 1180.0
 offset_top = 78.0
 offset_right = 1846.0
@@ -46,6 +47,7 @@ offset_left = 231.0
 offset_top = 71.0
 offset_right = 1027.0
 offset_bottom = 211.0
+theme_override_colors/default_color = Color(0.714632, 0.687204, 0.411368, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.436)
 theme_override_constants/shadow_offset_y = 8
 theme_override_constants/shadow_offset_x = 5

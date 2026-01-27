@@ -1,0 +1,355 @@
+[gd_scene load_steps=34 format=3 uid="uid://dunfqhikb7g0f"]
+
+[ext_resource type="Script" uid="uid://cms2v1fli0u3b" path="res://scenes/levels/practice_tool.gd" id="1_g1cqw"]
+[ext_resource type="Texture2D" uid="uid://dggombc7145g" path="res://sprites/game/background/1.png" id="2_0isne"]
+[ext_resource type="Texture2D" uid="uid://cfffprsiboc2p" path="res://sprites/game/background/3.png" id="3_exquy"]
+[ext_resource type="PackedScene" uid="uid://d384mg7fb6l2e" path="res://scenes/chord_manager.tscn" id="4_1npsn"]
+[ext_resource type="PackedScene" uid="uid://dth7isd7m8d0p" path="res://scenes/stave_line.tscn" id="5_3penx"]
+[ext_resource type="PackedScene" uid="uid://c0txe0f57ssv5" path="res://scenes/note.tscn" id="6_yk238"]
+[ext_resource type="AudioStream" uid="uid://cmn5xley5ak03" path="res://sounds/harpsichord/c.wav" id="7_33eco"]
+[ext_resource type="AudioStream" uid="uid://dm0kxdy441gp8" path="res://sounds/harpsichord/d.wav" id="8_rmivb"]
+[ext_resource type="AudioStream" uid="uid://bd1ay2nk80rar" path="res://sounds/harpsichord/e_m.wav" id="9_3mvik"]
+[ext_resource type="AudioStream" uid="uid://cm3j6p2ky2s5m" path="res://sounds/harpsichord/f.wav" id="10_20jev"]
+[ext_resource type="AudioStream" uid="uid://31ikrg5orx4f" path="res://sounds/harpsichord/g.wav" id="11_hldb3"]
+[ext_resource type="AudioStream" uid="uid://bp2ejswd7psgg" path="res://sounds/harpsichord/a.wav" id="12_6qw3e"]
+[ext_resource type="AudioStream" uid="uid://bb08rjssv0vm6" path="res://sounds/harpsichord/b.wav" id="13_ey5x7"]
+[ext_resource type="PackedScene" uid="uid://b0vf6neoqgkk4" path="res://scenes/player.tscn" id="16_b2xqj"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="18_hj3li"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="19_c83yp"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="20_irp8f"]
+[ext_resource type="Texture2D" uid="uid://celbmvvb53orc" path="res://sprites/game/background/2.png" id="21_fva0q"]
+[ext_resource type="Texture2D" uid="uid://dr7twp03ylrva" path="res://sprites/game/background/4.png" id="22_xt07x"]
+[ext_resource type="Texture2D" uid="uid://jc8qdy2hbu6m" path="res://sprites/game/background/5.png" id="23_m82p3"]
+[ext_resource type="PackedScene" uid="uid://cyfh6u5ojtyui" path="res://scenes/UI/composition_progress.tscn" id="24_7t3xq"]
+[ext_resource type="Texture2D" uid="uid://bfxg0ueqqibc6" path="res://sprites/game/UI/Overlay.png" id="25_lhy1t"]
+[ext_resource type="PackedScene" uid="uid://b2d0wuswlxlhm" path="res://scenes/UI/Hourglass.tscn" id="26_kb3kl"]
+[ext_resource type="PackedScene" uid="uid://biglfq8u88a6d" path="res://scenes/UI/keyboard.tscn" id="27_8hk5x"]
+[ext_resource type="PackedScene" uid="uid://b5tysofssnrtu" path="res://scenes/UI/cd_indicator.tscn" id="28_uv3px"]
+[ext_resource type="Texture2D" uid="uid://b35y1q021t5d" path="res://sprites/game/UI/Cooldown/DFA_cd_front.png" id="29_7q2rr"]
+[ext_resource type="Texture2D" uid="uid://b3nwrksmav2he" path="res://sprites/game/UI/Cooldown/EGB_cd_front.png" id="30_5ugba"]
+[ext_resource type="PackedScene" uid="uid://d0xqff0dpg01f" path="res://scenes/UI/Pause.tscn" id="31_u7x2i"]
+[ext_resource type="AudioStream" uid="uid://ceh7liqathpxb" path="res://sounds/UI & Main Menu/Ambient.wav" id="32_0isne"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1cqw"]
+size = Vector2(100.001, 424)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsuda"]
+size = Vector2(2112, 60.3221)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5b24"]
+size = Vector2(20, 391.419)
+
+[sub_resource type="Resource" id="Resource_gmpev"]
+script = ExtResource("19_c83yp")
+duration = 1.0
+transition = 0
+ease = 2
+
+[node name="PracticeLevel" type="Node"]
+script = ExtResource("1_g1cqw")
+
+[node name="BackgroundLayer" type="Node" parent="."]
+
+[node name="1" type="Sprite2D" parent="BackgroundLayer"]
+position = Vector2(555, 149)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_0isne")
+
+[node name="3" type="Sprite2D" parent="BackgroundLayer"]
+position = Vector2(555, 149)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_exquy")
+
+[node name="ChordManager" parent="." instance=ExtResource("4_1npsn")]
+
+[node name="Stave" type="Node" parent="."]
+
+[node name="stave_line_0" parent="Stave" node_paths=PackedStringArray("note") instance=ExtResource("5_3penx")]
+position = Vector2(500, 0)
+note = NodePath("../../Notes/C")
+type = "line"
+
+[node name="stave_line_1" parent="Stave" node_paths=PackedStringArray("note") instance=ExtResource("5_3penx")]
+position = Vector2(500, 0)
+note = NodePath("../../Notes/D")
+type = "space"
+id = 1
+
+[node name="stave_line_2" parent="Stave" node_paths=PackedStringArray("note") instance=ExtResource("5_3penx")]
+position = Vector2(500, 0)
+note = NodePath("../../Notes/E")
+type = "line"
+id = 2
+
+[node name="stave_line_3" parent="Stave" node_paths=PackedStringArray("note") instance=ExtResource("5_3penx")]
+position = Vector2(500, 0)
+note = NodePath("../../Notes/F")
+type = "space"
+id = 3
+
+[node name="stave_line_4" parent="Stave" node_paths=PackedStringArray("note") instance=ExtResource("5_3penx")]
+position = Vector2(500, 0)
+note = NodePath("../../Notes/G")
+type = "line"
+id = 4
+
+[node name="stave_line_5" parent="Stave" node_paths=PackedStringArray("note") instance=ExtResource("5_3penx")]
+position = Vector2(500, 0)
+note = NodePath("../../Notes/A")
+type = "space"
+id = 5
+
+[node name="stave_line_6" parent="Stave" node_paths=PackedStringArray("note") instance=ExtResource("5_3penx")]
+position = Vector2(500, 0)
+note = NodePath("../../Notes/B")
+type = "line"
+id = 6
+
+[node name="stave_line_7" parent="Stave" instance=ExtResource("5_3penx")]
+position = Vector2(500, 0)
+type = "space"
+id = 7
+
+[node name="stave_line_8" parent="Stave" instance=ExtResource("5_3penx")]
+position = Vector2(500, 0)
+type = "line"
+id = 8
+
+[node name="stave_line_9" parent="Stave" instance=ExtResource("5_3penx")]
+position = Vector2(500, 0)
+type = "space"
+id = 9
+
+[node name="stave_line_10" parent="Stave" instance=ExtResource("5_3penx")]
+position = Vector2(500, 0)
+type = "line"
+id = 10
+
+[node name="stave_line_11" parent="Stave" instance=ExtResource("5_3penx")]
+position = Vector2(500, 0)
+type = "space"
+id = 11
+
+[node name="Notes" type="Node" parent="."]
+
+[node name="C" parent="Notes" node_paths=PackedStringArray("stave_line", "keyboard_key") instance=ExtResource("6_yk238")]
+position = Vector2(4, -132)
+stave_line = NodePath("../../Stave/stave_line_0")
+keyboard_key = NodePath("../../CanvasLayer/Keyboard/KeyC")
+input = "C"
+pitch = ExtResource("7_33eco")
+
+[node name="D" parent="Notes" node_paths=PackedStringArray("stave_line", "keyboard_key") instance=ExtResource("6_yk238")]
+position = Vector2(4, -132)
+stave_line = NodePath("../../Stave/stave_line_1")
+keyboard_key = NodePath("../../CanvasLayer/Keyboard/KeyD")
+input = "D"
+id = 1
+pitch = ExtResource("8_rmivb")
+
+[node name="E" parent="Notes" node_paths=PackedStringArray("stave_line", "keyboard_key") instance=ExtResource("6_yk238")]
+position = Vector2(4, -132)
+stave_line = NodePath("../../Stave/stave_line_2")
+keyboard_key = NodePath("../../CanvasLayer/Keyboard/KeyE")
+input = "E"
+id = 2
+pitch = ExtResource("9_3mvik")
+
+[node name="F" parent="Notes" node_paths=PackedStringArray("stave_line", "keyboard_key") instance=ExtResource("6_yk238")]
+position = Vector2(4, -132)
+stave_line = NodePath("../../Stave/stave_line_3")
+keyboard_key = NodePath("../../CanvasLayer/Keyboard/KeyF")
+input = "F"
+id = 3
+pitch = ExtResource("10_20jev")
+
+[node name="G" parent="Notes" node_paths=PackedStringArray("stave_line", "keyboard_key") instance=ExtResource("6_yk238")]
+position = Vector2(4, -132)
+stave_line = NodePath("../../Stave/stave_line_4")
+keyboard_key = NodePath("../../CanvasLayer/Keyboard/KeyG")
+input = "G"
+id = 4
+pitch = ExtResource("11_hldb3")
+
+[node name="A" parent="Notes" node_paths=PackedStringArray("stave_line", "keyboard_key") instance=ExtResource("6_yk238")]
+position = Vector2(4, -132)
+stave_line = NodePath("../../Stave/stave_line_5")
+keyboard_key = NodePath("../../CanvasLayer/Keyboard/KeyA")
+input = "A"
+id = 5
+pitch = ExtResource("12_6qw3e")
+
+[node name="B" parent="Notes" node_paths=PackedStringArray("stave_line", "keyboard_key") instance=ExtResource("6_yk238")]
+position = Vector2(4, -132)
+stave_line = NodePath("../../Stave/stave_line_6")
+keyboard_key = NodePath("../../CanvasLayer/Keyboard/KeyH")
+input = "B"
+id = 6
+pitch = ExtResource("13_ey5x7")
+
+[node name="Player" parent="." instance=ExtResource("16_b2xqj")]
+position = Vector2(249, 495)
+safe_margin = 0.8
+
+[node name="TrainingDummy" type="Area2D" parent="."]
+position = Vector2(1592, 442)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrainingDummy"]
+position = Vector2(-323.001, -59)
+shape = SubResource("RectangleShape2D_g1cqw")
+
+[node name="SceneCollisions" type="StaticBody2D" parent="."]
+position = Vector2(577.641, 679.839)
+
+[node name="Floor" type="CollisionShape2D" parent="SceneCollisions"]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(-32.641, -52)
+shape = SubResource("RectangleShape2D_dsuda")
+
+[node name="Wall_Left" type="CollisionShape2D" parent="SceneCollisions"]
+position = Vector2(-1079.64, -246.839)
+shape = SubResource("RectangleShape2D_s5b24")
+
+[node name="Wall_Right" type="CollisionShape2D" parent="SceneCollisions"]
+position = Vector2(1014.36, -237.839)
+shape = SubResource("RectangleShape2D_s5b24")
+
+[node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_targets")]
+top_level = true
+position = Vector2(390, 230)
+script = ExtResource("18_hj3li")
+follow_mode = 3
+follow_targets = [NodePath("../Player"), null]
+tween_resource = SubResource("Resource_gmpev")
+follow_damping = true
+follow_damping_value = Vector2(0.3, 0.3)
+auto_zoom = true
+auto_zoom_min = 0.5
+auto_zoom_max = 1.0
+auto_zoom_margin = Vector4(250, 0, 200, 0)
+draw_limits = true
+limit_left = -570
+limit_top = -495
+limit_right = 1700
+limit_bottom = 770
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+physics_interpolation_mode = 1
+position = Vector2(390, 230)
+process_callback = 0
+limit_left = -570
+limit_top = -495
+limit_right = 1700
+limit_bottom = 770
+editor_draw_limits = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("20_irp8f")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="ProjectileLayer" type="Node" parent="."]
+
+[node name="CurtainLayer" type="Node" parent="."]
+
+[node name="2" type="Sprite2D" parent="CurtainLayer"]
+position = Vector2(555, 149)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("21_fva0q")
+
+[node name="4" type="Sprite2D" parent="CurtainLayer"]
+position = Vector2(555, 149)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("22_xt07x")
+
+[node name="5" type="Sprite2D" parent="CurtainLayer"]
+position = Vector2(555, 149)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("23_m82p3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CompositionProgress" parent="CanvasLayer" instance=ExtResource("24_7t3xq")]
+offset_left = -772.0
+offset_top = 9.0
+offset_bottom = 74.0
+max_value = 0.0
+
+[node name="Label" parent="CanvasLayer/CompositionProgress" index="0"]
+offset_left = 491.0
+offset_top = 91.0
+offset_right = 708.0
+offset_bottom = 142.0
+theme_override_colors/font_color = Color(0.780392, 0.560784, 0.109804, 1)
+theme_override_colors/font_outline_color = Color(0.443137, 0.243137, 0.0627451, 1)
+theme_override_constants/shadow_outline_size = 14
+
+[node name="Overlay" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(955, 519)
+scale = Vector2(0.966667, 0.966667)
+texture = ExtResource("25_lhy1t")
+
+[node name="Hourglass" parent="CanvasLayer" instance=ExtResource("26_kb3kl")]
+anchor_right = 0.128125
+anchor_bottom = 0.362963
+offset_left = 253.0
+offset_top = 74.0
+offset_right = 3147.0
+offset_bottom = 4167.0
+
+[node name="Keyboard" parent="CanvasLayer" instance=ExtResource("27_8hk5x")]
+
+[node name="CEG_cd_indicator" parent="CanvasLayer" instance=ExtResource("28_uv3px")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -378.0
+offset_top = 167.0
+offset_right = -20.0
+offset_bottom = 543.0
+grow_horizontal = 0
+value = 10.0
+
+[node name="DFA_cd_indicator" parent="CanvasLayer" instance=ExtResource("28_uv3px")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -258.0
+offset_top = 167.0
+offset_right = 100.0
+offset_bottom = 543.0
+grow_horizontal = 0
+max_value = 15.0
+value = 15.0
+texture_over = ExtResource("29_7q2rr")
+
+[node name="EGB_cd_indicator" parent="CanvasLayer" instance=ExtResource("28_uv3px")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -138.0
+offset_top = 167.0
+offset_right = 220.0
+offset_bottom = 543.0
+grow_horizontal = 0
+max_value = 20.0
+value = 20.0
+texture_over = ExtResource("30_5ugba")
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("31_u7x2i")]
+visible = false
+
+[node name="Start" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("32_0isne")
+autoplay = true
+bus = &"Music"
+
+[connection signal="body_entered" from="TrainingDummy" to="." method="_on_training_dummy_hit"]
+
+[editable path="CanvasLayer/CompositionProgress"]
+[editable path="CanvasLayer/Keyboard"]

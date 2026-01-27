@@ -114,6 +114,7 @@ flat = true
 icon_alignment = 1
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 129.0
 offset_top = 95.0
 offset_right = 1417.0

@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
-@onready var Main = get_tree().get_root().get_node("Level1")
-@onready var Death = get_parent().find_child("Death")
+@onready var Main = get_tree().current_scene # get_tree().get_root().get_node("Level1")
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
