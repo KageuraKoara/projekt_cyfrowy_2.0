@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://b2sjuxlkbhhdp"]
+[gd_scene load_steps=10 format=3 uid="uid://b2sjuxlkbhhdp"]
 
-[ext_resource type="Script" uid="uid://qr46abrprpbe" path="res://scripts/won.gd" id="1_v1vj1"]
+[ext_resource type="Script" uid="uid://qr46abrprpbe" path="res://Scripts/won.gd" id="1_v1vj1"]
+[ext_resource type="Texture2D" uid="uid://ccm0mhcq1ocqh" path="res://sprites/game/UI/Winning.png" id="2_18uy5"]
 [ext_resource type="FontFile" uid="uid://c2fmqyfklpeoq" path="res://sprites/Fonts/High Empathy.ttf" id="2_drevk"]
 [ext_resource type="AudioStream" uid="uid://bwvcddh7koxfe" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX1.wav" id="2_v1xkt"]
 [ext_resource type="AudioStream" uid="uid://bikvs00uye3lr" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX2.wav" id="3_5gfh7"]
 [ext_resource type="Texture2D" uid="uid://bckxqhv4y2npj" path="res://sprites/game/UI/Guzik.png" id="3_18uy5"]
+[ext_resource type="Texture2D" uid="uid://m1rgbaddcdns" path="res://sprites/game/UI/Ramka.png" id="3_wxtdw"]
 [ext_resource type="AudioStream" uid="uid://baki7vn5tlicm" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX3.wav" id="4_drevk"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_18uy5"]
@@ -22,36 +24,68 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v1vj1")
 
+[node name="Winning" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1927.0
+offset_bottom = 1196.0
+texture = ExtResource("2_18uy5")
+expand_mode = 1
+
+[node name="Ramka" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1180.0
+offset_top = 78.0
+offset_right = 1846.0
+offset_bottom = 856.0
+texture = ExtResource("3_wxtdw")
+expand_mode = 1
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 393.0
-offset_top = 214.0
-offset_right = 923.0
-offset_bottom = 339.0
+offset_left = 1324.0
+offset_top = 246.0
+offset_right = 1854.0
+offset_bottom = 378.0
+theme_override_colors/default_color = Color(0.607843, 0.439216, 0.227451, 1)
+theme_override_colors/font_outline_color = Color(0.352941, 0.203922, 0.0862745, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 10
 theme_override_fonts/normal_font = ExtResource("2_drevk")
-theme_override_font_sizes/normal_font_size = 60
-text = "Congrats You Lived!"
+theme_override_font_sizes/normal_font_size = 65
+text = "Congrats,
+You Lived!"
 fit_content = true
 
 [node name="TimeTotal" type="Label" parent="."]
 layout_mode = 0
-offset_left = 395.0
-offset_top = 305.0
-offset_right = 731.0
-offset_bottom = 403.0
+offset_left = 1324.0
+offset_top = 378.0
+offset_right = 1660.0
+offset_bottom = 476.0
+theme_override_colors/font_color = Color(0.607843, 0.439216, 0.227451, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.352941, 0.203922, 0.0862745, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 10
 theme_override_fonts/font = ExtResource("2_drevk")
-theme_override_font_sizes/font_size = 40
-text = "sdgsgd"
+theme_override_font_sizes/font_size = 45
+text = "gjhggkhsd"
 
 [node name="ChordsPlayed" type="Label" parent="."]
 layout_mode = 0
-offset_left = 395.0
-offset_top = 374.0
-offset_right = 731.0
-offset_bottom = 472.0
+offset_left = 1324.0
+offset_top = 487.0
+offset_right = 1660.0
+offset_bottom = 585.0
+theme_override_colors/font_color = Color(0.607843, 0.439216, 0.227451, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.352941, 0.203922, 0.0862745, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 10
 theme_override_fonts/font = ExtResource("2_drevk")
-theme_override_font_sizes/font_size = 40
-text = "sdgsgd"
+theme_override_font_sizes/font_size = 45
+text = "gjhfhgfhjh"
 
 [node name="Menu" type="Button" parent="."]
 layout_mode = 1
@@ -60,10 +94,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -260.0
-offset_top = 160.0
-offset_right = 684.0
-offset_bottom = 527.0
+offset_left = 292.0
+offset_top = 300.0
+offset_right = 1236.0
+offset_bottom = 667.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.55, 0.55)
