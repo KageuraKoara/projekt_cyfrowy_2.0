@@ -1,6 +1,6 @@
 extends Node
 
-@onready var Main = get_tree().get_root().get_node("Level1")
+@onready var Main = get_tree().current_scene # get_tree().get_root().get_node("Level1")
 @onready var player = get_parent().find_child("Player")
 @onready var note_refs = [$"../Notes/C", $"../Notes/D", $"../Notes/E", $"../Notes/F", $"../Notes/G", $"../Notes/A", $"../Notes/B"]
 @onready var hourglass = $"../CanvasLayer/Hourglass"

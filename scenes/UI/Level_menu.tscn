@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ean2b0d38pv7"]
+[gd_scene load_steps=6 format=3 uid="uid://ean2b0d38pv7"]
 
-[ext_resource type="Script" uid="uid://dw6p2c4pfxlc7" path="res://Scripts/level_menu.gd" id="1_w44lg"]
+[ext_resource type="Script" uid="uid://dw6p2c4pfxlc7" path="res://scripts/level_menu.gd" id="1_w44lg"]
 [ext_resource type="FontFile" uid="uid://c2fmqyfklpeoq" path="res://sprites/Fonts/High Empathy.ttf" id="2_fblrp"]
 [ext_resource type="Texture2D" uid="uid://4j6mgyx35l6d" path="res://sprites/game/UI/key.png" id="2_gqhcl"]
 [ext_resource type="Texture2D" uid="uid://bckxqhv4y2npj" path="res://sprites/game/UI/Guzik.png" id="4_uiu3n"]
+[ext_resource type="VideoStream" uid="uid://bjbsetdtxm7ju" path="res://sprites/game/cutscenes/cutscene_level1.ogv" id="5_vmygt"]
 
 [node name="LevelMenu" type="Control"]
 layout_mode = 3
@@ -89,9 +90,18 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_gqhcl")
 expand_mode = 1
 
+[node name="cutscene_player" type="VideoStreamPlayer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("5_vmygt")
+bus = &"Music"
+
 [connection signal="mouse_entered" from="tutorial" to="." method="_on_tutorial_mouse_entered"]
 [connection signal="mouse_exited" from="tutorial" to="." method="_on_tutorial_mouse_exited"]
 [connection signal="pressed" from="tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="mouse_entered" from="level 1" to="." method="_on_level_1_mouse_entered"]
 [connection signal="mouse_exited" from="level 1" to="." method="_on_level_1_mouse_exited"]
 [connection signal="pressed" from="level 1" to="." method="_on_level_1_pressed"]
+[connection signal="finished" from="cutscene_player" to="." method="_on_cutscene_finished"]
