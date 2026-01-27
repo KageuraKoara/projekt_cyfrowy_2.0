@@ -1,13 +1,16 @@
 [gd_scene load_steps=5 format=3 uid="uid://b2d0wuswlxlhm"]
 
-[ext_resource type="Texture2D" uid="uid://r4fo3q84o2qk" path="res://sprites/game/UI/hourglassBottom.png" id="1_03lrd"]
-[ext_resource type="Texture2D" uid="uid://dw6jtdtax6mef" path="res://sprites/game/UI/hourglassTop.png" id="2_pa85y"]
-[ext_resource type="Texture2D" uid="uid://wopyejl0fpt2" path="res://sprites/game/UI/hourglassFill.png" id="3_a32v3"]
+[ext_resource type="Texture2D" uid="uid://c4iuvgyna8x84" path="res://sprites/game/UI/klepsydra/hourglassBOTTOM.png" id="1_03lrd"]
+[ext_resource type="Texture2D" uid="uid://bmba2h2p2f6bo" path="res://sprites/game/UI/klepsydra/hourglassTop.png" id="2_pa85y"]
+[ext_resource type="Texture2D" uid="uid://ik6rfp02toku" path="res://sprites/game/UI/klepsydra/hourglassfill.png" id="3_a32v3"]
 [ext_resource type="Script" uid="uid://0sgbeao2d7wt" path="res://Scripts/ui_hourglass.gd" id="4_b14di"]
 
 [node name="Hourglass" type="TextureProgressBar"]
-offset_right = 2894.0
-offset_bottom = 4093.0
+anchors_preset = -1
+anchor_right = 0.0753646
+anchor_bottom = 0.189491
+offset_right = 2749.3
+offset_bottom = 3888.35
 scale = Vector2(0.05, 0.05)
 max_value = 180.0
 value = 20.0
@@ -16,6 +19,7 @@ texture_under = ExtResource("1_03lrd")
 texture_over = ExtResource("2_pa85y")
 texture_progress = ExtResource("3_a32v3")
 script = ExtResource("4_b14di")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
 visible = false

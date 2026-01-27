@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0xqff0dpg01f"]
+[gd_scene load_steps=9 format=3 uid="uid://d0xqff0dpg01f"]
 
 [ext_resource type="Script" uid="uid://d2hmfbbbjtq31" path="res://Scripts/pause_menu.gd" id="1_w5fml"]
 [ext_resource type="Texture2D" uid="uid://ij0emvfgkm" path="res://sprites/game/UI/Menu ilu.png" id="2_hcn70"]
 [ext_resource type="FontFile" uid="uid://c2fmqyfklpeoq" path="res://sprites/Fonts/High Empathy.ttf" id="3_fny3v"]
 [ext_resource type="AudioStream" uid="uid://bwvcddh7koxfe" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX1.wav" id="4_fjwti"]
+[ext_resource type="Texture2D" uid="uid://bckxqhv4y2npj" path="res://sprites/game/UI/Guzik.png" id="4_fn5q5"]
 [ext_resource type="AudioStream" uid="uid://bikvs00uye3lr" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX2.wav" id="5_fn5q5"]
 [ext_resource type="AudioStream" uid="uid://baki7vn5tlicm" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX3.wav" id="6_et4ke"]
 
@@ -33,84 +34,88 @@ texture = ExtResource("2_hcn70")
 expand_mode = 2
 
 [node name="Resume" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -2.0
-offset_top = -155.0
-offset_right = 68.0
-offset_bottom = -124.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.054902, 0, 0.113725, 0.941176)
+layout_mode = 0
+offset_left = 857.0
+offset_top = 233.0
+offset_right = 1801.0
+offset_bottom = 600.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_hover_pressed_color = Color(0.241608, 0.180875, 0.127789, 0.72549)
+theme_override_colors/font_hover_color = Color(0.9, 0.82575, 0.765, 0.886275)
+theme_override_colors/font_outline_color = Color(0.9, 0.82575, 0.765, 0.886275)
+theme_override_colors/font_color = Color(0.9, 0.82575, 0.765, 0.282353)
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_fny3v")
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 90
 text = "Resume"
+icon = ExtResource("4_fn5q5")
 flat = true
+icon_alignment = 1
 
 [node name="Restart" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.515885
-anchor_top = 0.473611
-anchor_right = 0.515885
-anchor_bottom = 0.473611
-offset_left = -32.5
-offset_top = -15.5
-offset_right = 32.5
-offset_bottom = 15.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.054902, 0, 0.113725, 0.941176)
+anchor_top = 0.17037
+anchor_bottom = 0.17037
+offset_left = 857.0
+offset_top = 191.0
+offset_right = 1801.0
+offset_bottom = 558.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_hover_pressed_color = Color(0.241608, 0.180875, 0.127789, 0.72549)
+theme_override_colors/font_hover_color = Color(0.9, 0.82575, 0.765, 0.886275)
+theme_override_colors/font_outline_color = Color(0.9, 0.82575, 0.765, 0.886275)
+theme_override_colors/font_color = Color(0.9, 0.82575, 0.765, 0.282353)
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_fny3v")
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 90
 text = "Restart
 "
+icon = ExtResource("4_fn5q5")
 flat = true
-metadata/_edit_use_anchors_ = true
+icon_alignment = 1
 
 [node name="Menu" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.51276
-anchor_top = 0.558796
-anchor_right = 0.51276
-anchor_bottom = 0.558796
-offset_left = -26.5
-offset_top = -15.5
-offset_right = 26.5
-offset_bottom = 15.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.054902, 0, 0.113725, 0.941176)
+anchor_top = 0.3
+anchor_bottom = 0.3
+offset_left = 857.0
+offset_top = 191.0
+offset_right = 1801.0
+offset_bottom = 558.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_hover_pressed_color = Color(0.241608, 0.180875, 0.127789, 0.72549)
+theme_override_colors/font_hover_color = Color(0.9, 0.82575, 0.765, 0.886275)
+theme_override_colors/font_outline_color = Color(0.9, 0.82575, 0.765, 0.886275)
+theme_override_colors/font_color = Color(0.9, 0.82575, 0.765, 0.282353)
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_fny3v")
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 90
 text = "Menu
 "
+icon = ExtResource("4_fn5q5")
 flat = true
-metadata/_edit_use_anchors_ = true
+icon_alignment = 1
 
 [node name="Exit" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 246.0
-offset_top = 249.0
-offset_right = 283.0
-offset_bottom = 280.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.054902, 0, 0.113725, 0.941176)
+layout_mode = 0
+offset_left = 857.0
+offset_top = 720.0
+offset_right = 1801.0
+offset_bottom = 1087.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_hover_pressed_color = Color(0.241608, 0.180875, 0.127789, 0.72549)
+theme_override_colors/font_hover_color = Color(0.9, 0.82575, 0.765, 0.886275)
+theme_override_colors/font_outline_color = Color(0.9, 0.82575, 0.765, 0.886275)
+theme_override_colors/font_color = Color(0.9, 0.82575, 0.765, 0.282353)
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_fny3v")
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 90
 text = "Exit"
+icon = ExtResource("4_fn5q5")
 flat = true
+icon_alignment = 1
 
 [node name="ButtonsSfx" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_jdpbe")

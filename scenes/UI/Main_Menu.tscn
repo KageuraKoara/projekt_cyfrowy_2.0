@@ -1,12 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://cg08eg5ai8ia8"]
+[gd_scene load_steps=15 format=3 uid="uid://cg08eg5ai8ia8"]
 
 [ext_resource type="Script" uid="uid://cwdmdakr51mcf" path="res://Scripts/main_menu.gd" id="1_n00j1"]
 [ext_resource type="PackedScene" uid="uid://b30l3wy1vsiix" path="res://Scenes/UI/Settings.tscn" id="2_7vad4"]
 [ext_resource type="Texture2D" uid="uid://bwjlt80s0qbmr" path="res://sprites/game/UI/Menu BG.png" id="2_bildh"]
 [ext_resource type="PackedScene" uid="uid://ean2b0d38pv7" path="res://Scenes/UI/Level_menu.tscn" id="3_66axm"]
-[ext_resource type="Texture2D" uid="uid://ij0emvfgkm" path="res://sprites/game/UI/Menu ilu.png" id="3_q5fvd"]
 [ext_resource type="Texture2D" uid="uid://4j6mgyx35l6d" path="res://sprites/game/UI/key.png" id="4_17otf"]
 [ext_resource type="FontFile" uid="uid://c2fmqyfklpeoq" path="res://sprites/Fonts/High Empathy.ttf" id="4_q5fvd"]
+[ext_resource type="Texture2D" uid="uid://bckxqhv4y2npj" path="res://sprites/game/UI/Guzik.png" id="5_61u10"]
+[ext_resource type="Texture2D" uid="uid://dy0fshwklbfgj" path="res://sprites/game/UI/Title/IMG_3703.PNG" id="6_2qd55"]
+[ext_resource type="Texture2D" uid="uid://cf0l6f5dxqa3d" path="res://sprites/game/UI/Title/IMG_3702.PNG" id="6_310en"]
 [ext_resource type="AudioStream" uid="uid://bwvcddh7koxfe" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX1.wav" id="8_vwwf1"]
 [ext_resource type="AudioStream" uid="uid://bikvs00uye3lr" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX2.wav" id="9_61u10"]
 [ext_resource type="AudioStream" uid="uid://baki7vn5tlicm" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX3.wav" id="10_310en"]
@@ -46,32 +48,7 @@ grow_vertical = 2
 texture = ExtResource("2_bildh")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="Background"]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("3_q5fvd")
-expand_mode = 1
-
 [node name="Music_sheet" type="Node" parent="."]
-
-[node name="Key_play" type="TextureRect" parent="Music_sheet"]
-visible = false
-offset_left = 1173.0
-offset_top = 338.0
-offset_right = 1219.0
-offset_bottom = 527.0
-texture = ExtResource("4_17otf")
-expand_mode = 1
-
-[node name="Key_settings" type="TextureRect" parent="Music_sheet"]
-visible = false
-offset_left = 1173.0
-offset_top = 479.0
-offset_right = 1219.0
-offset_bottom = 668.0
-texture = ExtResource("4_17otf")
-expand_mode = 1
 
 [node name="Play" type="Button" parent="Music_sheet"]
 anchors_preset = 3
@@ -80,18 +57,23 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -747.0
-offset_top = -619.0
-offset_right = -347.0
-offset_bottom = -588.0
+offset_top = -742.0
+offset_right = 197.0
+offset_bottom = -375.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0.054902, 0, 0.113725, 0.941176)
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_hover_pressed_color = Color(0.241608, 0.180875, 0.127789, 0.72549)
+theme_override_colors/font_hover_color = Color(0.9, 0.82575, 0.765, 0.886275)
+theme_override_colors/font_outline_color = Color(0.9, 0.82575, 0.765, 0.886275)
+theme_override_colors/font_color = Color(0.9, 0.82575, 0.765, 0.282353)
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("4_q5fvd")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 90
 text = "Play"
+icon = ExtResource("5_61u10")
 flat = true
+icon_alignment = 1
 
 [node name="Settings" type="Button" parent="Music_sheet"]
 anchors_preset = 3
@@ -100,18 +82,23 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -747.0
-offset_top = -474.0
-offset_right = -347.0
-offset_bottom = -443.0
+offset_top = -578.0
+offset_right = 197.0
+offset_bottom = -211.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0.054902, 0, 0.113725, 0.941176)
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_hover_pressed_color = Color(0.241608, 0.180875, 0.127789, 0.72549)
+theme_override_colors/font_hover_color = Color(0.9, 0.82575, 0.765, 0.886275)
+theme_override_colors/font_outline_color = Color(0.9, 0.82575, 0.765, 0.886275)
+theme_override_colors/font_color = Color(0.9, 0.82575, 0.765, 0.282353)
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("4_q5fvd")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 90
 text = "Settings"
+icon = ExtResource("5_61u10")
 flat = true
+icon_alignment = 1
 
 [node name="Exit" type="Button" parent="Music_sheet"]
 anchors_preset = 3
@@ -119,20 +106,24 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -244.0
-offset_top = -213.0
-offset_right = -207.0
-offset_bottom = -182.0
+offset_left = -747.0
+offset_top = -412.0
+offset_right = 197.0
+offset_bottom = -45.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0.054902, 0, 0.113725, 0.941176)
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_hover_pressed_color = Color(0.241608, 0.180875, 0.127789, 0.72549)
+theme_override_colors/font_hover_color = Color(0.9, 0.82575, 0.765, 0.886275)
+theme_override_colors/font_outline_color = Color(0.9, 0.82575, 0.765, 0.886275)
+theme_override_colors/font_color = Color(0.9, 0.82575, 0.765, 0.282353)
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("4_q5fvd")
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 90
 text = "Exit"
+icon = ExtResource("5_61u10")
 flat = true
-alignment = 0
+icon_alignment = 1
 
 [node name="Credits" type="Button" parent="Music_sheet"]
 visible = false
@@ -140,19 +131,88 @@ offset_left = 75.0
 offset_top = 867.0
 offset_right = 201.0
 offset_bottom = 970.0
+scale = Vector2(0.5, 0.5)
 text = "Credits"
+icon = ExtResource("5_61u10")
+icon_alignment = 1
+
+[node name="Key_play" type="TextureRect" parent="Music_sheet"]
+visible = false
+offset_left = 1328.0
+offset_top = 398.0
+offset_right = 1359.0
+offset_bottom = 526.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_17otf")
+expand_mode = 1
+
+[node name="Key_settings" type="TextureRect" parent="Music_sheet"]
+visible = false
+offset_left = 1328.0
+offset_top = 563.0
+offset_right = 1359.0
+offset_bottom = 691.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_17otf")
+expand_mode = 1
+
+[node name="Img3703" type="Sprite2D" parent="Music_sheet"]
+position = Vector2(1398, 205)
+scale = Vector2(0.362808, 0.362808)
+texture = ExtResource("6_2qd55")
+
+[node name="Img3702" type="Sprite2D" parent="Music_sheet"]
+position = Vector2(1401, 205)
+scale = Vector2(0.362808, 0.362808)
+texture = ExtResource("6_310en")
 
 [node name="Settings" parent="." instance=ExtResource("2_7vad4")]
 visible = false
 layout_mode = 1
+anchor_left = 0.600521
+anchor_top = 0.289815
+anchor_right = 0.839271
+anchor_bottom = 0.809815
+offset_right = -76.4
+offset_bottom = -93.6
+scale = Vector2(1.3, 1.3)
 
 [node name="LevelMenu" parent="." instance=ExtResource("3_66axm")]
 visible = false
 layout_mode = 1
-offset_left = 518.88
-offset_top = -121.176
-offset_right = 518.88
-offset_bottom = -121.176
+offset_left = -365.12
+offset_top = -84.176
+offset_right = -365.12
+offset_bottom = -84.176
+
+[node name="tutorial" parent="LevelMenu" index="0"]
+anchors_preset = -1
+anchor_left = 0.436422
+anchor_top = 0.462592
+anchor_right = 0.682255
+anchor_bottom = 0.632499
+offset_left = -121.824
+offset_top = -168.152
+offset_right = 822.176
+offset_bottom = 198.848
+
+[node name="level 1" parent="LevelMenu" index="1"]
+offset_left = -121.824
+offset_top = -4.15198
+offset_right = 822.176
+offset_bottom = 362.848
+
+[node name="Key_tut" parent="LevelMenu" index="2"]
+offset_left = 621.0
+offset_top = 226.0
+offset_right = 652.0
+offset_bottom = 354.0
+
+[node name="Key_1" parent="LevelMenu" index="3"]
+offset_left = 621.0
+offset_top = 391.0
+offset_right = 652.0
+offset_bottom = 519.0
 
 [node name="ButtonsSfx" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_2qd55")
@@ -171,3 +231,5 @@ bus = &"Music"
 [connection signal="pressed" from="Music_sheet/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Music_sheet/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Music_sheet/Credits" to="." method="_on_credits_pressed"]
+
+[editable path="LevelMenu"]
