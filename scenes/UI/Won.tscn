@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://b2sjuxlkbhhdp"]
 
-[ext_resource type="Script" uid="uid://qr46abrprpbe" path="res://Scripts/won.gd" id="1_v1vj1"]
+[ext_resource type="Script" uid="uid://qr46abrprpbe" path="res://scripts/won.gd" id="1_v1vj1"]
 [ext_resource type="Texture2D" uid="uid://ccm0mhcq1ocqh" path="res://sprites/game/UI/Winning.png" id="2_18uy5"]
 [ext_resource type="FontFile" uid="uid://c2fmqyfklpeoq" path="res://sprites/Fonts/High Empathy.ttf" id="2_drevk"]
 [ext_resource type="AudioStream" uid="uid://bwvcddh7koxfe" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX1.wav" id="2_v1xkt"]
@@ -42,19 +42,18 @@ expand_mode = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 1315.0
-offset_top = 221.0
-offset_right = 1712.0
-offset_bottom = 353.0
+offset_left = 1308.0
+offset_top = 251.0
+offset_right = 1719.0
+offset_bottom = 346.0
 theme_override_colors/default_color = Color(0.607843, 0.439216, 0.227451, 1)
 theme_override_colors/font_outline_color = Color(0.352941, 0.203922, 0.0862745, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_constants/shadow_outline_size = 10
 theme_override_fonts/normal_font = ExtResource("2_drevk")
-theme_override_font_sizes/normal_font_size = 65
-text = "Congrats,
-You Lived!"
+theme_override_font_sizes/normal_font_size = 75
+text = "Rest in Peace"
 fit_content = true
 horizontal_alignment = 1
 
@@ -62,7 +61,7 @@ horizontal_alignment = 1
 layout_mode = 0
 offset_left = 1324.0
 offset_top = 409.0
-offset_right = 1660.0
+offset_right = 1698.0
 offset_bottom = 507.0
 theme_override_colors/font_color = Color(0.607843, 0.439216, 0.227451, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -71,7 +70,7 @@ theme_override_constants/outline_size = 2
 theme_override_constants/shadow_outline_size = 10
 theme_override_fonts/font = ExtResource("2_drevk")
 theme_override_font_sizes/font_size = 45
-text = "gjhggkhsd"
+text = "Total Time: 2137 sec"
 
 [node name="ChordsPlayed" type="Label" parent="."]
 layout_mode = 0
@@ -86,7 +85,7 @@ theme_override_constants/outline_size = 2
 theme_override_constants/shadow_outline_size = 10
 theme_override_fonts/font = ExtResource("2_drevk")
 theme_override_font_sizes/font_size = 45
-text = "gjhfhgfhjh"
+text = "Chords Played: 69"
 
 [node name="Menu" type="Button" parent="."]
 layout_mode = 1
@@ -113,6 +112,21 @@ text = "Menu"
 icon = ExtResource("3_18uy5")
 flat = true
 icon_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 129.0
+offset_top = 95.0
+offset_right = 1417.0
+offset_bottom = 343.0
+theme_override_colors/default_color = Color(0.970576, 0.733955, 0.317908, 1)
+theme_override_colors/font_shadow_color = Color(0.118254, 0.0697923, 0.0131203, 0.84)
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/normal_font = ExtResource("2_drevk")
+theme_override_font_sizes/normal_font_size = 100
+text = "Unlike You,
+	thou Art shall live on "
 
 [node name="ButtonsSfx" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_18uy5")
