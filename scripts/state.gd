@@ -27,7 +27,6 @@ func exit():
 	set_physics_process(false)
 
 func transition():
-	print(busy)
 	pass
 
 func _physics_process(delta: float) -> void:

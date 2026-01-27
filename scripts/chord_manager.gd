@@ -3,18 +3,21 @@ extends Node
 @onready var Main = get_tree().get_root().get_node("Level1")
 @onready var player = get_parent().find_child("Player")
 @onready var note_refs = [$"../Notes/C", $"../Notes/D", $"../Notes/E", $"../Notes/F", $"../Notes/G", $"../Notes/A", $"../Notes/B"]
+@onready var hourglass = $"../CanvasLayer/Hourglass"
 
 enum EnumNote { C, D, E, F, G, A, B }
 
 var inputs_pressed : Array[int] = []
 var resolve_requested := false
-var note_boost := 1.0
+var nb_value := 1.0
+var note_boost := nb_value
+var notes_in_scene : Array = []
 
 var CHORDS := [
 	{
 		"id": "C_DUR",
-		"cd_timer": func(): return $CDUR_Timer.is_stopped(),
-		"start_cd": func(): $CDUR_Timer.start(),
+		"cd_timer": func(): return $CEG_Timer.is_stopped(),
+		"start_cd": func(): $CEG_Timer.start(),
 		"notes": [EnumNote.C, EnumNote.E, EnumNote.G],
 		"HP": 5.0,
 		"speed_mult": 1.3,
@@ -22,8 +25,8 @@ var CHORDS := [
 		},
 	{
 		"id": "D_MOLL",
-		"cd_timer": func(): return $DMOLL_Timer.is_stopped(),
-		"start_cd": func(): $DMOLL_Timer.start(),
+		"cd_timer": func(): return $DFA_Timer.is_stopped(),
+		"start_cd": func(): $DFA_Timer.start(),
 		"notes": [EnumNote.D, EnumNote.F, EnumNote.A],
 		"HP": 5.0,
 		"speed_mult": 1.3,
@@ -31,8 +34,8 @@ var CHORDS := [
 		},
 	{
 		"id": "E_MOLL",
-		"cd_timer": func(): return $EMOLL_Timer.is_stopped(),
-		"start_cd": func(): $EMOLL_Timer.start(),
+		"cd_timer": func(): return $EGB_Timer.is_stopped(),
+		"start_cd": func(): $EGB_Timer.start(),
 		"notes": [EnumNote.E, EnumNote.G, EnumNote.B],
 		"HP": 5.0,
 		"speed_mult": 1.3,
@@ -64,12 +67,22 @@ func clear_note(note: int):
 func interval_HP(distance: int) -> float:
 	return 1.0 + (distance * 0.25)
 
+func update_note_boost():
+	notes_in_scene = get_tree().get_nodes_in_group("projectile")
+	var count := notes_in_scene.size()
+	
+	if count >= 5:
+		note_boost = nb_value - 0.2 * int(count/5)
+	else:
+		note_boost = nb_value
 
 # the big boy section
 
 func resolve_combos(pressed_notes: Array[int]) -> Array[Dictionary]:
 	var result: Array[Dictionary] = []
 	var available := pressed_notes.duplicate()
+	
+	update_note_boost()
 
 	if available.size() > 4:
 		for note in available:
@@ -146,15 +159,22 @@ func _single_note_attack(note: int) -> Dictionary:
 		"speed_mult": 1.0 * note_boost
 	}
 
-
 func perform_chord_effect(effect):
+	SceneSharedData.chords_played += 1
 	if effect == "dash":
 		player.StartDashTimer()
+		$"../CanvasLayer/CEG_cd_indicator".cd_start()
 	elif effect == "super_jump":
 		player.StartSJumpTimer()
+		$"../CanvasLayer/DFA_cd_indicator".cd_start()
 	elif effect == "note_boost":
-		note_boost = 1.3
+		nb_value = 1.3
+		player.note_boost_glow(true)
+		hourglass.hp_ind_color = Color(0.933, 0.377, 0.497)
 		$NoteBoostTimer.start()
+		$"../CanvasLayer/EGB_cd_indicator".cd_start()
 
 func _on_note_boost_timeout() -> void:
-	note_boost = 1.0
+	nb_value = 1.0
+	player.note_boost_glow(false)
+	hourglass.hp_ind_color = Color(1, 1, 1)

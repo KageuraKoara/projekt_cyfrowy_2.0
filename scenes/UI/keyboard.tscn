@@ -1,0 +1,130 @@
+[gd_scene load_steps=9 format=3 uid="uid://biglfq8u88a6d"]
+
+[ext_resource type="Texture2D" uid="uid://cv50fqmyw87vd" path="res://sprites/game/UI/KLawisze/CR.png" id="1_3kf1j"]
+[ext_resource type="Texture2D" uid="uid://wd47ed0two64" path="res://sprites/game/UI/KLawisze/DT.png" id="2_to247"]
+[ext_resource type="Texture2D" uid="uid://bw12qp8gas25o" path="res://sprites/game/UI/KLawisze/EY.png" id="3_vd8mm"]
+[ext_resource type="Texture2D" uid="uid://ijn1rv6mp3wu" path="res://sprites/game/UI/KLawisze/FU.png" id="4_c3j1x"]
+[ext_resource type="Texture2D" uid="uid://jksvc552g3vu" path="res://sprites/game/UI/KLawisze/GI.png" id="5_87w7n"]
+[ext_resource type="Texture2D" uid="uid://b5apxte4hwsfk" path="res://sprites/game/UI/KLawisze/AO.png" id="6_jxi7c"]
+[ext_resource type="Texture2D" uid="uid://b0i08yakumdqa" path="res://sprites/game/UI/KLawisze/HP.png" id="7_i28vl"]
+[ext_resource type="Texture2D" uid="uid://djlxta2k3h36d" path="res://sprites/game/UI/KLawisze/BlackKeys.png" id="8_lfrqj"]
+
+[node name="Keyboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KeyC" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -1080.0
+offset_right = 960.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_3kf1j")
+
+[node name="KeyD" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -1080.0
+offset_right = 960.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_to247")
+
+[node name="KeyE" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -1080.0
+offset_right = 960.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_vd8mm")
+
+[node name="KeyF" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -1080.0
+offset_right = 960.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("4_c3j1x")
+
+[node name="KeyG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -1080.0
+offset_right = 960.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_87w7n")
+
+[node name="KeyA" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -1080.0
+offset_right = 960.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_jxi7c")
+
+[node name="KeyH" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -1080.0
+offset_right = 960.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_i28vl")
+
+[node name="BlackKeys" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -1080.0
+offset_right = 960.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("8_lfrqj")

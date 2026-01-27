@@ -8,15 +8,15 @@ extends CharacterBody2D
 @export var GRAVITY := 800.0
 @export var WALK_SPEED := 300
 @export var DASH_SPEED := 600
-@export var JUMP_FORCE := -400.0
-@export var SUPER_JUMP_FORCE := -600.0
+@export var JUMP_FORCE := -500.0
+@export var SUPER_JUMP_FORCE := -800.0
 
 var Pre_jump = preload("res://sounds/Compositor/Attacks/Combo/Jump.ogg")
 var Pre_dash = preload("res://sounds/Compositor/Attacks/Combo/Dash.ogg")
 
-var left_input := "movement_A"
-var jump_input := "movement_Space"
-var right_input := "movement_D"
+var left_input := SceneSharedData.input_left
+var jump_input := SceneSharedData.input_jump
+var right_input := SceneSharedData.input_right
 
 enum PlayerState {
 	IDLE,
@@ -129,11 +129,22 @@ func _on_knockback(push: float):
 		set_state(PlayerState.IDLE)
 
 func StartDashTimer():
+	$DashGlow.visible = true
 	$DashTimer.start()
 	$Jingle.play()
 	$Combo.stream = Pre_jump
 	$Combo.play()
 func StartSJumpTimer():
+	$SuperJumpGlow.visible = true
 	$SuperJumpTimer.start()
 	$Combo.stream = Pre_dash
 	$Jingle.play()
+
+func _on_dash_timeout() -> void:
+	$DashGlow.visible = false
+
+func _on_sjump_timeout() -> void:
+	$SuperJumpGlow.visible = false
+
+func note_boost_glow(b : bool):
+	$NoteBoostGlow.visible = b

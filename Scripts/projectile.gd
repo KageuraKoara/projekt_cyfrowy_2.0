@@ -12,8 +12,6 @@ var note = null
 var type := ""
 var HP := 0.5
 var pos_y
-var caught := false
-var damn_chicken
 var winded := false
 
 # odwrócenie kierunku lotu: Direction = -PI
@@ -22,37 +20,18 @@ func _ready() -> void:
 	global_position = Vector2(PlayerX_Position, pos_y[note])
 	speed = speed * speed_multiplier
 	$AnimatedSprite2D.play(type)
-	if speed < 100:
-		despawn()
+	if speed < 100: # or velocity !!!!!!!
+		queue_free()
 	
 func _physics_process(delta: float) -> void:
-	if not caught:
-		velocity = Vector2(speed,0).rotated(Direction)
-		move_and_slide()
-	else:
-		if is_instance_valid(damn_chicken):
-			global_position = damn_chicken.global_position + Vector2(50, 0)
-		else:
-			despawn()
+	velocity = Vector2(speed,0).rotated(Direction)
+	move_and_slide()
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("enemy_projectile"):
-		if body.name == "ink_raven":
-			despawn()
-			damn_chicken = body
-			if type != "single":
-				body.despawn()
-				get_debuffed(0.5)
-			else:
-				caught = true
-				Raven_death.play()
-				$Area2D/CollisionShape2D.set_deferred("disabled", true)
-				$CollisionShape2D.set_deferred("disabled", true)
-				
-				body.go_back()
-				Raven.stop()
-				
-
+	if body.is_in_group("enemy_projectile") and body.name == "ink_raven":
+		match type:
+			"single": queue_free()
+			_: get_debuffed(0.5)
 
 func get_debuffed(percent : float):
 	speed = speed * percent

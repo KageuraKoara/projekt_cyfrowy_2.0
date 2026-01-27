@@ -4,7 +4,6 @@ extends CharacterBody2D
 
 var direction := 0.0
 var vel_x := -200
-var is_alive := true
 var stave_line
 var caught := false
 
@@ -26,6 +25,7 @@ func _physics_process(delta: float) -> void:
 	if abs(velocity.x) < 1.0: despawn()
 
 func go_back():
+	$Single1.visible = true
 	caught = true
 	vel_x = 200
 	$AnimatedSprite2D.flip_h = true
@@ -36,12 +36,17 @@ func _on_detection_area_entered(body: Node2D) -> void:
 	elif body.is_in_group("player"):
 		Main._on_got_hit("ink_raven", 15.0)
 		despawn()
+	elif body.is_in_group("projectile"):
+		if body.type == "single":
+			go_back()
+		else:
+			despawn()
 
 func _on_despawn_timeout() -> void:
 	despawn()
 
 func despawn():
-	is_alive = false
+	$Single1.visible = false
 	$AnimatedSprite2D.play("dying")
 	await get_tree().create_timer(0.7).timeout
 	queue_free()

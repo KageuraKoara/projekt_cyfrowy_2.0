@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b2sjuxlkbhhdp"]
 
-[ext_resource type="Script" uid="uid://d2hmfbbbjtq31" path="res://Scripts/pause_menu.gd" id="1_kymma"]
+[ext_resource type="Script" uid="uid://qr46abrprpbe" path="res://scripts/won.gd" id="1_v1vj1"]
 [ext_resource type="FontFile" uid="uid://c2fmqyfklpeoq" path="res://sprites/Fonts/High Empathy.ttf" id="2_drevk"]
 [ext_resource type="AudioStream" uid="uid://bwvcddh7koxfe" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX1.wav" id="2_v1xkt"]
 [ext_resource type="AudioStream" uid="uid://bikvs00uye3lr" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX2.wav" id="3_5gfh7"]
@@ -20,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_kymma")
+script = ExtResource("1_v1vj1")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -37,10 +37,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -249.0
-offset_top = 164.0
-offset_right = 695.0
-offset_bottom = 531.0
+offset_left = -260.0
+offset_top = 160.0
+offset_right = 684.0
+offset_bottom = 527.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.55, 0.55)

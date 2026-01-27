@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 "
 
 [node name="CompositionProgress" type="ProgressBar"]
-self_modulate = Color(0.33, 0.0594, 0.12705, 1)
+self_modulate = Color(0.745217, 0.562888, 0.229739, 1)
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0

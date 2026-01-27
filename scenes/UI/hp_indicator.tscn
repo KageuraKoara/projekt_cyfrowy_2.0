@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d6qnq6iewdq7"]
+
+[ext_resource type="FontFile" uid="uid://c2fmqyfklpeoq" path="res://sprites/Fonts/High Empathy.ttf" id="1_t5evg"]
+[ext_resource type="Script" uid="uid://bcbphk3gk58gk" path="res://scripts/hp_indicator.gd" id="2_a33u6"]
+
+[node name="HP_indicator" type="Label"]
+offset_left = 3100.0
+offset_top = 1800.0
+offset_right = 4583.0
+offset_bottom = 2303.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("1_t5evg")
+theme_override_font_sizes/font_size = 500
+text = "+ 0 HP"
+script = ExtResource("2_a33u6")

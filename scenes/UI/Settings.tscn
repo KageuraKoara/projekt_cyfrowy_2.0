@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b30l3wy1vsiix"]
+[gd_scene load_steps=6 format=3 uid="uid://b30l3wy1vsiix"]
 
-[ext_resource type="PackedScene" uid="uid://cmoge78x72ov2" path="res://Scenes/UI/volume_slider.tscn" id="1_g0tyt"]
-[ext_resource type="Script" uid="uid://b5x42i8iy16il" path="res://Scripts/settings.gd" id="1_ydmms"]
+[ext_resource type="PackedScene" uid="uid://cmoge78x72ov2" path="res://scenes/UI/volume_slider.tscn" id="1_g0tyt"]
+[ext_resource type="Script" uid="uid://b5x42i8iy16il" path="res://scripts/settings.gd" id="1_ydmms"]
 [ext_resource type="Texture2D" uid="uid://dggombc7145g" path="res://sprites/game/background/1.png" id="2_5dgb1"]
 [ext_resource type="Texture2D" uid="uid://m1rgbaddcdns" path="res://sprites/game/UI/Ramka.png" id="2_y60rh"]
+[ext_resource type="FontFile" uid="uid://c2fmqyfklpeoq" path="res://sprites/Fonts/High Empathy.ttf" id="4_ghuma"]
 
 [node name="Settings" type="Control"]
 top_level = true
@@ -32,17 +33,22 @@ expand_mode = 1
 
 [node name="contents" type="HBoxContainer" parent="."]
 layout_mode = 1
-offset_left = 103.0
-offset_top = 90.0
-offset_right = 300.0
-offset_bottom = 412.0
+offset_left = 70.0
+offset_top = 80.0
+offset_right = 347.0
+offset_bottom = 585.0
 
 [node name="settings" type="VBoxContainer" parent="contents"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="contents/settings"]
 layout_mode = 2
-text = "master volume:"
+theme_override_colors/font_color = Color(0.0376861, 0.0300208, 0.109339, 1)
+theme_override_colors/font_outline_color = Color(0.0392157, 0.0313726, 0.109804, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_ghuma")
+theme_override_font_sizes/font_size = 35
+text = "Master volume:"
 horizontal_alignment = 1
 
 [node name="master" parent="contents/settings" instance=ExtResource("1_g0tyt")]
@@ -52,7 +58,12 @@ bus_name = "Master"
 
 [node name="Label2" type="Label" parent="contents/settings"]
 layout_mode = 2
-text = "music volume:"
+theme_override_colors/font_color = Color(0.0376861, 0.0300208, 0.109339, 1)
+theme_override_colors/font_outline_color = Color(0.0392157, 0.0313726, 0.109804, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_ghuma")
+theme_override_font_sizes/font_size = 35
+text = "Music volume:"
 horizontal_alignment = 1
 
 [node name="music" parent="contents/settings" instance=ExtResource("1_g0tyt")]
@@ -62,7 +73,12 @@ bus_name = "Music"
 
 [node name="Label3" type="Label" parent="contents/settings"]
 layout_mode = 2
-text = "sfx volume:"
+theme_override_colors/font_color = Color(0.0376861, 0.0300208, 0.109339, 1)
+theme_override_colors/font_outline_color = Color(0.0392157, 0.0313726, 0.109804, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_ghuma")
+theme_override_font_sizes/font_size = 35
+text = "SFX volume:"
 horizontal_alignment = 1
 
 [node name="sfx" parent="contents/settings" instance=ExtResource("1_g0tyt")]
@@ -72,25 +88,49 @@ bus_name = "Sfx"
 
 [node name="Label4" type="Label" parent="contents/settings"]
 layout_mode = 2
-text = "
-keybinds:"
+theme_override_colors/font_color = Color(0.0376861, 0.0300208, 0.109339, 1)
+theme_override_colors/font_outline_color = Color(0.0392157, 0.0313726, 0.109804, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_ghuma")
+theme_override_font_sizes/font_size = 35
+text = "Keybinds:"
 horizontal_alignment = 1
 
 [node name="left" type="CheckButton" parent="contents/settings"]
 layout_mode = 2
-text = "left: Q / A"
+theme_override_colors/font_outline_color = Color(0.205443, 0.183195, 0.397941, 1)
+theme_override_colors/font_color = Color(0.0843358, 0.0718011, 0.191903, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_ghuma")
+theme_override_font_sizes/font_size = 28
+text = "Left: Q / A"
 
 [node name="jump" type="CheckButton" parent="contents/settings"]
 layout_mode = 2
-text = "jump: Space / W   "
+theme_override_colors/font_outline_color = Color(0.205443, 0.183195, 0.397941, 1)
+theme_override_colors/font_color = Color(0.0843358, 0.0718011, 0.191903, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_ghuma")
+theme_override_font_sizes/font_size = 28
+text = "Jump: Space / W  "
 
 [node name="right" type="CheckButton" parent="contents/settings"]
 layout_mode = 2
-text = "right: P / D"
+theme_override_colors/font_outline_color = Color(0.205443, 0.183195, 0.397941, 1)
+theme_override_colors/font_color = Color(0.0843358, 0.0718011, 0.191903, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_ghuma")
+theme_override_font_sizes/font_size = 28
+text = "Right: P / D"
 
 [node name="esc" type="Label" parent="contents/settings"]
 layout_mode = 2
-text = "Press ESC to hide settings"
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_ghuma")
+theme_override_font_sizes/font_size = 35
+text = "
+[Press ESC to
+hide settings]"
 horizontal_alignment = 1
 
 [connection signal="toggled" from="contents/settings/left" to="." method="_on_left_toggled"]
