@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgl3i6x633nwm"]
+[gd_scene load_steps=11 format=3 uid="uid://cgl3i6x633nwm"]
 
-[ext_resource type="Script" uid="uid://d2hmfbbbjtq31" path="res://Scripts/pause_menu.gd" id="1_rpp7m"]
+[ext_resource type="Script" uid="uid://d2hmfbbbjtq31" path="res://scripts/pause_menu.gd" id="1_rpp7m"]
 [ext_resource type="FontFile" uid="uid://c2fmqyfklpeoq" path="res://sprites/Fonts/High Empathy.ttf" id="2_dxxwr"]
+[ext_resource type="Texture2D" uid="uid://5v2xddpvffki" path="res://sprites/game/UI/Death.png" id="2_e8o0g"]
+[ext_resource type="Texture2D" uid="uid://m1rgbaddcdns" path="res://sprites/game/UI/Ramka.png" id="3_1qspe"]
 [ext_resource type="AudioStream" uid="uid://bwvcddh7koxfe" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX1.wav" id="3_7r88y"]
 [ext_resource type="Texture2D" uid="uid://bckxqhv4y2npj" path="res://sprites/game/UI/Guzik.png" id="3_piaik"]
 [ext_resource type="AudioStream" uid="uid://bikvs00uye3lr" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX2.wav" id="4_215s7"]
@@ -23,15 +25,34 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rpp7m")
 
+[node name="Death" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1919.0
+offset_bottom = 1191.0
+texture = ExtResource("2_e8o0g")
+expand_mode = 1
+
+[node name="Ramka" type="TextureRect" parent="."]
+offset_left = 1180.0
+offset_top = 78.0
+offset_right = 1846.0
+offset_bottom = 856.0
+texture = ExtResource("3_1qspe")
+expand_mode = 1
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 352.0
-offset_top = 188.0
-offset_right = 829.0
-offset_bottom = 308.0
+offset_left = 231.0
+offset_top = 71.0
+offset_right = 1027.0
+offset_bottom = 211.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.436)
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_outline_size = 10
 theme_override_fonts/normal_font = ExtResource("2_dxxwr")
-theme_override_font_sizes/normal_font_size = 75
-text = "Oh no, you died..."
+theme_override_font_sizes/normal_font_size = 120
+text = "They forgot you..."
 
 [node name="Menu" type="Button" parent="."]
 layout_mode = 1
@@ -40,10 +61,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -131.0
-offset_top = -1.0
-offset_right = 813.0
-offset_bottom = 366.0
+offset_left = 314.0
+offset_top = -316.0
+offset_right = 1258.0
+offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -67,10 +88,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -131.0
-offset_top = 183.0
-offset_right = 813.0
-offset_bottom = 550.0
+offset_left = 314.0
+offset_top = -132.0
+offset_right = 1258.0
+offset_bottom = 235.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -86,6 +107,32 @@ icon = ExtResource("3_piaik")
 flat = true
 icon_alignment = 1
 
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 314.0
+offset_top = 49.0
+offset_right = 1258.0
+offset_bottom = 416.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_hover_pressed_color = Color(0.241608, 0.180875, 0.127789, 0.72549)
+theme_override_colors/font_hover_color = Color(0.9, 0.82575, 0.765, 0.886275)
+theme_override_colors/font_outline_color = Color(0.9, 0.82575, 0.765, 0.886275)
+theme_override_colors/font_color = Color(0.9, 0.82575, 0.765, 0.282353)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_dxxwr")
+theme_override_font_sizes/font_size = 100
+text = "Exit"
+icon = ExtResource("3_piaik")
+flat = true
+icon_alignment = 1
+
 [node name="ButtonsSfx" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_e8o0g")
 bus = &"Sfx"
@@ -96,4 +143,5 @@ bus = &"Music"
 
 [connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="ready" from="result" to="." method="_on_result_ready"]
