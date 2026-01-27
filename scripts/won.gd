@@ -2,4 +2,5 @@ extends "res://scripts/pause_menu.gd"
 
 
 func _ready() -> void:
-	print(SceneSharedData.time_total, " ", SceneSharedData.chords_played, " ")
+	$TimeTotal.text = str("Total time gained: " + str(SceneSharedData.time_total))
+	$ChordsPlayed.text = str("Chords played: " + str(SceneSharedData.chords_played))

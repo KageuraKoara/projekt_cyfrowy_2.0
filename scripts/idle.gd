@@ -50,7 +50,7 @@ func transition():
 		get_parent().change_state("Transform")
 	if Main.song_position_in_beats == 310 and not it_wimdy:
 		spawn_wind()
-	if Main.song_position_in_beats >= 10: # 360
+	if Main.song_position_in_beats >= 360: # 360:
 		Main.you_win()
 	
 	# minor attacks
