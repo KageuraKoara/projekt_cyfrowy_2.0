@@ -58,7 +58,7 @@ func start_attackCD(time):
 
 func start_rain_timer():
 	$SpecialAttackDurationTimer.start(10)
-	spawn_ink_rain()
+	if !get_tree().paused: spawn_ink_rain()
 
 func spawn_ink_rain():
 	if not $SpecialAttackDurationTimer.is_stopped():
