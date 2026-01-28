@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cg08eg5ai8ia8"]
+[gd_scene load_steps=16 format=3 uid="uid://cg08eg5ai8ia8"]
 
 [ext_resource type="Script" uid="uid://cwdmdakr51mcf" path="res://Scripts/main_menu.gd" id="1_n00j1"]
 [ext_resource type="PackedScene" uid="uid://b30l3wy1vsiix" path="res://Scenes/UI/Settings.tscn" id="2_7vad4"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://bikvs00uye3lr" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX2.wav" id="9_61u10"]
 [ext_resource type="AudioStream" uid="uid://baki7vn5tlicm" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX3.wav" id="10_310en"]
 [ext_resource type="AudioStream" uid="uid://ceh7liqathpxb" path="res://sounds/UI & Main Menu/Ambient.wav" id="11_61u10"]
+[ext_resource type="AudioStream" uid="uid://bonor5y8fl653" path="res://sounds/UI & Main Menu/Start Gry.mp3" id="14_w3prd"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2qd55"]
 streams_count = 3
@@ -229,6 +230,10 @@ bus = &"Sfx"
 stream = ExtResource("11_61u10")
 autoplay = true
 bus = &"Music"
+
+[node name="Start" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_w3prd")
+bus = &"Sfx"
 
 [connection signal="mouse_entered" from="Music_sheet/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="mouse_exited" from="Music_sheet/Play" to="." method="_on_play_mouse_exited"]

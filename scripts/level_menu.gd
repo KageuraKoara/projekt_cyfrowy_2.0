@@ -13,13 +13,14 @@ func _process(delta: float) -> void:
 		_on_cutscene_finished()
 
 func _on_tutorial_pressed() -> void:
+	$"../Start".play()	
 	chosen_level = 0
 	_on_cutscene_finished()
 
 func _on_level_1_pressed() -> void:
 	chosen_level = 1
 	$"../AudioStreamPlayer".stop()
-	$"../ButtonsSfx".play()
+	$"../Start".play()	
 	$cutscene_player.stream.set_file("res://sprites/game/cutscenes/cutscene_level1.ogv")
 	$cutscene_player.visible = true
 	$cutscene_player.play()

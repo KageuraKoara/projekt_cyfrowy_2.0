@@ -340,9 +340,6 @@ texture_over = ExtResource("30_vmrhw")
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("26_o7j4k")]
 visible = false
 
-[node name="Start" type="AudioStreamPlayer" parent="."]
-bus = &"Sfx"
-
 [node name="WinTimer" type="Timer" parent="."]
 wait_time = 178.0
 one_shot = true
