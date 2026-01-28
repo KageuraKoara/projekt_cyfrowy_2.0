@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ean2b0d38pv7"]
 
-[ext_resource type="Script" uid="uid://dw6p2c4pfxlc7" path="res://scripts/level_menu.gd" id="1_w44lg"]
+[ext_resource type="Script" uid="uid://dw6p2c4pfxlc7" path="res://Scripts/level_menu.gd" id="1_w44lg"]
 [ext_resource type="FontFile" uid="uid://c2fmqyfklpeoq" path="res://sprites/Fonts/High Empathy.ttf" id="2_fblrp"]
 [ext_resource type="Texture2D" uid="uid://4j6mgyx35l6d" path="res://sprites/game/UI/key.png" id="2_gqhcl"]
 [ext_resource type="Texture2D" uid="uid://bckxqhv4y2npj" path="res://sprites/game/UI/Guzik.png" id="4_uiu3n"]
@@ -36,7 +36,7 @@ theme_override_colors/font_color = Color(0.9, 0.82575, 0.765, 0.282353)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_fblrp")
 theme_override_font_sizes/font_size = 90
-text = "Tutorial"
+text = "Practice Tool"
 icon = ExtResource("4_uiu3n")
 flat = true
 icon_alignment = 1
@@ -71,9 +71,9 @@ icon_alignment = 1
 [node name="Key_tut" type="TextureRect" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 990.0
+offset_left = 950.0
 offset_top = 448.0
-offset_right = 1021.0
+offset_right = 981.0
 offset_bottom = 576.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_gqhcl")
