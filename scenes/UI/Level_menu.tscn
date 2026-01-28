@@ -4,7 +4,9 @@
 [ext_resource type="FontFile" uid="uid://c2fmqyfklpeoq" path="res://sprites/Fonts/High Empathy.ttf" id="2_fblrp"]
 [ext_resource type="Texture2D" uid="uid://4j6mgyx35l6d" path="res://sprites/game/UI/key.png" id="2_gqhcl"]
 [ext_resource type="Texture2D" uid="uid://bckxqhv4y2npj" path="res://sprites/game/UI/Guzik.png" id="4_uiu3n"]
-[ext_resource type="VideoStream" uid="uid://bjbsetdtxm7ju" path="res://sprites/game/cutscenes/cutscene_level1.ogv" id="5_vmygt"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_nxyhr"]
+file = "res://sprites/game/cutscenes/cutscene_level1.ogv"
 
 [node name="LevelMenu" type="Control"]
 layout_mode = 3
@@ -95,8 +97,19 @@ visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-stream = ExtResource("5_vmygt")
+stream = SubResource("VideoStreamTheora_nxyhr")
 bus = &"Music"
+
+[node name="skip_indicator" type="Label" parent="cutscene_player"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 30.0
+offset_right = 299.0
+offset_bottom = 81.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.691)
+theme_override_fonts/font = ExtResource("2_fblrp")
+theme_override_font_sizes/font_size = 40
+text = "[Space] to skip"
 
 [connection signal="mouse_entered" from="tutorial" to="." method="_on_tutorial_mouse_entered"]
 [connection signal="mouse_exited" from="tutorial" to="." method="_on_tutorial_mouse_exited"]

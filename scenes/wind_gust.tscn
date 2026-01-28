@@ -7,7 +7,7 @@
 radius = 35.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ekob"]
-size = Vector2(400, 120)
+size = Vector2(634.5, 120)
 
 [node name="wind_gust" type="CharacterBody2D" groups=["enemy_projectile"]]
 collision_layer = 4

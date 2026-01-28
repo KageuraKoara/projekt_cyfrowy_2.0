@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dunfqhikb7g0f"]
+[gd_scene load_steps=35 format=3 uid="uid://dunfqhikb7g0f"]
 
 [ext_resource type="Script" uid="uid://cms2v1fli0u3b" path="res://scenes/levels/practice_tool.gd" id="1_g1cqw"]
 [ext_resource type="Texture2D" uid="uid://dggombc7145g" path="res://sprites/game/background/1.png" id="2_0isne"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bfxg0ueqqibc6" path="res://sprites/game/UI/Overlay.png" id="25_lhy1t"]
 [ext_resource type="PackedScene" uid="uid://b2d0wuswlxlhm" path="res://scenes/UI/Hourglass.tscn" id="26_kb3kl"]
 [ext_resource type="PackedScene" uid="uid://biglfq8u88a6d" path="res://scenes/UI/keyboard.tscn" id="27_8hk5x"]
+[ext_resource type="PackedScene" uid="uid://bcb8qkfbowc4j" path="res://scenes/UI/tutorial_panel.tscn" id="28_nte3o"]
 [ext_resource type="PackedScene" uid="uid://b5tysofssnrtu" path="res://scenes/UI/cd_indicator.tscn" id="28_uv3px"]
 [ext_resource type="Texture2D" uid="uid://b35y1q021t5d" path="res://sprites/game/UI/Cooldown/DFA_cd_front.png" id="29_7q2rr"]
 [ext_resource type="Texture2D" uid="uid://b3nwrksmav2he" path="res://sprites/game/UI/Cooldown/EGB_cd_front.png" id="30_5ugba"]
@@ -340,6 +341,18 @@ grow_horizontal = 0
 max_value = 20.0
 value = 20.0
 texture_over = ExtResource("30_5ugba")
+
+[node name="TutorialPanel" parent="CanvasLayer" instance=ExtResource("28_nte3o")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -214.0
+offset_top = 20.0
+offset_right = -214.0
+offset_bottom = 20.0
+grow_vertical = 1
+scale = Vector2(0.3, 0.3)
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("31_u7x2i")]
 visible = false

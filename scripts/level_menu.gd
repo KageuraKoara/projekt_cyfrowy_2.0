@@ -2,13 +2,11 @@ extends Control
 
 @onready var key_lvl: TextureRect = $Key_1
 @onready var key_tut: TextureRect = $Key_tut
-@onready var cutscene_0 = ""
-@onready var cutscene_1 = "res://sprites/game/cutscenes/cutscene_level1.ogv"
 
 var chosen_level : int
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("esc") and $cutscene_player.is_playing():
+	if Input.is_action_just_pressed("movement_Space") and $cutscene_player.is_playing():
 		$cutscene_player.stop()
 		_on_cutscene_finished()
 
@@ -20,8 +18,8 @@ func _on_tutorial_pressed() -> void:
 func _on_level_1_pressed() -> void:
 	chosen_level = 1
 	$"../AudioStreamPlayer".stop()
-	$"../Start".play()	
-	$cutscene_player.stream.set_file("res://sprites/game/cutscenes/cutscene_level1.ogv")
+	$"../ButtonsSfx".play()
+	$cutscene_player.stream.set_file("res://sprites/game/cutscenes/cutscene_1.ogv")
 	$cutscene_player.visible = true
 	$cutscene_player.play()
 
