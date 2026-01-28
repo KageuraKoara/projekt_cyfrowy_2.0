@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 func _ready() -> void:
 	$Particles.wind()
-	global_position.x = 700
+	global_position.x = 600
 	global_position.y = 460
 
 func _on_phase_change() -> void:

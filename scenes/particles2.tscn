@@ -111,11 +111,11 @@ process_material = SubResource("ParticleProcessMaterial_jp56q")
 
 [node name="Wind" type="GPUParticles2D" parent="."]
 modulate = Color(1, 1, 1, 0.729412)
-position = Vector2(694, 0)
+position = Vector2(880, 0)
 emitting = false
 amount = 10
 texture = ExtResource("2_c7hh6")
-lifetime = 2.0
+lifetime = 2.5
 trail_enabled = true
 trail_lifetime = 1.0
 trail_sections = 16
@@ -124,7 +124,7 @@ process_material = SubResource("ParticleProcessMaterial_cr50e")
 
 [node name="Wind2" type="GPUParticles2D" parent="."]
 modulate = Color(1, 1, 1, 0.698039)
-position = Vector2(694, 0)
+position = Vector2(880, 0)
 emitting = false
 amount = 15
 texture = ExtResource("3_h7nvr")
@@ -136,7 +136,7 @@ trail_section_subdivisions = 16
 process_material = SubResource("ParticleProcessMaterial_cr50e")
 
 [node name="Feathers" type="GPUParticles2D" parent="."]
-position = Vector2(694, 0)
+position = Vector2(726, 0)
 emitting = false
 amount = 5
 texture = ExtResource("4_dccco")
