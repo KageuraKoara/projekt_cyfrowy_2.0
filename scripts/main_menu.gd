@@ -15,7 +15,9 @@ func _on_credits_pressed() -> void:
 	pass
 
 func _on_exit_pressed() -> void:
+	$ButtonsSfx.play()
 	get_tree().quit()
+	
 
 
 func _on_settings_mouse_entered() -> void:

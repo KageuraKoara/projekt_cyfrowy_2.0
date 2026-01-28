@@ -1,9 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://cg08eg5ai8ia8"]
+[gd_scene load_steps=16 format=3 uid="uid://cg08eg5ai8ia8"]
 
-[ext_resource type="Script" uid="uid://cwdmdakr51mcf" path="res://scripts/main_menu.gd" id="1_n00j1"]
-[ext_resource type="PackedScene" uid="uid://b30l3wy1vsiix" path="res://scenes/UI/Settings.tscn" id="2_7vad4"]
+[ext_resource type="Script" uid="uid://cwdmdakr51mcf" path="res://Scripts/main_menu.gd" id="1_n00j1"]
+[ext_resource type="PackedScene" uid="uid://b30l3wy1vsiix" path="res://Scenes/UI/Settings.tscn" id="2_7vad4"]
 [ext_resource type="Texture2D" uid="uid://bwjlt80s0qbmr" path="res://sprites/game/UI/Menu BG.png" id="2_bildh"]
-[ext_resource type="PackedScene" uid="uid://ean2b0d38pv7" path="res://scenes/UI/Level_menu.tscn" id="3_66axm"]
+[ext_resource type="PackedScene" uid="uid://ean2b0d38pv7" path="res://Scenes/UI/Level_menu.tscn" id="3_66axm"]
 [ext_resource type="Texture2D" uid="uid://4j6mgyx35l6d" path="res://sprites/game/UI/key.png" id="4_17otf"]
 [ext_resource type="FontFile" uid="uid://c2fmqyfklpeoq" path="res://sprites/Fonts/High Empathy.ttf" id="4_q5fvd"]
 [ext_resource type="Texture2D" uid="uid://bckxqhv4y2npj" path="res://sprites/game/UI/Guzik.png" id="5_61u10"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://bikvs00uye3lr" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX2.wav" id="9_61u10"]
 [ext_resource type="AudioStream" uid="uid://baki7vn5tlicm" path="res://sounds/UI & Main Menu/SFX Przycisków/SFX3.wav" id="10_310en"]
 [ext_resource type="AudioStream" uid="uid://ceh7liqathpxb" path="res://sounds/UI & Main Menu/Ambient.wav" id="11_61u10"]
+[ext_resource type="AudioStream" uid="uid://bonor5y8fl653" path="res://sounds/UI & Main Menu/Start Gry.mp3" id="14_w3prd"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2qd55"]
 streams_count = 3
@@ -197,7 +198,6 @@ offset_left = -121.824
 offset_top = -168.152
 offset_right = 822.176
 offset_bottom = 198.848
-text = "Practice Tool"
 
 [node name="level 1" parent="LevelMenu" index="1"]
 offset_left = -121.824
@@ -207,9 +207,9 @@ offset_bottom = 362.848
 
 [node name="Key_tut" parent="LevelMenu" index="2"]
 self_modulate = Color(80.663, 81.215, 84.53, 0.884)
-offset_left = 621.0
+offset_left = 572.0
 offset_top = 226.0
-offset_right = 652.0
+offset_right = 603.0
 offset_bottom = 354.0
 
 [node name="Key_1" parent="LevelMenu" index="3"]
@@ -230,6 +230,10 @@ bus = &"Sfx"
 stream = ExtResource("11_61u10")
 autoplay = true
 bus = &"Music"
+
+[node name="Start" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_w3prd")
+bus = &"Sfx"
 
 [connection signal="mouse_entered" from="Music_sheet/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="mouse_exited" from="Music_sheet/Play" to="." method="_on_play_mouse_exited"]

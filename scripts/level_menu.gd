@@ -11,6 +11,7 @@ func _process(delta: float) -> void:
 		_on_cutscene_finished()
 
 func _on_tutorial_pressed() -> void:
+	$"../ButtonsSfx".play()
 	chosen_level = 0
 	_on_cutscene_finished()
 

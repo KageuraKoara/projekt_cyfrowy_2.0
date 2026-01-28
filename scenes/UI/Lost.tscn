@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cgl3i6x633nwm"]
 
-[ext_resource type="Script" uid="uid://d2hmfbbbjtq31" path="res://scripts/pause_menu.gd" id="1_rpp7m"]
+[ext_resource type="Script" uid="uid://d2hmfbbbjtq31" path="res://Scripts/pause_menu.gd" id="1_rpp7m"]
 [ext_resource type="Texture2D" uid="uid://dj8123a2h7i86" path="res://sprites/game/UI/lost_menu.png" id="2_1qspe"]
 [ext_resource type="FontFile" uid="uid://c2fmqyfklpeoq" path="res://sprites/Fonts/High Empathy.ttf" id="2_dxxwr"]
 [ext_resource type="Texture2D" uid="uid://m1rgbaddcdns" path="res://sprites/game/UI/Ramka.png" id="3_1qspe"]
